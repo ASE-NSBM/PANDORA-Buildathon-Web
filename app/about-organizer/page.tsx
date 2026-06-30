@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Github, Instagram, Facebook, Youtube, ExternalLink } from 'lucide-react'
 
 const socialLinks = [
@@ -55,11 +56,15 @@ export default function AboutOrganizerPage() {
             </div>
 
             <div className="flex justify-center">
-              <div className="w-48 h-48 rounded-full glass-card glow-border-cyan flex items-center justify-center">
-                <div className="text-center">
-                  <div className="font-cinzel font-bold text-bright-cyan text-4xl mb-1">ASE</div>
-                  <div className="font-poppins text-white/40 text-xs tracking-[0.3em] uppercase">Club</div>
-                </div>
+              <div className="w-48 h-48 rounded-full glass-card glow-border-cyan flex items-center justify-center p-6 animate-float">
+                <Image
+                  src="/ase-logo.jpg"
+                  alt="ASE Club logo"
+                  width={160}
+                  height={160}
+                  className="w-full h-full object-contain rounded-full"
+                  priority
+                />
               </div>
             </div>
           </div>
