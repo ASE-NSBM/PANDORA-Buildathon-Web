@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Calendar, MapPin, ArrowRight, Zap, Code2, BookOpen, Trophy } from 'lucide-react'
-import VideoStory, { StorySection } from '@/components/ui/VideoStory'
+import ScrollScrubVideo from '@/components/ui/ScrollScrubVideo'
 
 const whyParticipate = [
   { icon: Zap,      title: 'Real World Impact', description: 'Solve meaningful problems that create impact.' },
@@ -9,13 +9,11 @@ const whyParticipate = [
   { icon: Trophy,   title: 'Win Rewards',        description: 'Exciting prizes and recognition await.' },
 ]
 
-const sections: StorySection[] = [
-  // ── 1: Hero ──
-  {
-    src: '/vids/clip1.mp4',
-    overlay: 0.5,
-    content: (
-      <>
+export default function HomePage() {
+  return (
+    <>
+      {/* ── 1: Hero ─ clip1 ── */}
+      <ScrollScrubVideo src="/vids/clip1.mp4" scrollHeight="300vh" overlay={0.5}>
         <div className="inline-flex items-center gap-2 mb-6">
           <div className="w-6 h-6 rounded-full bg-bio-cyan/20 border border-bio-cyan/50 flex items-center justify-center">
             <span className="text-bright-cyan text-[10px] font-cinzel font-bold">P</span>
@@ -46,60 +44,49 @@ const sections: StorySection[] = [
           Register Now
           <ArrowRight size={18} />
         </Link>
-      </>
-    ),
-  },
-  // ── 2: About ──
-  {
-    src: '/vids/clip2.mp4',
-    overlay: 0.6,
-    content: (
-      <div className="max-w-2xl">
-        <p className="font-cinzel text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
-          About the Event
-        </p>
-        <h2 className="section-heading mb-6">BuilderThan</h2>
-        <p className="font-poppins text-white/70 leading-relaxed text-lg mb-8">
-          BuilderThan is a platform for passionate minds to solve real-world problems and build
-          innovative solutions. Dive into the journey of creativity, collaboration and impact.
-        </p>
-        <Link href="/about-event" className="btn-outline inline-flex items-center gap-2">
-          Explore Event
-          <ArrowRight size={16} />
-        </Link>
-      </div>
-    ),
-  },
-  // ── 3: Why Participate ──
-  {
-    src: '/vids/clip3.mp4',
-    overlay: 0.65,
-    content: (
-      <div className="max-w-7xl w-full mx-auto">
-        <h2 className="section-heading mb-12">Why Participate?</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {whyParticipate.map(({ icon: Icon, title, description }) => (
-            <div
-              key={title}
-              className="glass-card glow-border-cyan p-6 text-center group hover:shadow-cyan-glow transition-all duration-300"
-            >
-              <div className="w-12 h-12 rounded-full bg-bio-cyan/10 border border-bio-cyan/30 flex items-center justify-center mx-auto mb-4 group-hover:border-bright-cyan group-hover:shadow-cyan-glow transition-all duration-300">
-                <Icon size={20} className="text-bright-cyan" />
-              </div>
-              <h3 className="font-cinzel font-semibold text-white text-sm mb-2">{title}</h3>
-              <p className="font-poppins text-white/50 text-sm leading-relaxed">{description}</p>
-            </div>
-          ))}
+      </ScrollScrubVideo>
+
+      {/* ── 2: About ─ clip2 ── */}
+      <ScrollScrubVideo src="/vids/clip2.mp4" scrollHeight="250vh" overlay={0.6}>
+        <div className="max-w-2xl">
+          <p className="font-cinzel text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
+            About the Event
+          </p>
+          <h2 className="section-heading mb-6">BuilderThan</h2>
+          <p className="font-poppins text-white/70 leading-relaxed text-lg mb-8">
+            BuilderThan is a platform for passionate minds to solve real-world problems and build
+            innovative solutions. Dive into the journey of creativity, collaboration and impact.
+          </p>
+          <Link href="/about-event" className="btn-outline inline-flex items-center gap-2">
+            Explore Event
+            <ArrowRight size={16} />
+          </Link>
         </div>
-      </div>
-    ),
-  },
-  // ── 4: Final CTA ──
-  {
-    src: '/vids/clip4.mp4',
-    overlay: 0.45,
-    content: (
-      <>
+      </ScrollScrubVideo>
+
+      {/* ── 3: Why Participate ─ clip3 ── */}
+      <ScrollScrubVideo src="/vids/clip3.mp4" scrollHeight="250vh" overlay={0.65}>
+        <div className="max-w-7xl w-full mx-auto">
+          <h2 className="section-heading mb-12">Why Participate?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyParticipate.map(({ icon: Icon, title, description }) => (
+              <div
+                key={title}
+                className="glass-card glow-border-cyan p-6 text-center group hover:shadow-cyan-glow transition-all duration-300"
+              >
+                <div className="w-12 h-12 rounded-full bg-bio-cyan/10 border border-bio-cyan/30 flex items-center justify-center mx-auto mb-4 group-hover:border-bright-cyan group-hover:shadow-cyan-glow transition-all duration-300">
+                  <Icon size={20} className="text-bright-cyan" />
+                </div>
+                <h3 className="font-cinzel font-semibold text-white text-sm mb-2">{title}</h3>
+                <p className="font-poppins text-white/50 text-sm leading-relaxed">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </ScrollScrubVideo>
+
+      {/* ── 4: Final CTA ─ clip4 ── */}
+      <ScrollScrubVideo src="/vids/clip4.mp4" scrollHeight="200vh" overlay={0.45} id="contact">
         <p className="font-cinzel text-bright-cyan text-xs tracking-[0.3em] uppercase mb-6">
           Ready to Build?
         </p>
@@ -113,11 +100,7 @@ const sections: StorySection[] = [
           Register Now
           <ArrowRight size={18} />
         </Link>
-      </>
-    ),
-  },
-]
-
-export default function HomePage() {
-  return <VideoStory sections={sections} />
+      </ScrollScrubVideo>
+    </>
+  )
 }
