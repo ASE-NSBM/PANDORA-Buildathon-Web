@@ -1,8 +1,15 @@
 import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+
+const papyrus = localFont({
+  src: './fonts/papyrus.ttf',
+  variable: '--font-papyrus',
+  display: 'swap',
+})
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -31,7 +38,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
+    <html lang="en" className={`${papyrus.variable} ${poppins.variable} ${inter.variable}`}>
       <body className="font-poppins bg-deep-ocean text-white antialiased">
         <Navbar />
         <main>{children}</main>
