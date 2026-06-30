@@ -20,7 +20,6 @@ const config: Config = {
         'accent-purple': '#8A2BE2',
       },
       fontFamily: {
-        papyrus: ['Papyrus', 'Copperplate', 'Luminari', 'fantasy'],
         poppins: ['var(--font-poppins)', 'sans-serif'],
         inter:   ['var(--font-inter)',   'sans-serif'],
       },

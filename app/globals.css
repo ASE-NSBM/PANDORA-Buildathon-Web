@@ -38,11 +38,13 @@ body {
   }
 
   .section-heading {
-    @apply font-papyrus text-3xl md:text-4xl font-bold text-white;
+    @apply text-3xl md:text-4xl font-bold text-white;
+    font-family: 'Papyrus', 'Copperplate', 'Luminari', fantasy;
   }
 
   .section-subheading {
-    @apply font-papyrus text-xl md:text-2xl font-semibold text-bright-cyan;
+    @apply text-xl md:text-2xl font-semibold text-bright-cyan;
+    font-family: 'Papyrus', 'Copperplate', 'Luminari', fantasy;
   }
 
   .form-input {
@@ -54,5 +56,11 @@ body {
 
   .form-label {
     @apply block font-inter text-white/70 text-sm mb-2;
+  }
+}
+
+@layer utilities {
+  .font-papyrus {
+    font-family: 'Papyrus', 'Copperplate', 'Luminari', fantasy;
   }
 }
