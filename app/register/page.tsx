@@ -5,19 +5,19 @@ import { ChevronRight } from 'lucide-react'
 import type { Member } from '@/types'
 
 const emptyMember = (): Member => ({
-  fullName:      '',
-  studentId:     '',
-  email:         '',
-  contactNumber: '',
-  whatsappNumber:'',
+  fullName:       '',
+  studentId:      '',
+  email:          '',
+  contactNumber:  '',
+  whatsappNumber: '',
 })
 
 const MEMBER_FIELDS: { field: keyof Member; label: string; placeholder: string; type: string }[] = [
-  { field: 'fullName',       label: 'Full Name',       placeholder: 'Enter full name',        type: 'text'  },
-  { field: 'studentId',      label: 'Student ID',      placeholder: 'Enter student ID',       type: 'text'  },
-  { field: 'email',          label: 'Email Address',   placeholder: 'Enter email address',    type: 'email' },
-  { field: 'contactNumber',  label: 'Contact Number',  placeholder: 'Enter contact number',   type: 'tel'   },
-  { field: 'whatsappNumber', label: 'WhatsApp Number', placeholder: 'Enter WhatsApp number',  type: 'tel'   },
+  { field: 'fullName',       label: 'Full Name',       placeholder: 'Enter full name',       type: 'text'  },
+  { field: 'studentId',      label: 'Student ID',      placeholder: 'Enter student ID',      type: 'text'  },
+  { field: 'email',          label: 'Email Address',   placeholder: 'Enter email address',   type: 'email' },
+  { field: 'contactNumber',  label: 'Contact Number',  placeholder: 'Enter contact number',  type: 'tel'   },
+  { field: 'whatsappNumber', label: 'WhatsApp Number', placeholder: 'Enter WhatsApp number', type: 'tel'   },
 ]
 
 export default function RegisterPage() {
@@ -70,9 +70,19 @@ export default function RegisterPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-10 text-center">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* Hero with video background */}
+      <section className="relative pt-32 pb-16 overflow-hidden min-h-[40vh] flex items-center">
+        <video
+          src="/vids/clip4.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-deep-ocean/70" />
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 text-center">
           <p className="font-cinzel text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
             Join BuilderThan
           </p>
@@ -84,7 +94,7 @@ export default function RegisterPage() {
       </section>
 
       {/* Form */}
-      <section className="py-12">
+      <section className="py-16 bg-deep-ocean">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 

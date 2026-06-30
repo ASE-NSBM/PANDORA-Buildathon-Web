@@ -25,22 +25,31 @@ export default function AboutEventPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-glow-cyan opacity-20 pointer-events-none" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero with video background */}
+      <section className="relative pt-32 pb-20 overflow-hidden min-h-[50vh] flex items-center">
+        <video
+          src="/vids/clip2.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-deep-ocean/65" />
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="font-cinzel text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
             Discover More
           </p>
           <h1 className="section-heading text-5xl md:text-6xl mb-4">About the Event</h1>
-          <p className="font-poppins text-white/50 max-w-xl mx-auto">
+          <p className="font-poppins text-white/60 max-w-xl mx-auto">
             Everything you need to know about BuilderThan 2026.
           </p>
         </div>
       </section>
 
       {/* Tabs */}
-      <section className="py-16">
+      <section className="py-16 bg-deep-ocean">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Tab nav */}
@@ -129,10 +138,10 @@ export default function AboutEventPage() {
               <h2 className="section-subheading mb-8">Schedule</h2>
               <div className="relative space-y-6 before:absolute before:left-3 before:top-2 before:bottom-2 before:w-px before:bg-bio-cyan/30">
                 {[
-                  { date: 'July 2026',       event: 'Registration Opens' },
-                  { date: 'Aug 10, 2026',    event: 'Registration Closes' },
-                  { date: 'Aug 15, 2026',    event: 'Day 1 – Kickoff & Ideation' },
-                  { date: 'Aug 16, 2026',    event: 'Day 2 – Pitching & Awards' },
+                  { date: 'July 2026',    event: 'Registration Opens' },
+                  { date: 'Aug 10, 2026', event: 'Registration Closes' },
+                  { date: 'Aug 15, 2026', event: 'Day 1 – Kickoff & Ideation' },
+                  { date: 'Aug 16, 2026', event: 'Day 2 – Pitching & Awards' },
                 ].map(({ date, event }) => (
                   <div key={date} className="pl-10 relative">
                     <div className="absolute left-1 top-1.5 w-4 h-4 rounded-full bg-bio-cyan border-2 border-deep-ocean" />

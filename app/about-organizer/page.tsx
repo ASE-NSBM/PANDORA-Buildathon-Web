@@ -10,26 +10,34 @@ const socialLinks = [
 export default function AboutOrganizerPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-glow-purple opacity-20 pointer-events-none" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero with video background */}
+      <section className="relative pt-32 pb-20 overflow-hidden min-h-[50vh] flex items-center">
+        <video
+          src="/vids/clip3.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-deep-ocean/65" />
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="font-cinzel text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
             Meet the Team
           </p>
           <h1 className="section-heading text-5xl md:text-6xl mb-4">About the Organizer</h1>
-          <p className="font-poppins text-white/50 max-w-xl mx-auto">
+          <p className="font-poppins text-white/60 max-w-xl mx-auto">
             BuilderThan is proudly organized by the Association of Software Engineering (ASE) Club under Pandora.
           </p>
         </div>
       </section>
 
-      {/* Club intro */}
-      <section className="py-16">
+      {/* Club content */}
+      <section className="py-16 bg-deep-ocean">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-            {/* Content */}
             <div>
               <h2 className="section-subheading mb-2">ASE Club</h2>
               <h3 className="font-cinzel font-bold text-white text-2xl mb-6">
@@ -46,7 +54,6 @@ export default function AboutOrganizerPage() {
               </a>
             </div>
 
-            {/* Logo placeholder */}
             <div className="flex justify-center">
               <div className="w-48 h-48 rounded-full glass-card glow-border-cyan flex items-center justify-center">
                 <div className="text-center">
