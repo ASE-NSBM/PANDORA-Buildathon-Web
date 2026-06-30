@@ -16,7 +16,7 @@ export default function HomePage() {
       <ScrollScrubBackground src="/vids/story.mp4" overlay={0.5} />
 
       {/* Content scrolls over the locked video */}
-      <div className="relative z-10">
+      <div id="scrub-track" className="relative z-10">
 
         {/* ── 1: Hero ── */}
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-4">

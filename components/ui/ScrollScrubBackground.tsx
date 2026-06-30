@@ -33,11 +33,18 @@ export default function ScrollScrubBackground({
     let displayed = 0
     const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v))
 
+    // Scrub only across the content track (excludes the footer below it),
+    // so the video reaches its last frame exactly when content ends, then
+    // holds that frame while the footer scrolls in.
+    const track = document.getElementById('scrub-track')
+
     const tick = () => {
       const dur = video.duration
       if (dur && Number.isFinite(dur)) {
-        const max = document.documentElement.scrollHeight - window.innerHeight
-        const progress = max > 0 ? clamp(window.scrollY / max, 0, 1) : 0
+        const range = track
+          ? track.offsetHeight - window.innerHeight
+          : document.documentElement.scrollHeight - window.innerHeight
+        const progress = range > 0 ? clamp(window.scrollY / range, 0, 1) : 0
         const target = progress * dur
 
         displayed += (target - displayed) * ease
