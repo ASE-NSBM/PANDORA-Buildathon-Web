@@ -22,14 +22,14 @@ export default function HomePage() {
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-4">
           <div className="inline-flex items-center gap-2 mb-6">
             <div className="w-6 h-6 rounded-full bg-bio-cyan/20 border border-bio-cyan/50 flex items-center justify-center">
-              <span className="text-bright-cyan text-[10px] font-cinzel font-bold">P</span>
+              <span className="text-bright-cyan text-[10px] font-papyrus font-bold">P</span>
             </div>
-            <span className="font-cinzel text-bright-cyan text-sm tracking-[0.3em] uppercase">Pandora</span>
+            <span className="font-papyrus text-bright-cyan text-sm tracking-[0.3em] uppercase">Pandora</span>
           </div>
-          <h1 className="font-cinzel font-bold text-6xl md:text-8xl lg:text-[9rem] text-white mb-4 glow-text-cyan tracking-wider leading-none">
+          <h1 className="font-papyrus font-bold text-6xl md:text-8xl lg:text-[9rem] text-white mb-4 glow-text-cyan tracking-wider leading-none">
             BUILDERTHAN
           </h1>
-          <p className="font-cinzel text-base md:text-lg text-bright-cyan/80 tracking-[0.25em] uppercase mb-8">
+          <p className="font-papyrus text-base md:text-lg text-bright-cyan/80 tracking-[0.25em] uppercase mb-8">
             Build Beyond Imagination
           </p>
           <p className="font-poppins text-white/60 text-base md:text-lg max-w-xl mx-auto mb-10">
@@ -55,7 +55,7 @@ export default function HomePage() {
         {/* ── 2: About ── */}
         <section className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto md:mx-0">
-            <p className="font-cinzel text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
+            <p className="font-papyrus text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
               About the Event
             </p>
             <h2 className="section-heading mb-6">BuilderThan</h2>
@@ -83,7 +83,7 @@ export default function HomePage() {
                   <div className="w-12 h-12 rounded-full bg-bio-cyan/10 border border-bio-cyan/30 flex items-center justify-center mx-auto mb-4 group-hover:border-bright-cyan group-hover:shadow-cyan-glow transition-all duration-300">
                     <Icon size={20} className="text-bright-cyan" />
                   </div>
-                  <h3 className="font-cinzel font-semibold text-white text-sm mb-2">{title}</h3>
+                  <h3 className="font-papyrus font-semibold text-white text-sm mb-2">{title}</h3>
                   <p className="font-poppins text-white/50 text-sm leading-relaxed">{description}</p>
                 </div>
               ))}
@@ -93,10 +93,10 @@ export default function HomePage() {
 
         {/* ── 4: Final CTA ── */}
         <section id="contact" className="min-h-screen flex flex-col items-center justify-center text-center px-4">
-          <p className="font-cinzel text-bright-cyan text-xs tracking-[0.3em] uppercase mb-6">
+          <p className="font-papyrus text-bright-cyan text-xs tracking-[0.3em] uppercase mb-6">
             Ready to Build?
           </p>
-          <h2 className="font-cinzel font-bold text-4xl md:text-6xl text-white mb-6 glow-text-cyan">
+          <h2 className="font-papyrus font-bold text-4xl md:text-6xl text-white mb-6 glow-text-cyan">
             Join BuilderThan 2026
           </h2>
           <p className="font-poppins text-white/60 max-w-xl mx-auto mb-10 text-lg">

@@ -38,7 +38,7 @@ export default function AboutEventPage() {
         <div className="absolute inset-0 bg-deep-ocean/65" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="font-cinzel text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
+          <p className="font-papyrus text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
             Discover More
           </p>
           <h1 className="section-heading text-5xl md:text-6xl mb-4">About the Event</h1>
@@ -83,7 +83,7 @@ export default function AboutEventPage() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {overviewCards.map(({ title, description }) => (
                   <div key={title} className="glass-card p-6">
-                    <h3 className="font-cinzel font-bold text-bright-cyan text-lg mb-2">{title}</h3>
+                    <h3 className="font-papyrus font-bold text-bright-cyan text-lg mb-2">{title}</h3>
                     <p className="font-poppins text-white/50 text-sm">{description}</p>
                   </div>
                 ))}
@@ -145,7 +145,7 @@ export default function AboutEventPage() {
                 ].map(({ date, event }) => (
                   <div key={date} className="pl-10 relative">
                     <div className="absolute left-1 top-1.5 w-4 h-4 rounded-full bg-bio-cyan border-2 border-deep-ocean" />
-                    <p className="font-cinzel text-bright-cyan text-sm">{date}</p>
+                    <p className="font-papyrus text-bright-cyan text-sm">{date}</p>
                     <p className="font-poppins text-white/70 mt-0.5">{event}</p>
                   </div>
                 ))}
@@ -165,7 +165,7 @@ export default function AboutEventPage() {
                   { place: 'Special Awards', prize: 'Best Innovation · Best UI/UX' },
                 ].map(({ place, prize }) => (
                   <div key={place} className="glass-card p-4 flex items-center gap-4">
-                    <span className="font-cinzel font-bold text-bright-cyan min-w-[130px] text-sm">{place}</span>
+                    <span className="font-papyrus font-bold text-bright-cyan min-w-[130px] text-sm">{place}</span>
                     <span className="font-poppins text-white/60 text-sm">{prize}</span>
                   </div>
                 ))}

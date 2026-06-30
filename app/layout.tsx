@@ -1,14 +1,8 @@
 import type { Metadata } from 'next'
-import { Cinzel, Poppins, Inter } from 'next/font/google'
+import { Poppins, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-
-const cinzel = Cinzel({
-  subsets: ['latin'],
-  variable: '--font-cinzel',
-  display: 'swap',
-})
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -37,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cinzel.variable} ${poppins.variable} ${inter.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body className="font-poppins bg-deep-ocean text-white antialiased">
         <Navbar />
         <main>{children}</main>

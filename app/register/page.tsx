@@ -58,7 +58,7 @@ export default function RegisterPage() {
           <div className="w-16 h-16 rounded-full bg-bio-cyan/20 border border-bio-cyan/50 flex items-center justify-center mx-auto mb-6">
             <span className="text-bright-cyan text-2xl">✓</span>
           </div>
-          <h2 className="font-cinzel font-bold text-white text-2xl mb-3">Registration Successful!</h2>
+          <h2 className="font-papyrus font-bold text-white text-2xl mb-3">Registration Successful!</h2>
           <p className="font-poppins text-white/60 text-sm leading-relaxed">
             Team <span className="text-bright-cyan font-semibold">{teamName}</span> has been registered.
             We&apos;ll be in touch soon!
@@ -83,7 +83,7 @@ export default function RegisterPage() {
         <div className="absolute inset-0 bg-deep-ocean/70" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 text-center">
-          <p className="font-cinzel text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
+          <p className="font-papyrus text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
             Join BuilderThan
           </p>
           <h1 className="section-heading text-5xl md:text-6xl mb-4">Register Your Team</h1>
@@ -100,7 +100,7 @@ export default function RegisterPage() {
 
             {/* Team Information */}
             <div className="glass-card p-8 space-y-6 h-fit">
-              <h2 className="font-cinzel font-bold text-bright-cyan text-lg">Team Information</h2>
+              <h2 className="font-papyrus font-bold text-bright-cyan text-lg">Team Information</h2>
 
               <div>
                 <label className="form-label">
@@ -142,7 +142,7 @@ export default function RegisterPage() {
             {/* Member Details */}
             <div className="glass-card p-8 space-y-6">
               <div className="flex items-center justify-between">
-                <h2 className="font-cinzel font-bold text-bright-cyan text-lg">Member Details</h2>
+                <h2 className="font-papyrus font-bold text-bright-cyan text-lg">Member Details</h2>
                 <div className="flex gap-1">
                   {members.map((_, i) => (
                     <button

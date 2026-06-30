@@ -20,7 +20,7 @@ const config: Config = {
         'accent-purple': '#8A2BE2',
       },
       fontFamily: {
-        cinzel:  ['var(--font-cinzel)',  'serif'],
+        papyrus: ['Papyrus', 'Copperplate', 'Luminari', 'fantasy'],
         poppins: ['var(--font-poppins)', 'sans-serif'],
         inter:   ['var(--font-inter)',   'sans-serif'],
       },

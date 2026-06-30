@@ -23,9 +23,9 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-full bg-bio-cyan/20 border border-bio-cyan/50 flex items-center justify-center group-hover:shadow-cyan-glow transition-all duration-300">
-              <span className="text-bright-cyan text-xs font-cinzel font-bold">P</span>
+              <span className="text-bright-cyan text-xs font-papyrus font-bold">P</span>
             </div>
-            <span className="font-cinzel font-bold text-white text-lg tracking-wider">PANDORA</span>
+            <span className="font-papyrus font-bold text-white text-lg tracking-wider">PANDORA</span>
           </Link>
 
           {/* Desktop links */}

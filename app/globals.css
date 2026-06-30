@@ -38,11 +38,11 @@ body {
   }
 
   .section-heading {
-    @apply font-cinzel text-3xl md:text-4xl font-bold text-white;
+    @apply font-papyrus text-3xl md:text-4xl font-bold text-white;
   }
 
   .section-subheading {
-    @apply font-cinzel text-xl md:text-2xl font-semibold text-bright-cyan;
+    @apply font-papyrus text-xl md:text-2xl font-semibold text-bright-cyan;
   }
 
   .form-input {
