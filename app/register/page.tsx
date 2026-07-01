@@ -95,7 +95,9 @@ export default function RegisterPage() {
 
       {/* Form */}
       <section className="py-16 bg-deep-ocean">
+        
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          
           <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
             {/* Team Information */}
