@@ -43,12 +43,45 @@ export default function RegisterPage() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitting(true)
-    // TODO: POST to /api/register
-    await new Promise((r) => setTimeout(r, 1000))
-    setSubmitting(false)
-    setSubmitted(true)
+    // e.preventDefault()
+    // setSubmitting(true)
+    
+    // // TODO: POST to /api/register
+    // await new Promise((r) => setTimeout(r, 1000))
+    // setSubmitting(false)
+    // setSubmitted(true)
+
+    e.preventDefault();
+    setSubmitting(true);
+
+    try {
+      const formData = {
+        teamName,
+        memberCount,
+        members,
+      };
+
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+      } else {
+        alert(data.message || "Registration failed.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
