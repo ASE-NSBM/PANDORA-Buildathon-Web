@@ -45,10 +45,23 @@ export default function RegisterPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitting(true)
-    // TODO: POST to /api/register
-    await new Promise((r) => setTimeout(r, 1000))
-    setSubmitting(false)
-    setSubmitted(true)
+    try {
+      const res = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ teamName, members }),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        alert(data.error ?? 'Registration failed. Please try again.')
+        return
+      }
+      setSubmitted(true)
+    } catch {
+      alert('Network error. Check your connection and try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (submitted) {

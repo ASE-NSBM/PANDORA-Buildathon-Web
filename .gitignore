@@ -37,3 +37,11 @@ next-env.d.ts
 
 # office lock files
 .~lock.*#
+
+# SQLite databases
+data/*.db
+data/*.db-shm
+data/*.db-wal
+
+# admin server local env
+admin-server/.env
