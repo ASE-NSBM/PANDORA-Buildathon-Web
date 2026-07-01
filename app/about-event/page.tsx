@@ -155,7 +155,7 @@ export default function AboutEventPage() {
       <div className="absolute top-[60%] right-[-10%] w-[50%] h-[40%] bg-glow-purple pointer-events-none opacity-30" />
       
       {/* Hero Section */}
-      <section className="relative h-[45vh] min-h-[320px] md:h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden min-h-[50vh] flex items-center">
         <video
           src="/vids/clip2.mp4"
           autoPlay
@@ -164,17 +164,18 @@ export default function AboutEventPage() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Bioluminescent Gradient Mask */}
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean/50 via-deep-ocean/75 to-deep-ocean" />
+        <div className="absolute inset-0 bg-deep-ocean/65" />
         
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-          <h1 className="font-papyrus text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 md:mb-6 uppercase drop-shadow-[0_4px_12px_rgba(100,230,255,0.3)]">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="font-papyrus text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
+            Discover More
+          </p>
+          <h1 className="section-heading text-5xl md:text-6xl mb-4">
             About the Event
           </h1>
           
-          <p className="font-poppins text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-            BuilderThan 2026 is the signature hackathon organized by the Association of Software Engineering (ASE) Club. 
-            A competitive arena where innovators dive deep to build solutions beyond imagination.
+          <p className="font-poppins text-white/60 max-w-xl mx-auto">
+            Everything you need to know about BuilderThan 2026.
           </p>
         </div>
       </section>
