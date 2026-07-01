@@ -155,7 +155,7 @@ export default function AboutEventPage() {
       <div className="absolute top-[60%] right-[-10%] w-[50%] h-[40%] bg-glow-purple pointer-events-none opacity-30" />
       
       {/* Hero Section */}
-      <section className="relative h-[65vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[45vh] min-h-[320px] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <video
           src="/vids/clip2.mp4"
           autoPlay
@@ -168,19 +168,19 @@ export default function AboutEventPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean/50 via-deep-ocean/75 to-deep-ocean" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-          <h1 className="font-papyrus text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 uppercase drop-shadow-[0_4px_12px_rgba(100,230,255,0.3)]">
+          <h1 className="font-papyrus text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 md:mb-6 uppercase drop-shadow-[0_4px_12px_rgba(100,230,255,0.3)]">
             About the Event
           </h1>
           
-          <p className="font-poppins text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-poppins text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
             BuilderThan 2026 is the signature hackathon organized by the Association of Software Engineering (ASE) Club. 
             A competitive arena where innovators dive deep to build solutions beyond imagination.
           </p>
         </div>
       </section>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-20 space-y-24">
-        <hr className="border-white/10 mb-16" />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-20 space-y-16 md:space-y-24">
+        <hr className="border-white/10 mb-8 md:mb-16" />
         
         {/* Overview & Objectives Section */}
         <section id="overview" className="scroll-mt-24 space-y-12">
@@ -194,20 +194,20 @@ export default function AboutEventPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
             {/* Left Column: Introduction */}
-            <div className="lg:col-span-5 glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-8 flex flex-col justify-between hover:scale-[1.01] transition-all duration-300">
+            <div className="lg:col-span-5 glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-6 md:p-8 flex flex-col justify-between hover:scale-[1.01] transition-all duration-300">
               <div className="space-y-6">
                 <div className="w-12 h-12 rounded-xl bg-bio-cyan/15 flex items-center justify-center border border-bio-cyan/30 shadow-cyan-glow">
                   <Award className="text-bright-cyan" size={24} />
                 </div>
-                <h3 className="font-papyrus text-2xl font-bold text-white tracking-wide">
+                <h3 className="font-papyrus text-xl md:text-2xl font-bold text-white tracking-wide">
                   Build Beyond Imagination
                 </h3>
-                <p className="font-poppins text-sm md:text-base text-white/70 leading-relaxed">
+                <p className="font-poppins text-xs md:text-sm lg:text-base text-white/70 leading-relaxed">
                   BuilderThan is more than a competition; it is a collaborative platform designed to test the limits 
                   of your technical prowess and product thinking. In partnership with Pandora, the ASE Club hosts 
                   undergraduates from across the region to tackle modern, complex industry problems.
                 </p>
-                <p className="font-poppins text-sm md:text-base text-white/70 leading-relaxed">
+                <p className="font-poppins text-xs md:text-sm lg:text-base text-white/70 leading-relaxed">
                   Over a 24-hour sprint, your team will conceptualize, develop, test, and pitch an application, 
                   proving that you can convert high-level requirements into clean, production-ready systems.
                 </p>
@@ -225,13 +225,13 @@ export default function AboutEventPage() {
                 return (
                   <div 
                     key={i} 
-                    className="glass-card p-6 flex flex-col justify-between hover:scale-[1.02] hover:border-bio-cyan/30 hover:shadow-cyan-glow transition-all duration-300 group"
+                    className="glass-card p-5 md:p-6 flex flex-col justify-between hover:scale-[1.02] hover:border-bio-cyan/30 hover:shadow-cyan-glow transition-all duration-300 group"
                   >
                     <div className="space-y-4">
                       <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-bio-cyan/30 group-hover:bg-bio-cyan/10 transition-colors">
                         <IconComponent className="text-white/60 group-hover:text-bright-cyan transition-colors" size={20} />
                       </div>
-                      <h4 className="font-papyrus text-lg font-bold text-white group-hover:text-bright-cyan transition-colors">
+                      <h4 className="font-papyrus text-base md:text-lg font-bold text-white group-hover:text-bright-cyan transition-colors">
                         {obj.title}
                       </h4>
                       <p className="font-poppins text-xs md:text-sm text-white/60 leading-relaxed">
@@ -248,10 +248,10 @@ export default function AboutEventPage() {
         <hr className="border-white/10" />
 
         {/* Eligibility & Rules Section */}
-        <section id="eligibility" className="scroll-mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <section id="eligibility" className="scroll-mt-24 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
           
           {/* Eligibility Card */}
-          <div className="glass-card glow-border-cyan p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden group">
+          <div className="glass-card glow-border-cyan p-6 md:p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-bright-cyan/5 rounded-full blur-xl group-hover:bg-bright-cyan/10 transition-all duration-500" />
             
             <div className="flex items-center gap-4 mb-6">
@@ -259,7 +259,7 @@ export default function AboutEventPage() {
                 <Users className="text-bright-cyan" size={24} />
               </div>
               <div>
-                <h3 className="font-papyrus text-2xl font-bold text-white">Eligibility Criteria</h3>
+                <h3 className="font-papyrus text-xl md:text-2xl font-bold text-white">Eligibility Criteria</h3>
                 <p className="font-inter text-xs text-bright-cyan font-semibold tracking-wider uppercase">Who can build</p>
               </div>
             </div>
@@ -283,7 +283,7 @@ export default function AboutEventPage() {
           </div>
 
           {/* Rules Card */}
-          <div className="glass-card glow-border-cyan p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden group">
+          <div className="glass-card glow-border-cyan p-6 md:p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-accent-purple/5 rounded-full blur-xl group-hover:bg-accent-purple/10 transition-all duration-500" />
             
             <div className="flex items-center gap-4 mb-6">
@@ -291,7 +291,7 @@ export default function AboutEventPage() {
                 <Shield className="text-accent-purple" size={24} />
               </div>
               <div>
-                <h3 className="font-papyrus text-2xl font-bold text-white">Codex of the Deep</h3>
+                <h3 className="font-papyrus text-xl md:text-2xl font-bold text-white">Codex of the Deep</h3>
                 <p className="font-inter text-xs text-accent-purple font-semibold tracking-wider uppercase">Competition Rules</p>
               </div>
             </div>
@@ -348,10 +348,10 @@ export default function AboutEventPage() {
             </div>
 
             {/* Daily Schedule tabs */}
-            <div className="lg:col-span-7 glass-card glow-border-cyan p-8 space-y-8">
+            <div className="lg:col-span-7 glass-card p-5 md:p-8 space-y-8">
               
               {/* Tab Selector */}
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between border-b border-white/10 pb-4">
                 <div className="flex gap-2">
                   <button
                     onClick={() => setActiveDay('day1')}
@@ -375,7 +375,7 @@ export default function AboutEventPage() {
                   </button>
                 </div>
 
-                <div className="hidden sm:flex items-center gap-2 text-xs font-inter text-white/40">
+                <div className="flex items-center gap-2 text-xs font-inter text-white/40">
                   <Clock size={14} />
                   <span>UTC+5:30 Colombo</span>
                 </div>
@@ -384,8 +384,8 @@ export default function AboutEventPage() {
               {/* Schedule listing */}
               <div className="space-y-6 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                 {(activeDay === 'day1' ? SCHEDULE_DAY_1 : SCHEDULE_DAY_2).map((item, idx) => (
-                  <div key={idx} className="flex gap-4 items-start border-l border-white/5 pl-4 hover:border-bio-cyan/30 transition-colors">
-                    <span className="font-inter text-xs text-bright-cyan font-bold min-w-[140px] pt-0.5">
+                  <div key={idx} className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-start border-l border-white/5 pl-4 hover:border-bio-cyan/30 transition-colors">
+                    <span className="font-inter text-xs text-bright-cyan font-bold sm:min-w-[140px] pt-0.5">
                       {item.time}
                     </span>
                     <div className="space-y-1">
@@ -421,7 +421,9 @@ export default function AboutEventPage() {
             {PRIZES.map((prize, idx) => (
               <div
                 key={idx}
-                className={`glass-card p-8 border flex flex-col justify-between hover:translate-y-[-4px] transition-all duration-300 ${prize.glowClass}`}
+                className={`glass-card p-6 md:p-8 border flex flex-col justify-between hover:translate-y-[-4px] transition-all duration-300 ${prize.glowClass} ${
+                  idx === 1 ? 'order-1 md:order-2' : idx === 0 ? 'order-2 md:order-1' : 'order-3'
+                }`}
               >
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
@@ -457,7 +459,7 @@ export default function AboutEventPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {SPECIAL_AWARDS.map((award, idx) => (
-                <div key={idx} className="glass-card p-6 border border-white/5 hover:border-bio-cyan/20 hover:scale-[1.01] transition-all duration-300">
+                <div key={idx} className="glass-card p-5 md:p-6 border border-white/5 hover:border-bio-cyan/20 hover:scale-[1.01] transition-all duration-300">
                   <h4 className="font-papyrus text-base font-bold text-bright-cyan mb-2">
                     {award.title}
                   </h4>
@@ -490,11 +492,11 @@ export default function AboutEventPage() {
                 <button
                   type="button"
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full flex items-center justify-between px-6 py-5 cursor-pointer text-left select-none outline-none focus:outline-none"
+                  className="w-full flex items-center justify-between px-4 md:px-6 py-4 md:py-5 cursor-pointer text-left select-none outline-none focus:outline-none"
                 >
                   <div className="flex gap-3 items-center">
                     <HelpCircle size={18} className={`transition-colors duration-300 ${openFaq === idx ? 'text-bright-cyan' : 'text-bright-cyan/60'}`} />
-                    <span className={`font-inter text-sm md:text-base font-semibold transition-colors duration-300 ${openFaq === idx ? 'text-white' : 'text-white/80'}`}>
+                    <span className={`font-inter text-xs sm:text-sm md:text-base font-semibold transition-colors duration-300 ${openFaq === idx ? 'text-white' : 'text-white/80'}`}>
                       {faq.q}
                     </span>
                   </div>
@@ -510,7 +512,7 @@ export default function AboutEventPage() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-6 pb-5 pt-3 border-t border-white/5 bg-white/[0.01]">
+                    <div className="px-4 md:px-6 pb-4 md:pb-5 pt-3 border-t border-white/5 bg-white/[0.01]">
                       <p className="font-poppins text-xs md:text-sm text-white/60 leading-relaxed">
                         {faq.a}
                       </p>
