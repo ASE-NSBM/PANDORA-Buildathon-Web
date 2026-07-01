@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import {
   Target,
   Users,
@@ -10,8 +11,7 @@ import {
   Trophy,
   Compass,
   Zap,
-  CheckCircle2,
-  Clock
+  CheckCircle2
 } from 'lucide-react'
 
 
@@ -147,6 +147,31 @@ export default function AboutEventPage() {
   const [activeDay, setActiveDay] = useState<'day1' | 'day2'>('day1')
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
+  const [mousePos1, setMousePos1] = useState({ x: 0, y: 0 })
+  const [mousePos2, setMousePos2] = useState({ x: 0, y: 0 })
+
+  const handleMouseMove1 = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = (e.clientX - rect.left) / rect.width - 0.5
+    const y = (e.clientY - rect.top) / rect.height - 0.5
+    setMousePos1({ x, y })
+  }
+
+  const handleMouseLeave1 = () => {
+    setMousePos1({ x: 0, y: 0 })
+  }
+
+  const handleMouseMove2 = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = (e.clientX - rect.left) / rect.width - 0.5
+    const y = (e.clientY - rect.top) / rect.height - 0.5
+    setMousePos2({ x, y })
+  }
+
+  const handleMouseLeave2 = () => {
+    setMousePos2({ x: 0, y: 0 })
+  }
+
   return (
     <div className="relative min-h-screen bg-deep-ocean text-white overflow-x-hidden selection:bg-bright-cyan/30">
       
@@ -252,16 +277,38 @@ export default function AboutEventPage() {
         <section id="eligibility" className="scroll-mt-24 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
           
           {/* Eligibility Card */}
-          <div className="glass-card glow-border-cyan p-6 md:p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden group">
+          <div 
+            onMouseMove={handleMouseMove1}
+            onMouseLeave={handleMouseLeave1}
+            className="glass-card glow-border-cyan p-6 md:p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-visible group"
+            style={{ perspective: 1000, transformStyle: 'preserve-3d' }}
+          >
             <div className="absolute top-0 right-0 w-24 h-24 bg-bright-cyan/5 rounded-full blur-xl group-hover:bg-bright-cyan/10 transition-all duration-500" />
             
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-bio-cyan/15 flex items-center justify-center border border-bio-cyan/30">
-                <Users className="text-bright-cyan" size={24} />
+            <div className="flex items-center justify-between gap-4 mb-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-bio-cyan/15 flex items-center justify-center border border-bio-cyan/30">
+                  <Users className="text-bright-cyan" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-papyrus text-xl md:text-2xl font-bold text-white">Eligibility Criteria</h3>
+                  <p className="font-inter text-xs text-bright-cyan font-semibold tracking-wider uppercase">Who can build</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-papyrus text-xl md:text-2xl font-bold text-white">Eligibility Criteria</h3>
-                <p className="font-inter text-xs text-bright-cyan font-semibold tracking-wider uppercase">Who can build</p>
+              
+              {/* Flower Image */}
+              <div className="relative md:absolute -top-4 -right-4 md:-top-10 md:-right-10 w-24 h-24 md:w-40 md:h-40 flex-shrink-0 z-20 pointer-events-none">
+                <Image
+                  src="/flower-1.png"
+                  alt="Bioluminescent flower asset 1"
+                  fill
+                  sizes="(max-width: 768px) 96px, 160px"
+                  className="object-contain"
+                  style={{
+                    transform: `translate3d(${mousePos1.x * 25}px, ${mousePos1.y * 25}px, 50px) rotateX(${mousePos1.y * -20}deg) rotateY(${mousePos1.x * 20}deg)`,
+                    transition: 'transform 0.1s ease-out',
+                  }}
+                />
               </div>
             </div>
 
@@ -284,16 +331,38 @@ export default function AboutEventPage() {
           </div>
 
           {/* Rules Card */}
-          <div className="glass-card glow-border-cyan p-6 md:p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden group">
+          <div 
+            onMouseMove={handleMouseMove2}
+            onMouseLeave={handleMouseLeave2}
+            className="glass-card glow-border-cyan p-6 md:p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-visible group"
+            style={{ perspective: 1000, transformStyle: 'preserve-3d' }}
+          >
             <div className="absolute top-0 right-0 w-24 h-24 bg-accent-purple/5 rounded-full blur-xl group-hover:bg-accent-purple/10 transition-all duration-500" />
             
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-accent-purple/15 flex items-center justify-center border border-accent-purple/30">
-                <Shield className="text-accent-purple" size={24} />
+            <div className="flex items-center justify-between gap-4 mb-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-accent-purple/15 flex items-center justify-center border border-accent-purple/30">
+                  <Shield className="text-accent-purple" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-papyrus text-xl md:text-2xl font-bold text-white">Codex of the Deep</h3>
+                  <p className="font-inter text-xs text-accent-purple font-semibold tracking-wider uppercase">Competition Rules</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-papyrus text-xl md:text-2xl font-bold text-white">Codex of the Deep</h3>
-                <p className="font-inter text-xs text-accent-purple font-semibold tracking-wider uppercase">Competition Rules</p>
+              
+              {/* Flower Image */}
+              <div className="relative md:absolute -top-4 -right-4 md:-top-10 md:-right-10 w-24 h-24 md:w-40 md:h-40 flex-shrink-0 z-20 pointer-events-none">
+                <Image
+                  src="/flower-2.png"
+                  alt="Bioluminescent flower asset 2"
+                  fill
+                  sizes="(max-width: 768px) 96px, 160px"
+                  className="object-contain"
+                  style={{
+                    transform: `translate3d(${mousePos2.x * 25}px, ${mousePos2.y * 25}px, 50px) rotateX(${mousePos2.y * -20}deg) rotateY(${mousePos2.x * 20}deg)`,
+                    transition: 'transform 0.1s ease-out',
+                  }}
+                />
               </div>
             </div>
 
@@ -374,11 +443,6 @@ export default function AboutEventPage() {
                   >
                     Day 2 (Aug 16)
                   </button>
-                </div>
-
-                <div className="flex items-center gap-2 text-xs font-inter text-white/40">
-                  <Clock size={14} />
-                  <span>UTC+5:30 Colombo</span>
                 </div>
               </div>
 
