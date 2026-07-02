@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import { Poppins, Inter, Geist } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
-import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
-import { cn } from "@/lib/utils";
+import SiteChrome from '@/components/SiteChrome'
 import { Toaster } from "@/components/ui/sonner"
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -44,10 +42,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${papyrus.variable} ${poppins.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className="font-poppins bg-deep-ocean text-white antialiased">
-        <Navbar />
+        <SiteChrome>{children}</SiteChrome>
         <Toaster />
-        <main>{children}</main>
-        <Footer />
       </body>
     </html>
   )

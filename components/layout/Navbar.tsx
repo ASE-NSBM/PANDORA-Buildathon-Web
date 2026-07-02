@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'About Event',     href: '/about-event' },
   { label: 'About Organizer', href: '/about-organizer' },
   { label: 'Register',        href: '/register' },
-  { label: 'Contact',         href: '#contact' },
+  { label: 'Contact',         href: 'mailto:scse.nsbm@gmail.com' },
 ]
 
 export default function Navbar() {

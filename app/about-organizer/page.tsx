@@ -1,11 +1,11 @@
 import Image from 'next/image'
-import { Github, Instagram, Facebook, Youtube, ExternalLink } from 'lucide-react'
+import { Github, Instagram, Facebook, Linkedin, ExternalLink } from 'lucide-react'
 
 const socialLinks = [
-  { icon: Facebook,  href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Github,    href: '#', label: 'GitHub' },
-  { icon: Youtube,   href: '#', label: 'YouTube' },
+  { icon: Facebook,  href: 'https://www.facebook.com/ase.nsbm/',      label: 'Facebook' },
+  { icon: Instagram, href: 'https://www.instagram.com/ase.nsbm/',     label: 'Instagram' },
+  { icon: Linkedin,  href: 'https://www.linkedin.com/company/asensbm', label: 'LinkedIn' },
+  { icon: Github,    href: 'https://github.com/ASE-NSBM',             label: 'GitHub' },
 ]
 
 export default function AboutOrganizerPage() {
@@ -49,7 +49,12 @@ export default function AboutOrganizerPage() {
                 under Pandora. We aim to empower students by creating opportunities to learn, connect and grow through
                 technical and non-technical activities.
               </p>
-              <a href="#" className="btn-outline inline-flex items-center gap-2">
+              <a
+                href="https://asensbm.live/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline inline-flex items-center gap-2"
+              >
                 Learn More About ASE
                 <ExternalLink size={16} />
               </a>
@@ -95,6 +100,8 @@ export default function AboutOrganizerPage() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-12 h-12 rounded-full glass-card glow-border-cyan flex items-center justify-center text-white/50 hover:text-bright-cyan hover:shadow-cyan-glow transition-all duration-300"
                 >

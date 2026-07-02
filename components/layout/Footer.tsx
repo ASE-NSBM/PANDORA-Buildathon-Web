@@ -1,19 +1,19 @@
 import Link from 'next/link'
-import { Github, Instagram, Facebook, Youtube } from 'lucide-react'
+import { Github, Instagram, Facebook, Linkedin } from 'lucide-react'
 
 const quickLinks = [
   { label: 'Home',            href: '/' },
   { label: 'About Event',     href: '/about-event' },
   { label: 'About Organizer', href: '/about-organizer' },
   { label: 'Register',        href: '/register' },
-  { label: 'Contact',         href: '#contact' },
+  { label: 'Contact',         href: 'mailto:scse.nsbm@gmail.com' },
 ]
 
 const socialLinks = [
-  { icon: Facebook,  href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Github,    href: '#', label: 'GitHub' },
-  { icon: Youtube,   href: '#', label: 'YouTube' },
+  { icon: Facebook,  href: 'https://www.facebook.com/ase.nsbm/',      label: 'Facebook' },
+  { icon: Instagram, href: 'https://www.instagram.com/ase.nsbm/',     label: 'Instagram' },
+  { icon: Linkedin,  href: 'https://www.linkedin.com/company/asensbm', label: 'LinkedIn' },
+  { icon: Github,    href: 'https://github.com/ASE-NSBM',             label: 'GitHub' },
 ]
 
 export default function Footer() {
@@ -64,6 +64,8 @@ export default function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-bright-cyan hover:border-bright-cyan hover:shadow-cyan-glow transition-all duration-300"
                 >

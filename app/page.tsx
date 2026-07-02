@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Calendar, MapPin, ArrowRight, Zap, Code2, BookOpen, Trophy } from 'lucide-react'
 import ScrollScrubBackground from '@/components/ui/ScrollScrubBackground'
+import Countdown from '@/components/ui/Countdown'
 
 const whyParticipate = [
   { icon: Zap,      title: 'Real World Impact', description: 'Solve meaningful problems that create impact.' },
@@ -29,10 +30,11 @@ export default function HomePage() {
           <h1 className="font-papyrus font-bold text-6xl md:text-8xl lg:text-[9rem] text-white mb-4 glow-text-cyan tracking-wider leading-none">
             BUILDERTHAN
           </h1>
-          <p className="font-papyrus text-base md:text-lg text-bright-cyan/80 tracking-[0.25em] uppercase mb-8">
+          <p className="font-papyrus text-base md:text-lg text-bright-cyan/80 tracking-[0.25em] uppercase mb-6">
             Build Beyond Imagination
           </p>
-          <p className="font-poppins text-white/60 text-base md:text-lg max-w-xl mx-auto mb-10">
+          <Countdown />
+          <p className="font-poppins text-white/60 text-base md:text-lg max-w-xl mx-auto mt-8 mb-10">
             A competitive challenge for innovators, dreamers and builders.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-12 font-poppins text-sm text-white/60">

@@ -7,6 +7,7 @@ export type Member = {
 }
 
 export type Registration = {
+  _id: string
   teamName: string
   memberCount: number
   members: Member[]

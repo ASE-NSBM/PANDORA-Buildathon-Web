@@ -1,141 +1,91 @@
-import { NextResponse } from "next/server";
-import connectDB from "@/lib/mongodb";
-import Registration from "@/models/Registration";
+import { NextResponse } from 'next/server'
+import connectDB from '@/lib/mongodb'
+import Registration from '@/models/Registration'
 
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const phoneRegex = /^(\+94|0)\d{9}$/
 
-// Sri Lankan phone numbers
-const phoneRegex = /^(\+94|0)\d{9}$/;
+function escapeRegex(str: string) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+function fail(message: string, status = 400) {
+  return NextResponse.json({ success: false, message }, { status })
+}
 
 export async function POST(req: Request) {
   try {
-    await connectDB();
+    await connectDB()
 
-    const body = await req.json();
+    const body = await req.json()
+    const { teamName, memberCount, members } = body
 
-    const { teamName, memberCount, members } = body;
+    // ── Basic shape validation ──────────────────────────────────────────
+    if (!teamName?.trim()) return fail('Team name is required.')
 
-    // Team name
-    if (!teamName || teamName.trim() === "") {
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Team name is required.",
-        },
-        { status: 400 }
-      );
-    }
+    if (!Array.isArray(members) || members.length === 0)
+      return fail('At least one member is required.')
 
-    // Members array
-    if (!Array.isArray(members) || members.length === 0) {
-      return NextResponse.json(
-        {
-          success: false,
-          message: "At least one member is required.",
-        },
-        { status: 400 }
-      );
-    }
+    if (memberCount !== members.length)
+      return fail('Member count does not match the number of members provided.')
 
-    // Member count
-    if (memberCount !== members.length) {
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Member count does not match the number of members.",
-        },
-        { status: 400 }
-      );
-    }
+    // ── Intra-team duplicate check ──────────────────────────────────────
+    const submittedEmails    = members.map((m: any) => m.email?.toLowerCase?.() ?? '')
+    const submittedStudentIds = members.map((m: any) => m.studentId?.trim?.() ?? '')
 
-    // Validate each member
+    const uniqueEmails     = new Set(submittedEmails)
+    const uniqueStudentIds = new Set(submittedStudentIds)
+
+    if (uniqueEmails.size !== submittedEmails.length)
+      return fail('Two or more members share the same email address.')
+
+    if (uniqueStudentIds.size !== submittedStudentIds.length)
+      return fail('Two or more members share the same student ID.')
+
+    // ── Per-member field validation ─────────────────────────────────────
     for (const member of members) {
-      if (!member.fullName?.trim()) {
-        return NextResponse.json(
-          {
-            success: false,
-            message: "Full name is required.",
-          },
-          { status: 400 }
-        );
-      }
+      if (!member.fullName?.trim())
+        return fail('Full name is required for every member.')
 
-      if (!member.studentId?.trim()) {
-        return NextResponse.json(
-          {
-            success: false,
-            message: "Student ID is required.",
-          },
-          { status: 400 }
-        );
-      }
+      if (!member.studentId?.trim())
+        return fail('Student ID is required for every member.')
 
-      if (!emailRegex.test(member.email)) {
-        return NextResponse.json(
-          {
-            success: false,
-            message: `Invalid email: ${member.email}`,
-          },
-          { status: 400 }
-        );
-      }
+      if (!emailRegex.test(member.email))
+        return fail(`Invalid email: ${member.email}`)
 
-      if (!phoneRegex.test(member.contactNumber)) {
-        return NextResponse.json(
-          {
-            success: false,
-            message: `Invalid contact number for ${member.fullName}`,
-          },
-          { status: 400 }
-        );
-      }
+      if (!phoneRegex.test(member.contactNumber))
+        return fail(`Invalid contact number for ${member.fullName}`)
 
-      if (!phoneRegex.test(member.whatsappNumber)) {
-        return NextResponse.json(
-          {
-            success: false,
-            message: `Invalid WhatsApp number for ${member.fullName}`,
-          },
-          { status: 400 }
-        );
-      }
+      if (!phoneRegex.test(member.whatsappNumber))
+        return fail(`Invalid WhatsApp number for ${member.fullName}`)
     }
 
-    // Duplicate email check
-    const emails = members.map((m: any) => m.email.toLowerCase());
+    // ── Duplicate team name check (case-insensitive) ────────────────────
+    const existingTeam = await Registration.findOne({
+      teamName: { $regex: `^${escapeRegex(teamName.trim())}$`, $options: 'i' },
+    })
+    if (existingTeam) return fail('Team name is already taken. Choose a different name.')
 
-    const existing = await Registration.findOne({
-      "members.email": {
-        $in: emails,
-      },
-    });
+    // ── Cross-team duplicate email check ───────────────────────────────
+    const existingEmail = await Registration.findOne({
+      'members.email': { $in: submittedEmails },
+    })
+    if (existingEmail)
+      return fail('One or more email addresses are already registered in another team.')
 
-    if (existing) {
-      return NextResponse.json(
-        {
-          success: false,
-          message: "One or more email addresses are already registered.",
-        },
-        { status: 400 }
-      );
-    }
+    // ── Cross-team duplicate student ID check ──────────────────────────
+    const existingStudentId = await Registration.findOne({
+      'members.studentId': { $in: submittedStudentIds },
+    })
+    if (existingStudentId)
+      return fail('One or more student IDs are already registered in another team.')
 
-    const registration = await Registration.create(body);
-
-    return NextResponse.json({
-      success: true,
-      registration,
-    });
+    // ── Save ───────────────────────────────────────────────────────────
+    const registration = await Registration.create(body)
+    return NextResponse.json({ success: true, registration })
 
   } catch (error) {
-    console.error(error);
-
-    return NextResponse.json(
-      {
-        success: false,
-        message: "Registration failed.",
-      },
-      { status: 500 }
-    );
+    console.error(error)
+    return NextResponse.json({ success: false, message: 'Registration failed.' }, { status: 500 })
   }
 }
