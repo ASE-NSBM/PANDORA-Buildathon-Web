@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={cn(papyrus.variable, poppins.variable, inter.variable, "font-sans", geist.variable)}>
+    <html lang="en" className={`${papyrus.variable} ${poppins.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className="font-poppins bg-deep-ocean text-white antialiased">
         <Navbar />
         <Toaster />

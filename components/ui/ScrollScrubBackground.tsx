@@ -45,7 +45,8 @@ export default function ScrollScrubBackground({
           ? track.offsetHeight - window.innerHeight
           : document.documentElement.scrollHeight - window.innerHeight
         const progress = range > 0 ? clamp(window.scrollY / range, 0, 1) : 0
-        const target = progress * dur
+        // Cap 50 ms before duration — seeking to exact duration shows a blank frame in most browsers.
+        const target = progress * Math.max(0, dur - 0.05)
 
         displayed += (target - displayed) * ease
         if (Math.abs(target - displayed) < 0.001) displayed = target

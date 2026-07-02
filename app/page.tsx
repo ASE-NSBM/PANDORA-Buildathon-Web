@@ -92,7 +92,7 @@ export default function HomePage() {
         </section>
 
         {/* ── 4: Final CTA ── */}
-        <section id="contact" className="min-h-screen flex flex-col items-center justify-center text-center px-4">
+        <section className="min-h-screen flex flex-col items-center justify-center text-center px-4">
           <p className="font-papyrus text-bright-cyan text-xs tracking-[0.3em] uppercase mb-6">
             Ready to Build?
           </p>
