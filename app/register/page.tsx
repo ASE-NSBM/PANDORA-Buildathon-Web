@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { ChevronRight } from 'lucide-react'
 import type { Member } from '@/types'
+import { toast } from "sonner"
 
 const emptyMember = (): Member => ({
   fullName:       '',
@@ -43,12 +44,56 @@ export default function RegisterPage() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitting(true)
-    // TODO: POST to /api/register
-    await new Promise((r) => setTimeout(r, 1000))
-    setSubmitting(false)
-    setSubmitted(true)
+
+    e.preventDefault();
+    setSubmitting(true);
+
+    try {
+      const formData = {
+        teamName,
+        memberCount,
+        members,
+      };
+
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+      } else {
+        toast.error(data.message || "Registration failed.",{
+            position: "top-right",
+            style: {
+              background: "rgba(8, 27, 42, 0.9)",
+              color: "#64E6FF",
+              border: "1px solid rgba(100, 230, 255, 0.3)",
+              boxShadow: "0 0 20px rgba(239,68,68,0.15)",
+            },
+        
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Something went wrong. Please try again.",{
+        position: "top-right",
+        style: {
+          background: "rgba(8, 27, 42, 0.9)",
+          color: "#64E6FF",
+          border: "1px solid rgba(100, 230, 255, 0.3)",
+          boxShadow: "0 0 20px rgba(239,68,68,0.15)",
+        },
+      
+      });
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
