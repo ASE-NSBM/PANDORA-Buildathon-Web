@@ -20,6 +20,10 @@ function getInitials(name: string) {
     : name.trim().slice(0, 2).toUpperCase()
 }
 
+function memberLabel(i: number) {
+  return i === 0 ? 'Team Leader' : `Member ${i + 1}`
+}
+
 function isMemberComplete(m: Member) {
   return !!(m.fullName.trim() && m.studentId.trim() && m.email.trim() && m.contactNumber.trim() && m.whatsappNumber.trim())
 }
@@ -248,7 +252,7 @@ export default function RegisterPage() {
                               done    ? 'text-white/80'    :
                                         'text-white/30'
                             }`}>
-                              {m.fullName.trim() || `Member ${i + 1}`}
+                              {m.fullName.trim() || memberLabel(i)}
                             </div>
                             {m.studentId.trim() && (
                               <div className="font-inter text-[11px] text-white/30 truncate">{m.studentId}</div>
@@ -276,7 +280,7 @@ export default function RegisterPage() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h2 className="font-papyrus font-bold text-white text-lg">
-                      Member {activeMember + 1}{memberCount > 1 ? ` of ${memberCount}` : ''}
+                      {memberLabel(activeMember)}{memberCount > 1 ? ` · ${activeMember + 1} of ${memberCount}` : ''}
                     </h2>
                     <p className="font-inter text-xs text-white/35 mt-0.5">
                       {members[activeMember]?.fullName.trim() || 'Fill in details below'}
