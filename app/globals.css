@@ -155,6 +155,6 @@ body {
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-display), 'Papyrus', 'Copperplate', fantasy;
+    font-family: var(--font-display), 'Trajan Pro', 'Cinzel', serif;
   }
 }
