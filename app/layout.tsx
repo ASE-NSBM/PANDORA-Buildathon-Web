@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
-import { Poppins, Inter } from 'next/font/google'
-import localFont from 'next/font/local'
+import { Poppins, Inter, Cinzel } from 'next/font/google'
 import './globals.css'
 import SiteChrome from '@/components/SiteChrome'
 import { Toaster } from "@/components/ui/sonner"
 
-const papyrus = localFont({
-  src: './fonts/papyrus.ttf',
-  variable: '--font-papyrus',
+// Trajan-style display serif per the Pandora design spec (Cinzel / Trajan Pro)
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-display',
   display: 'swap',
 })
 
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${papyrus.variable} ${poppins.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${cinzel.variable} ${poppins.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className="font-poppins bg-deep-ocean text-white antialiased">
         <SiteChrome>{children}</SiteChrome>
         <Toaster />

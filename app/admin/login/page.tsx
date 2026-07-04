@@ -54,7 +54,7 @@ export default function AdminLoginPage() {
           </span>
         </div>
 
-        <h1 className="font-papyrus text-xl font-bold text-white mb-1">Welcome back</h1>
+        <h1 className="font-display text-xl font-bold text-white mb-1">Welcome back</h1>
         <p className="font-inter text-sm text-white/40 mb-6">Enter your admin password to continue.</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">

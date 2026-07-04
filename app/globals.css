@@ -112,7 +112,7 @@ body {
 
 @layer components {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-card;
+    @apply bg-midnight-blue/40 backdrop-blur-md border border-bio-cyan/15 rounded-card;
   }
   .glow-text-cyan {
     text-shadow: 0 0 30px rgba(100, 230, 255, 0.6), 0 0 60px rgba(100, 230, 255, 0.3);
@@ -120,21 +120,27 @@ body {
   .glow-border-cyan {
     box-shadow: 0 0 20px rgba(100, 230, 255, 0.15), inset 0 0 20px rgba(100, 230, 255, 0.03);
   }
+  /* Pill CTA with bioluminescent gradient — per Pandora design spec */
   .btn-primary {
-    @apply bg-bio-cyan text-deep-ocean font-inter font-semibold px-6 py-3 rounded-lg
-           hover:bg-bright-cyan hover:shadow-cyan-glow transition-all duration-300 cursor-pointer;
+    @apply text-deep-ocean font-inter font-semibold px-6 py-3 rounded-full
+           bg-gradient-to-r from-bio-cyan to-bright-cyan
+           hover:shadow-cyan-glow-lg hover:brightness-110 transition-all duration-300 cursor-pointer;
   }
   .btn-outline {
-    @apply border border-bio-cyan text-bio-cyan font-inter font-semibold px-6 py-3 rounded-lg
-           hover:bg-bio-cyan/10 hover:shadow-cyan-glow transition-all duration-300 cursor-pointer;
+    @apply border border-bio-cyan/60 text-bright-cyan font-inter font-semibold px-6 py-3 rounded-full
+           hover:bg-bio-cyan/10 hover:border-bright-cyan hover:shadow-cyan-glow transition-all duration-300 cursor-pointer;
+  }
+  /* Gradient display lettering, e.g. the BUILDERTHON hero title */
+  .text-gradient-cyan {
+    @apply bg-gradient-to-b from-ice-blue via-bright-cyan to-aqua-blue bg-clip-text text-transparent;
   }
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold text-white;
-    font-family: var(--font-papyrus), 'Papyrus', 'Copperplate', fantasy;
+    @apply text-3xl md:text-4xl font-bold text-white tracking-wide;
+    font-family: var(--font-display), 'Trajan Pro', 'Cinzel', serif;
   }
   .section-subheading {
-    @apply text-xl md:text-2xl font-semibold text-bright-cyan;
-    font-family: var(--font-papyrus), 'Papyrus', 'Copperplate', fantasy;
+    @apply text-xl md:text-2xl font-semibold text-bright-cyan tracking-wide;
+    font-family: var(--font-display), 'Trajan Pro', 'Cinzel', serif;
   }
   .form-input {
     @apply w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3
@@ -148,7 +154,7 @@ body {
 }
 
 @layer utilities {
-  .font-papyrus {
-    font-family: var(--font-papyrus), 'Papyrus', 'Copperplate', fantasy;
+  .font-display {
+    font-family: var(--font-display), 'Papyrus', 'Copperplate', fantasy;
   }
 }

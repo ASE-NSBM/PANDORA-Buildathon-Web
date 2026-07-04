@@ -26,9 +26,9 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-full bg-bio-cyan/20 border border-bio-cyan/50 flex items-center justify-center">
-                <span className="text-bright-cyan text-xs font-papyrus font-bold">P</span>
+                <span className="text-bright-cyan text-xs font-display font-bold">P</span>
               </div>
-              <span className="font-papyrus font-bold text-white text-lg tracking-wider">PANDORA</span>
+              <span className="font-display font-bold text-white text-lg tracking-wider">PANDORA</span>
             </div>
             <p className="font-poppins text-sm text-white/50 leading-relaxed">
               Explore. Connect. Create.<br />Build beyond imagination.
@@ -37,7 +37,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-papyrus font-semibold text-bright-cyan text-xs tracking-[0.2em] uppercase mb-4">
+            <h4 className="font-display font-semibold text-bright-cyan text-xs tracking-[0.2em] uppercase mb-4">
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="font-papyrus font-semibold text-bright-cyan text-xs tracking-[0.2em] uppercase mb-4">
+            <h4 className="font-display font-semibold text-bright-cyan text-xs tracking-[0.2em] uppercase mb-4">
               Follow Us
             </h4>
             <div className="flex gap-3">
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-papyrus font-semibold text-bright-cyan text-xs tracking-[0.2em] uppercase mb-4">
+            <h4 className="font-display font-semibold text-bright-cyan text-xs tracking-[0.2em] uppercase mb-4">
               Contact Us
             </h4>
             <div className="space-y-2 font-poppins text-sm text-white/50">

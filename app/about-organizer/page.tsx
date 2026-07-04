@@ -24,7 +24,7 @@ export default function AboutOrganizerPage() {
         <div className="absolute inset-0 bg-deep-ocean/65" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="font-papyrus text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
+          <p className="font-display text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
             Meet the Team
           </p>
           <h1 className="section-heading text-5xl md:text-6xl mb-4">About the Organizer</h1>
@@ -41,7 +41,7 @@ export default function AboutOrganizerPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
               <h2 className="section-subheading mb-2">ASE Club</h2>
-              <h3 className="font-papyrus font-bold text-white text-2xl mb-6">
+              <h3 className="font-display font-bold text-white text-2xl mb-6">
                 Association of Software Engineering
               </h3>
               <p className="font-poppins text-white/60 leading-relaxed mb-8">
@@ -77,14 +77,14 @@ export default function AboutOrganizerPage() {
           {/* Vision & Mission */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
             <div className="glass-card p-8">
-              <h3 className="font-papyrus font-bold text-bright-cyan text-xl mb-4">Vision</h3>
+              <h3 className="font-display font-bold text-bright-cyan text-xl mb-4">Vision</h3>
               <p className="font-poppins text-white/60 leading-relaxed">
                 To be the leading student organization that nurtures innovation and technical excellence
                 among Software Engineering undergraduates.
               </p>
             </div>
             <div className="glass-card p-8">
-              <h3 className="font-papyrus font-bold text-bright-cyan text-xl mb-4">Mission</h3>
+              <h3 className="font-display font-bold text-bright-cyan text-xl mb-4">Mission</h3>
               <p className="font-poppins text-white/60 leading-relaxed">
                 To create an inclusive community that bridges academia and industry through meaningful
                 events, workshops, and competitions like BuilderThan.

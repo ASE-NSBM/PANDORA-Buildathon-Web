@@ -39,15 +39,15 @@ export default function Countdown() {
       {units.map(({ label, value }, i) => (
         <div key={label} className="flex items-center gap-3 sm:gap-5">
           <div className="text-center">
-            <div className="font-papyrus text-3xl sm:text-4xl md:text-5xl font-bold text-white glow-text-cyan tabular-nums leading-none">
+            <div className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white glow-text-cyan tabular-nums leading-none">
               <Pad n={value} />
             </div>
-            <div className="font-papyrus text-bright-cyan text-[10px] sm:text-xs tracking-[0.25em] uppercase mt-1">
+            <div className="font-display text-bright-cyan text-[10px] sm:text-xs tracking-[0.25em] uppercase mt-1">
               {label}
             </div>
           </div>
           {i < units.length - 1 && (
-            <span className="font-papyrus text-2xl sm:text-3xl text-bright-cyan/40 font-bold leading-none mb-3">:</span>
+            <span className="font-display text-2xl sm:text-3xl text-bright-cyan/40 font-bold leading-none mb-3">:</span>
           )}
         </div>
       ))}

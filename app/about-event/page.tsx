@@ -192,7 +192,7 @@ export default function AboutEventPage() {
         <div className="absolute inset-0 bg-deep-ocean/65" />
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="font-papyrus text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
+          <p className="font-display text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
             Discover More
           </p>
           <h1 className="section-heading text-5xl md:text-6xl mb-4">
@@ -225,7 +225,7 @@ export default function AboutEventPage() {
                 <div className="w-12 h-12 rounded-xl bg-bio-cyan/15 flex items-center justify-center border border-bio-cyan/30 shadow-cyan-glow">
                   <Award className="text-bright-cyan" size={24} />
                 </div>
-                <h3 className="font-papyrus text-xl md:text-2xl font-bold text-white tracking-wide">
+                <h3 className="font-display text-xl md:text-2xl font-bold text-white tracking-wide">
                   Build Beyond Imagination
                 </h3>
                 <p className="font-poppins text-xs md:text-sm lg:text-base text-white/70 leading-relaxed">
@@ -257,7 +257,7 @@ export default function AboutEventPage() {
                       <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-bio-cyan/30 group-hover:bg-bio-cyan/10 transition-colors">
                         <IconComponent className="text-white/60 group-hover:text-bright-cyan transition-colors" size={20} />
                       </div>
-                      <h4 className="font-papyrus text-base md:text-lg font-bold text-white group-hover:text-bright-cyan transition-colors">
+                      <h4 className="font-display text-base md:text-lg font-bold text-white group-hover:text-bright-cyan transition-colors">
                         {obj.title}
                       </h4>
                       <p className="font-poppins text-xs md:text-sm text-white/60 leading-relaxed">
@@ -291,7 +291,7 @@ export default function AboutEventPage() {
                   <Users className="text-bright-cyan" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-papyrus text-xl md:text-2xl font-bold text-white">Eligibility Criteria</h3>
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-white">Eligibility Criteria</h3>
                   <p className="font-inter text-xs text-bright-cyan font-semibold tracking-wider uppercase">Who can build</p>
                 </div>
               </div>
@@ -345,7 +345,7 @@ export default function AboutEventPage() {
                   <Shield className="text-accent-purple" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-papyrus text-xl md:text-2xl font-bold text-white">Codex of the Deep</h3>
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-white">Codex of the Deep</h3>
                   <p className="font-inter text-xs text-accent-purple font-semibold tracking-wider uppercase">Competition Rules</p>
                 </div>
               </div>
@@ -407,7 +407,7 @@ export default function AboutEventPage() {
                   <span className="font-inter text-xs text-bright-cyan font-bold tracking-widest uppercase">
                     {item.date}
                   </span>
-                  <h3 className="font-papyrus text-lg font-bold text-white/90 mt-1 group-hover:text-bright-cyan transition-colors">
+                  <h3 className="font-display text-lg font-bold text-white/90 mt-1 group-hover:text-bright-cyan transition-colors">
                     {item.title}
                   </h3>
                   <p className="font-poppins text-xs md:text-sm text-white/60 mt-1 leading-relaxed">
@@ -454,7 +454,7 @@ export default function AboutEventPage() {
                       {item.time}
                     </span>
                     <div className="space-y-1">
-                      <h4 className="font-papyrus text-base font-bold text-white">
+                      <h4 className="font-display text-base font-bold text-white">
                         {item.title}
                       </h4>
                       <p className="font-poppins text-xs md:text-sm text-white/50 leading-relaxed">
@@ -500,7 +500,7 @@ export default function AboutEventPage() {
                   
                   <div className="space-y-1">
                     <p className="font-inter text-xs text-white/40 uppercase tracking-widest">Cash Prize</p>
-                    <p className="font-papyrus text-3xl md:text-4xl font-bold text-white tracking-wide">
+                    <p className="font-display text-3xl md:text-4xl font-bold text-white tracking-wide">
                       {prize.amount}
                     </p>
                   </div>
@@ -520,12 +520,12 @@ export default function AboutEventPage() {
 
           {/* Special Awards */}
           <div className="space-y-8 pt-8">
-            <h3 className="font-papyrus text-xl font-bold text-white text-center">Special Recognition</h3>
+            <h3 className="font-display text-xl font-bold text-white text-center">Special Recognition</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {SPECIAL_AWARDS.map((award, idx) => (
                 <div key={idx} className="glass-card p-5 md:p-6 border border-white/5 hover:border-bio-cyan/20 hover:scale-[1.01] transition-all duration-300">
-                  <h4 className="font-papyrus text-base font-bold text-bright-cyan mb-2">
+                  <h4 className="font-display text-base font-bold text-bright-cyan mb-2">
                     {award.title}
                   </h4>
                   <p className="font-poppins text-xs md:text-sm text-white/50 leading-relaxed">

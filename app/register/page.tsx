@@ -110,7 +110,7 @@ export default function RegisterPage() {
             <Check size={28} className="text-bright-cyan" />
           </div>
           <div>
-            <h2 className="font-papyrus font-bold text-white text-2xl mb-2">Crew Registered!</h2>
+            <h2 className="font-display font-bold text-white text-2xl mb-2">Crew Registered!</h2>
             <p className="font-poppins text-white/60 text-sm leading-relaxed">
               Team <span className="text-bright-cyan font-semibold">{teamName}</span> ({memberCount} member{memberCount !== 1 ? 's' : ''}) is locked in. We&apos;ll be in touch soon.
             </p>
@@ -142,7 +142,7 @@ export default function RegisterPage() {
         <video src="/vids/clip4.mp4" autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-deep-ocean/72" />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 text-center">
-          <p className="font-papyrus text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">Join BuilderThan 2026</p>
+          <p className="font-display text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">Join BuilderThan 2026</p>
           <h1 className="section-heading text-5xl md:text-6xl mb-4">Assemble Your Crew</h1>
           <p className="font-poppins text-white/50 max-w-lg mx-auto">
             Name your team, choose your crew size, and fill in every member&apos;s details to secure your spot.
@@ -162,7 +162,7 @@ export default function RegisterPage() {
 
                 {/* Team info card */}
                 <div className="glass-card p-6 space-y-5">
-                  <h2 className="font-papyrus font-bold text-bright-cyan text-xs tracking-[0.25em] uppercase">Mission Setup</h2>
+                  <h2 className="font-display font-bold text-bright-cyan text-xs tracking-[0.25em] uppercase">Mission Setup</h2>
 
                   <div>
                     <label className="form-label">Team Name <span className="text-accent-purple">*</span></label>
@@ -200,7 +200,7 @@ export default function RegisterPage() {
                 {/* Roster card */}
                 <div className="glass-card p-5 space-y-3">
                   <div className="flex items-center justify-between">
-                    <h2 className="font-papyrus font-bold text-bright-cyan text-xs tracking-[0.25em] uppercase">Crew Manifest</h2>
+                    <h2 className="font-display font-bold text-bright-cyan text-xs tracking-[0.25em] uppercase">Crew Manifest</h2>
                     <span className="font-inter text-xs text-white/35">{completedCount}/{memberCount} ready</span>
                   </div>
 
@@ -279,7 +279,7 @@ export default function RegisterPage() {
                 {/* Header */}
                 <div className="flex items-start justify-between">
                   <div>
-                    <h2 className="font-papyrus font-bold text-white text-lg">
+                    <h2 className="font-display font-bold text-white text-lg">
                       {memberLabel(activeMember)}{memberCount > 1 ? ` · ${activeMember + 1} of ${memberCount}` : ''}
                     </h2>
                     <p className="font-inter text-xs text-white/35 mt-0.5">

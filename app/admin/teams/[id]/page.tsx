@@ -57,7 +57,7 @@ export default async function TeamDetailPage({
         <div className="space-y-3">
           <div>
             <p className="font-inter text-xs text-white/30 uppercase tracking-widest mb-1">Team</p>
-            <h1 className="font-papyrus text-2xl font-bold text-white">{reg.teamName}</h1>
+            <h1 className="font-display text-2xl font-bold text-white">{reg.teamName}</h1>
           </div>
           <div className="flex items-center gap-4 flex-wrap">
             <div className="flex items-center gap-1.5 text-bright-cyan">
@@ -84,7 +84,7 @@ export default async function TeamDetailPage({
       {/* Members */}
       <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
         <div className="px-5 py-4 border-b border-white/10">
-          <h2 className="font-papyrus font-bold text-white text-base">Team Members</h2>
+          <h2 className="font-display font-bold text-white text-base">Team Members</h2>
         </div>
 
         <div className="divide-y divide-white/5">
@@ -94,7 +94,7 @@ export default async function TeamDetailPage({
                 <div className="w-7 h-7 rounded-full bg-bio-cyan/15 border border-bio-cyan/30 flex items-center justify-center">
                   <span className="font-inter text-xs text-bright-cyan font-bold">{idx + 1}</span>
                 </div>
-                <span className="font-papyrus text-sm font-bold text-white">{member.fullName}</span>
+                <span className="font-display text-sm font-bold text-white">{member.fullName}</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
