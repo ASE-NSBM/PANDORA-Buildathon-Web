@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import connectDB from '@/lib/mongodb'
 import Registration from '@/models/Registration'
+import { getAdminSession } from '@/lib/adminAuth'
 
 function csv(value: unknown): string {
   const str = String(value ?? '')
@@ -10,6 +11,11 @@ function csv(value: unknown): string {
 }
 
 export async function GET() {
+  const session = await getAdminSession()
+  if (!session) {
+    return NextResponse.json({ success: false, message: 'Unauthorized.' }, { status: 401 })
+  }
+
   await connectDB()
 
   const registrations = await Registration.find().sort({ createdAt: -1 }).lean()
@@ -41,7 +47,7 @@ export async function GET() {
   return new NextResponse(rows.join('\n'), {
     headers: {
       'Content-Type': 'text/csv; charset=utf-8',
-      'Content-Disposition': `attachment; filename="builderthan-registrations-${date}.csv"`,
+      'Content-Disposition': `attachment; filename="buildathon-registrations-${date}.csv"`,
     },
   })
 }

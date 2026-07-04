@@ -1,23 +1,13 @@
-import { cookies } from 'next/headers'
-import { createHmac } from 'crypto'
 import AdminNav from '@/components/admin/AdminNav'
 import AdminLogout from '@/components/admin/AdminLogout'
 import PageTransition from '@/components/PageTransition'
 import Link from 'next/link'
-
-function verifyToken(token: string, secret: string): boolean {
-  const expected = createHmac('sha256', secret).update('admin:authenticated').digest('hex')
-  if (token.length !== expected.length) return false
-  let diff = 0
-  for (let i = 0; i < token.length; i++) diff |= token.charCodeAt(i) ^ expected.charCodeAt(i)
-  return diff === 0
-}
+import Image from 'next/image'
+import { getAdminSession } from '@/lib/adminAuth'
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  const cookieStore   = await cookies()
-  const token         = cookieStore.get('admin_token')?.value
-  const secret        = process.env.ADMIN_SECRET ?? ''
-  const authenticated = token ? verifyToken(token, secret) : false
+  const session       = await getAdminSession()
+  const authenticated = session !== null
 
   if (!authenticated) {
     return (
@@ -33,14 +23,18 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <aside className="w-60 bg-[#050f18] border-r border-white/10 flex flex-col fixed h-full z-40">
         {/* Logo */}
         <div className="p-5 border-b border-white/10">
-          <Link href="/admin" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-full bg-bio-cyan/20 border border-bio-cyan/50 flex items-center justify-center group-hover:shadow-cyan-glow transition-all duration-300">
-              <span className="text-bright-cyan text-xs font-papyrus font-bold">P</span>
-            </div>
-            <div>
-              <div className="font-papyrus text-white font-bold tracking-wider text-sm leading-none">PANDORA</div>
-              <div className="font-inter text-white/35 text-[10px] mt-0.5 uppercase tracking-widest">Admin Panel</div>
-            </div>
+          <Link href="/admin" className="group inline-flex flex-col gap-1.5">
+            <Image
+              src="/logo-Pandora.png"
+              alt="Pandora"
+              width={1201}
+              height={239}
+              priority
+              className="h-auto w-[150px] transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(100,230,255,0.45)]"
+            />
+            <span className="pl-0.5 font-inter text-[10px] uppercase tracking-[0.25em] text-white/35">
+              Admin Panel
+            </span>
           </Link>
         </div>
 
