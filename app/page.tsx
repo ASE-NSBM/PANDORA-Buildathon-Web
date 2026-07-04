@@ -28,7 +28,7 @@ export default function HomePage() {
             <span className="font-papyrus text-bright-cyan text-sm tracking-[0.3em] uppercase">Pandora</span>
           </div>
           <h1 className="font-papyrus font-bold text-6xl md:text-8xl lg:text-[9rem] text-white mb-4 glow-text-cyan tracking-wider leading-none">
-            BUILDERTHAN
+            BUILDERTHON
           </h1>
           <p className="font-papyrus text-base md:text-lg text-bright-cyan/80 tracking-[0.25em] uppercase mb-6">
             Build Beyond Imagination
