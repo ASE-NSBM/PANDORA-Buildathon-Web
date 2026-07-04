@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Calendar, MapPin, ArrowRight, Zap, Code2, BookOpen, Trophy } from 'lucide-react'
 import ScrollScrubBackground from '@/components/ui/ScrollScrubBackground'
 import Countdown from '@/components/ui/Countdown'
@@ -21,12 +22,14 @@ export default function HomePage() {
 
         {/* ── 1: Hero ── */}
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-4">
-          <div className="inline-flex items-center gap-2 mb-6">
-            <div className="w-6 h-6 rounded-full bg-bio-cyan/20 border border-bio-cyan/50 flex items-center justify-center">
-              <span className="text-bright-cyan text-[10px] font-papyrus font-bold">P</span>
-            </div>
-            <span className="font-papyrus text-bright-cyan text-sm tracking-[0.3em] uppercase">Pandora</span>
-          </div>
+          <Image
+            src="/logo-Pandora.png"
+            alt="Pandora"
+            width={1201}
+            height={239}
+            priority
+            className="mb-6 h-12 w-auto drop-shadow-[0_0_20px_rgba(34,211,238,0.4)] md:h-16"
+          />
           <h1 className="font-papyrus font-bold text-6xl md:text-8xl lg:text-[9rem] text-white mb-4 glow-text-cyan tracking-wider leading-none">
             BUILDERTHON
           </h1>

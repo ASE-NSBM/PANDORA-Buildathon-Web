@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -21,11 +22,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-full bg-bio-cyan/20 border border-bio-cyan/50 flex items-center justify-center group-hover:shadow-cyan-glow transition-all duration-300">
-              <span className="text-bright-cyan text-xs font-papyrus font-bold">P</span>
-            </div>
-            <span className="font-papyrus font-bold text-white text-lg tracking-wider">PANDORA</span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/logo-Pandora.png"
+              alt="Pandora"
+              width={1201}
+              height={239}
+              priority
+              className="h-8 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(34,211,238,0.55)]"
+            />
           </Link>
 
           {/* Desktop links */}
