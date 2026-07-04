@@ -1,14 +1,13 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import { LogOut } from 'lucide-react'
 
 export default function AdminLogout() {
-  const router = useRouter()
-
   const logout = async () => {
     await fetch('/api/admin/logout', { method: 'POST' })
-    router.push('/admin/login')
+    // Hard navigation forces middleware + a fresh server render of the
+    // admin layout, so the sidebar disappears now that the cookie is gone.
+    window.location.href = '/admin/login'
   }
 
   return (

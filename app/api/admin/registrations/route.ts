@@ -1,8 +1,14 @@
 import { NextResponse } from 'next/server'
 import connectDB from '@/lib/mongodb'
 import Registration from '@/models/Registration'
+import { getAdminSession } from '@/lib/adminAuth'
 
 export async function GET(req: Request) {
+  const session = await getAdminSession()
+  if (!session) {
+    return NextResponse.json({ success: false, message: 'Unauthorized.' }, { status: 401 })
+  }
+
   await connectDB()
 
   const { searchParams } = new URL(req.url)
