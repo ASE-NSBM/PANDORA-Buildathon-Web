@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
-import { Poppins, Inter, Geist } from 'next/font/google'
+import { Poppins, Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
 import SiteChrome from '@/components/SiteChrome'
 import { Toaster } from "@/components/ui/sonner"
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const papyrus = localFont({
   src: './fonts/papyrus.ttf',

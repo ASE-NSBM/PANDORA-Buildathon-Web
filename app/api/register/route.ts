@@ -2,6 +2,14 @@ import { NextResponse } from 'next/server'
 import connectDB from '@/lib/mongodb'
 import Registration from '@/models/Registration'
 
+interface MemberInput {
+  fullName?: string;
+  studentId?: string;
+  email?: string;
+  contactNumber?: string;
+  whatsappNumber?: string;
+}
+
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const phoneRegex = /^(\+94|0)\d{9}$/
 
@@ -30,8 +38,8 @@ export async function POST(req: Request) {
       return fail('Member count does not match the number of members provided.')
 
     // ── Intra-team duplicate check ──────────────────────────────────────
-    const submittedEmails    = members.map((m: any) => m.email?.toLowerCase?.() ?? '')
-    const submittedStudentIds = members.map((m: any) => m.studentId?.trim?.() ?? '')
+    const submittedEmails    = members.map((m: MemberInput) => m.email?.toLowerCase?.() ?? '')
+    const submittedStudentIds = members.map((m: MemberInput) => m.studentId?.trim?.() ?? '')
 
     const uniqueEmails     = new Set(submittedEmails)
     const uniqueStudentIds = new Set(submittedStudentIds)

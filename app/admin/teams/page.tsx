@@ -5,6 +5,14 @@ import { Download } from 'lucide-react'
 import TeamsSearch from '@/components/admin/TeamsSearch'
 import { Suspense } from 'react'
 
+interface RegistrationRecord {
+  _id: string;
+  teamName: string;
+  memberCount: number;
+  createdAt: string;
+  members?: { email?: string }[];
+}
+
 const PAGE_SIZE = 20
 
 export default async function TeamsPage({
@@ -42,13 +50,13 @@ export default async function TeamsPage({
           </p>
         </div>
 
-        <a
+        <Link
           href="/api/admin/registrations/export"
           className="inline-flex items-center gap-2 px-4 py-2 bg-bio-cyan/10 border border-bio-cyan/30 text-bright-cyan font-inter text-sm font-medium rounded-lg hover:bg-bio-cyan/20 transition-all"
         >
           <Download size={14} />
           Export CSV
-        </a>
+        </Link>
       </div>
 
       {/* Search */}
@@ -74,7 +82,7 @@ export default async function TeamsPage({
               </tr>
             </thead>
             <tbody>
-              {registrations.map((reg: any) => (
+              {registrations.map((reg: RegistrationRecord) => (
                 <tr key={String(reg._id)} className="border-b border-white/5 hover:bg-white/[0.03] transition-colors">
                   <td className="px-5 py-3.5 font-inter text-sm text-white font-medium">{reg.teamName}</td>
                   <td className="px-5 py-3.5">

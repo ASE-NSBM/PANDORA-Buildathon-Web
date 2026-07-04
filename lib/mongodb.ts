@@ -6,14 +6,23 @@ if (!MONGODB_URI) {
   throw new Error("Please define MONGODB_URI");
 }
 
-let cached = (global as any).mongoose;
+interface MongooseCache {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
+}
 
-if (!cached) {
-  cached = (global as any).mongoose = {
+const globalWithMongoose = globalThis as typeof globalThis & {
+  mongoose?: MongooseCache;
+};
+
+if (!globalWithMongoose.mongoose) {
+  globalWithMongoose.mongoose = {
     conn: null,
     promise: null,
   };
 }
+
+const cached = globalWithMongoose.mongoose;
 
 export default async function connectDB() {
   if (cached.conn) return cached.conn;

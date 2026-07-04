@@ -3,6 +3,13 @@ import Registration from '@/models/Registration'
 import Link from 'next/link'
 import { Users, UserCheck, Clock, ArrowRight } from 'lucide-react'
 
+interface RegistrationRecord {
+  _id: string;
+  teamName: string;
+  memberCount: number;
+  createdAt: string;
+}
+
 export default async function AdminDashboard() {
   await connectDB()
 
@@ -68,7 +75,7 @@ export default async function AdminDashboard() {
               </tr>
             </thead>
             <tbody>
-              {latestRegs.map((reg: any) => (
+              {latestRegs.map((reg: RegistrationRecord) => (
                 <tr key={String(reg._id)} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
                   <td className="px-5 py-3 font-inter text-sm text-white">{reg.teamName}</td>
                   <td className="px-5 py-3 font-inter text-sm text-white/60">{reg.memberCount}</td>

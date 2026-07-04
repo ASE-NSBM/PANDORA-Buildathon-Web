@@ -5,6 +5,23 @@ import Link from 'next/link'
 import DeleteTeamButton from '@/components/admin/DeleteTeamButton'
 import { ArrowLeft, Users, Calendar } from 'lucide-react'
 
+interface Member {
+  fullName: string;
+  studentId: string;
+  email: string;
+  contactNumber: string;
+  whatsappNumber: string;
+  [key: string]: string;
+}
+
+interface RegistrationDetail {
+  _id: string;
+  teamName: string;
+  memberCount: number;
+  createdAt: string;
+  members: Member[];
+}
+
 export default async function TeamDetailPage({
   params,
 }: {
@@ -13,7 +30,7 @@ export default async function TeamDetailPage({
   const { id } = await params
 
   await connectDB()
-  const reg = await Registration.findById(id).lean() as any
+  const reg = await Registration.findById(id).lean() as RegistrationDetail | null
 
   if (!reg) notFound()
 
@@ -71,7 +88,7 @@ export default async function TeamDetailPage({
         </div>
 
         <div className="divide-y divide-white/5">
-          {reg.members.map((member: any, idx: number) => (
+          {reg.members.map((member: Member, idx: number) => (
             <div key={idx} className="px-5 py-5">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-7 h-7 rounded-full bg-bio-cyan/15 border border-bio-cyan/30 flex items-center justify-center">
