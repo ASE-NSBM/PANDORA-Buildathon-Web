@@ -18,7 +18,7 @@ const config: Config = {
         // 'bright-cyan':   '#64E6FF',
         // 'ice-blue':      '#A3F7FF',
         // 'accent-purple': '#8A2BE2',
-        'deep-ocean':    '#081B2A',
+        'deep-ocean':    '#0B1D2A',
         'midnight-blue': '#102A43',
         'ocean-blue':    '#143D59',
         'aqua-blue':     '#1E5F7A',

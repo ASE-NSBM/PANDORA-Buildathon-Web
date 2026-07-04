@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Github, Instagram, Facebook, Linkedin } from 'lucide-react'
 
 const quickLinks = [
@@ -24,11 +25,15 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-bio-cyan/20 border border-bio-cyan/50 flex items-center justify-center">
-                <span className="text-bright-cyan text-xs font-display font-bold">P</span>
-              </div>
-              <span className="font-display font-bold text-white text-lg tracking-wider">PANDORA</span>
+            <div className="flex items-center gap-2.5 mb-4">
+              <Image
+                src="/pandora-mark.png"
+                alt=""
+                width={512}
+                height={512}
+                className="h-8 w-8"
+              />
+              <span className="font-display font-semibold text-white text-lg tracking-[0.18em]">PANDORA</span>
             </div>
             <p className="font-poppins text-sm text-white/50 leading-relaxed">
               Explore. Connect. Create.<br />Build beyond imagination.
