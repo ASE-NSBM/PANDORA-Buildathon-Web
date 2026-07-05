@@ -2,13 +2,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, MapPin, ArrowRight, Zap, Code2, BookOpen, Trophy, Mail, Phone } from 'lucide-react'
 import ScrollScrubBackground from '@/components/ui/ScrollScrubBackground'
+import HeroGuardian from '@/components/ui/HeroGuardian'
+import HeroCreature from '@/components/ui/HeroCreature'
 import FlowFieldOverlay from '@/components/ui/FlowFieldOverlay'
 import ScrollProgress from '@/components/ui/ScrollProgress'
 import Countdown from '@/components/ui/Countdown'
 import Reveal from '@/components/ui/Reveal'
 import TypewriterText from '@/components/ui/TypewriterText'
 import { DiaTextReveal } from '@/components/ui/dia-text-reveal'
-import AnimatedTestimonials from '@/components/ui/AnimatedTestimonials'
+import MemberCards from '@/components/ui/MemberCards'
+import { committee } from '@/lib/team'
 import EventContent from '@/components/EventContent'
 import RegisterForm from '@/components/RegisterForm'
 
@@ -20,13 +23,6 @@ const whyParticipate = [
   { icon: Code2,    title: 'Innovate & Create', description: 'Bring your ideas to life with cutting-edge tech.' },
   { icon: BookOpen, title: 'Learn & Grow',       description: 'Learn from experts and grow your skills.' },
   { icon: Trophy,   title: 'Win Rewards',        description: 'Exciting prizes and recognition await.' },
-]
-
-const committee = [
-  { role: 'President',      name: 'Samsudeen Ashad',        email: 'samsudeenashad@gmail.com' },
-  { role: 'Vice President', name: 'Nethum Bashitha',        email: 'bashithanethum4@gmail.com' },
-  { role: 'Vice President', name: 'Dilara Wickramanayake',  email: 'dilarawickramanayake@gmail.com' },
-  { role: 'Secretary',      name: 'Hirushi Nethmini',       email: 'hirushinethmini5@gmail.com' },
 ]
 
 /** Small HUD chapter marker, e.g. "01 / HERO" */
@@ -54,8 +50,10 @@ export default function HomePage() {
       <div id="scrub-track" className="relative z-10">
 
         {/* ── 1: Hero ── */}
-        <section className="relative min-h-dvh flex flex-col items-center justify-center text-center px-6 sm:px-12 lg:px-20 pt-28 pb-20">
+        <section className="relative min-h-dvh flex flex-col items-center justify-center text-center px-6 sm:px-12 lg:px-20 pt-28 pb-20 overflow-hidden">
           <div className="pointer-events-none absolute inset-0 hud-grid" aria-hidden="true" />
+          <HeroCreature />
+          <HeroGuardian />
           <Reveal className="relative flex flex-col items-center w-full max-w-4xl mx-auto">
             <Image
               src="/logo-Pandora.png"
@@ -82,21 +80,21 @@ export default function HomePage() {
               />
             </p>
             <Countdown />
-            <p className="font-poppins text-white/80 text-base md:text-lg max-w-xl mx-auto mt-8 mb-10">
+            <p className="font-poppins text-white text-xl md:text-3xl font-medium max-w-2xl mx-auto mt-8 mb-10">
               A competitive challenge for{' '}
               <TypewriterText
                 words={['innovators.', 'dreamers.', 'builders.']}
                 className="text-bright-cyan font-semibold"
               />
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-12 font-poppins text-sm text-white/80">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-12 font-poppins text-base md:text-lg text-white/90">
               <div className="flex items-center gap-2">
-                <Calendar size={15} className="text-bright-cyan" />
+                <Calendar size={18} className="text-bright-cyan" />
                 <span>5th August 2026 · 10 AM – 5 PM</span>
               </div>
-              <div className="hidden sm:block w-px h-4 bg-white/20" />
+              <div className="hidden sm:block w-px h-5 bg-white/20" />
               <div className="flex items-center gap-2">
-                <MapPin size={15} className="text-bright-cyan" />
+                <MapPin size={18} className="text-bright-cyan" />
                 <span>NSBM Green University</span>
               </div>
             </div>
@@ -141,6 +139,7 @@ export default function HomePage() {
                 <Reveal key={title} delay={i * 90}>
                   <div
                     className="glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-6 text-center group h-full
+                               bg-midnight-blue/65 backdrop-blur-2xl
                                hover:shadow-cyan-glow hover:-translate-y-1 transition-all duration-300"
                   >
                     <div className="w-12 h-12 rounded-full bg-bio-cyan/10 border border-bio-cyan/30 flex items-center justify-center mx-auto mb-4 group-hover:border-bright-cyan group-hover:shadow-cyan-glow transition-all duration-300">
@@ -222,9 +221,9 @@ export default function HomePage() {
               </a>
             </Reveal>
 
-            {/* Committee — animated testimonials style */}
+            {/* Organizing committee — every member in one row */}
             <Reveal>
-              <AnimatedTestimonials members={committee} />
+              <MemberCards members={committee} columns={4} />
             </Reveal>
           </div>
         </section>

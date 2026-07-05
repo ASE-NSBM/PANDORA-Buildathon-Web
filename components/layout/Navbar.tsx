@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'About Event',     href: '/about-event' },
   { label: 'About Organizer', href: '/about-organizer' },
   { label: 'Register',        href: '/register' },
-  { label: 'Contact',         href: '/#contact-team' },
+  { label: 'Contact',         href: '/contact' },
 ]
 
 export default function Navbar() {

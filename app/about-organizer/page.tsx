@@ -1,11 +1,10 @@
 import Image from 'next/image'
-import { Github, Instagram, Facebook, Linkedin, ExternalLink } from 'lucide-react'
+import { Instagram, Facebook, Linkedin, ExternalLink } from 'lucide-react'
 
 const socialLinks = [
   { icon: Facebook,  href: 'https://www.facebook.com/ase.nsbm/',      label: 'Facebook' },
   { icon: Instagram, href: 'https://www.instagram.com/ase.nsbm/',     label: 'Instagram' },
   { icon: Linkedin,  href: 'https://www.linkedin.com/company/asensbm', label: 'LinkedIn' },
-  { icon: Github,    href: 'https://github.com/ASE-NSBM',             label: 'GitHub' },
 ]
 
 export default function AboutOrganizerPage() {

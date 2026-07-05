@@ -1,20 +1,19 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Github, Instagram, Facebook, Linkedin } from 'lucide-react'
+import { Instagram, Facebook, Linkedin } from 'lucide-react'
 
 const quickLinks = [
   { label: 'Home',            href: '/' },
   { label: 'About Event',     href: '/about-event' },
   { label: 'About Organizer', href: '/about-organizer' },
   { label: 'Register',        href: '/register' },
-  { label: 'Contact',         href: 'mailto:ase@nsbm.ac.lk' },
+  { label: 'Contact',         href: '/contact' },
 ]
 
 const socialLinks = [
   { icon: Facebook,  href: 'https://www.facebook.com/ase.nsbm/',      label: 'Facebook' },
   { icon: Instagram, href: 'https://www.instagram.com/ase.nsbm/',     label: 'Instagram' },
   { icon: Linkedin,  href: 'https://www.linkedin.com/company/asensbm', label: 'LinkedIn' },
-  { icon: Github,    href: 'https://github.com/ASE-NSBM',             label: 'GitHub' },
 ]
 
 export default function Footer() {

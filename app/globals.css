@@ -114,6 +114,10 @@ body {
   .glass-card {
     @apply bg-midnight-blue/40 backdrop-blur-md border border-bio-cyan/15 rounded-card;
   }
+  /* Gentle vertical float for the hero guardian figure */
+  .guardian-float {
+    animation: guardianFloat 6s ease-in-out infinite;
+  }
   .glow-text-cyan {
     text-shadow: 0 0 30px rgba(100, 230, 255, 0.6), 0 0 60px rgba(100, 230, 255, 0.3);
   }
@@ -337,5 +341,18 @@ body {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
+  }
+  .guardian-float {
+    animation: none !important;
+  }
+}
+
+@keyframes guardianFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
   }
 }
