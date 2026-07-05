@@ -24,9 +24,10 @@ export default function MemberCards({
   columns = 4,
 }: {
   members: Member[]
-  columns?: 4 | 5
+  columns?: 4 | 5 | 6
 }) {
-  const lgCols = columns === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4'
+  const lgCols =
+    columns === 6 ? 'lg:grid-cols-6' : columns === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4'
 
   return (
     <div className={`grid grid-cols-2 sm:grid-cols-3 ${lgCols} gap-4 sm:gap-6`}>

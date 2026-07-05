@@ -70,7 +70,7 @@ export default function ContactPage() {
           </h2>
         </Reveal>
         <Reveal>
-          <MemberCards members={developmentTeam} columns={5} />
+          <MemberCards members={developmentTeam} columns={6} />
         </Reveal>
       </section>
     </div>
