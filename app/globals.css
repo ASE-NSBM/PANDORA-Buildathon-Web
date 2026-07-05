@@ -157,4 +157,108 @@ body {
   .font-display {
     font-family: var(--font-display), 'Trajan Pro', 'Cinzel', serif;
   }
+
+  /* ── HUD / Sci-Fi FUI accents ─────────────────────────────── */
+
+  /* Faint technical grid, used as a section backdrop layer */
+  .hud-grid {
+    background-image:
+      linear-gradient(to right, rgba(100, 230, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(100, 230, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+            mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  }
+
+  /* Corner brackets drawn around a bordered card */
+  .hud-corners {
+    position: relative;
+  }
+  .hud-corners::before,
+  .hud-corners::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: rgba(100, 230, 255, 0.55);
+    pointer-events: none;
+    transition: border-color 0.3s ease;
+  }
+  .hud-corners::before {
+    top: -1px;
+    left: -1px;
+    border-top: 1.5px solid;
+    border-left: 1.5px solid;
+    border-top-left-radius: 0.4rem;
+  }
+  .hud-corners::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 1.5px solid;
+    border-right: 1.5px solid;
+    border-bottom-right-radius: 0.4rem;
+  }
+  .group:hover .hud-corners::before,
+  .group:hover .hud-corners::after,
+  .hud-corners:hover::before,
+  .hud-corners:hover::after {
+    border-color: rgba(163, 247, 255, 0.95);
+  }
+
+  /* Small HUD eyebrow index marker, e.g. "01 / HERO" */
+  .hud-index {
+    @apply inline-flex items-center gap-2 font-poppins text-[11px] tracking-[0.3em] uppercase text-bright-cyan/70;
+  }
+  .hud-index::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: #64e6ff;
+    box-shadow: 0 0 8px rgba(100, 230, 255, 0.9);
+    animation: hud-blink 2s ease-in-out infinite;
+  }
+
+  /* Accessible focus ring for keyboard users on cyan surfaces */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bright-cyan/80
+           focus-visible:ring-offset-2 focus-visible:ring-offset-deep-ocean rounded-full;
+  }
+}
+
+/* ── Scroll-reveal (staggered entrance) ───────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes hud-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+@keyframes hud-scan {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translateY(2000%); opacity: 0; }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hud-index::before {
+    animation: none;
+  }
 }
