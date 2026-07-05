@@ -30,7 +30,7 @@ const OBJECTIVES = [
   {
     icon: Zap,
     title: 'Rapid Prototyping',
-    description: 'Accelerate your ideas from concept to a functioning prototype in just 24 hours.'
+    description: 'Accelerate your ideas from concept to a functioning prototype in a single build day.'
   },
   {
     icon: Target,
@@ -47,43 +47,36 @@ const TIMELINE = [
     status: 'Upcoming'
   },
   {
-    date: 'August 10, 2026',
+    date: 'August 3, 2026',
     title: 'Registration Deadline',
     desc: 'Team registrations close. Ensure all member profiles are fully submitted.',
     status: 'Upcoming'
   },
   {
-    date: 'August 15, 2026',
-    title: 'Day 1 – Kickoff & Development',
-    desc: 'Opening ceremony, theme announcement, and start of the 24-hour hacking marathon.',
-    status: 'Hackathon'
+    date: 'Aug 5 · Morning',
+    title: 'Kickoff & Build Session',
+    desc: 'Opening ceremony, challenge briefing, and the start of the one-day build session.',
+    status: 'Buildathon'
   },
   {
-    date: 'August 16, 2026',
-    title: 'Day 2 – Pitching & Awards',
-    desc: 'Hackathon ends. Teams submit code and present live demo pitches to judges. Winners announced.',
+    date: 'Aug 5 · Evening',
+    title: 'Pitching & Awards',
+    desc: 'Teams submit their projects and present live demos to judges. Winners announced at the closing ceremony.',
     status: 'Awards'
   }
 ]
 
-const SCHEDULE_DAY_1 = [
-  { time: '08:00 AM – 09:00 AM', title: 'Arrival & Registration Check-in', desc: 'Welcome desk check-in, credential collection, and breakfast.' },
-  { time: '09:00 AM – 10:00 AM', title: 'Opening Ceremony', desc: 'Introduction by the ASE Club, guest speeches, and official hackathon rules briefing.' },
-  { time: '10:00 AM', title: 'The Theme Announcement', desc: 'The secret challenge topic is revealed. Hacking begins immediately!' },
-  { time: '01:00 PM – 02:00 PM', title: 'Lunch & Mentoring Session 1', desc: 'Fuel up and get feedback on your architecture from industry expert mentors.' },
-  { time: '04:00 PM – 05:00 PM', title: 'Checkpoint Review 1', desc: 'Progress check-in. Teams submit their high-level solution outline.' },
-  { time: '07:30 PM – 08:30 PM', title: 'Dinner & Mentoring Session 2', desc: 'Technical mentoring focusing on backend, database, and deployment setup.' },
-  { time: '12:00 AM (Midnight)', title: 'Midnight Snack & Chill Out', desc: 'Mini-games and quick coffee breaks to keep the energy levels high.' }
-]
-
-const SCHEDULE_DAY_2 = [
-  { time: '07:00 AM – 08:00 AM', title: 'Rise & Shine Breakfast', desc: 'Morning coffee and fresh meals to prepare for the final sprint.' },
-  { time: '09:00 AM – 10:00 AM', title: 'Checkpoint Review 2 & Mentoring 3', desc: 'Final push. Mentors review demo readiness and presentation decks.' },
-  { time: '10:00 AM', title: 'Hacking Stop & Code Freeze', desc: 'All repositories must be pushed. Late submissions will not be accepted.' },
-  { time: '10:30 AM – 01:00 PM', title: 'Preliminary Round Pitches', desc: 'Teams present 5-minute demos to panel judges. Top teams advance to finals.' },
-  { time: '01:00 PM – 02:00 PM', title: 'Lunch Break', desc: 'Judges deliberate and score sheet verification.' },
-  { time: '02:00 PM – 04:00 PM', title: 'Final Pitch Showcase', desc: 'The top finalist teams pitch live on the main stage to all attendees.' },
-  { time: '04:00 PM – 05:00 PM', title: 'Award Ceremony & Closing', desc: 'Prizes, trophies, certificates distribution, and closing photography.' }
+const SCHEDULE = [
+  { time: '08:30 AM', title: 'Registration & Opening Ceremony', desc: 'Welcome desk check-in, credential collection, and the official opening of the event.' },
+  { time: '09:00 AM', title: 'Welcome Address & Introduction', desc: 'Introduction by the ASE Club and guest speeches to kick off the Buildathon.' },
+  { time: '09:30 AM', title: 'Challenge Briefing & Rules', desc: 'The challenge domains and evaluation criteria are revealed, with a full rules briefing.' },
+  { time: '10:00 AM', title: 'Buildathon Officially Begins', desc: 'Building starts. Teams begin turning their ideas into working prototypes.' },
+  { time: '12:30 PM', title: 'Lunch Break', desc: 'Refuel and regroup before the afternoon development session.' },
+  { time: '01:30 PM', title: 'Development Session Continues', desc: 'Teams keep building, with mentors on hand for technical guidance.' },
+  { time: '04:00 PM', title: 'Project Submission Deadline', desc: 'All repositories must be pushed. Late submissions will not be accepted.' },
+  { time: '04:15 PM', title: 'Team Presentations & Demonstrations', desc: 'Teams present live demos of their solutions to the panel of judges.' },
+  { time: '05:30 PM', title: 'Judges’ Deliberation', desc: 'Judges score the submissions and verify the final results.' },
+  { time: '06:00 PM', title: 'Awards Ceremony & Closing Remarks', desc: 'Prizes, trophies, certificates, and closing photography.' }
 ]
 
 const PRIZES = [
@@ -131,7 +124,7 @@ const FAQS = [
   },
   {
     q: 'Can we use pre-built templates or libraries?',
-    a: 'Yes, using open-source libraries, frameworks, and boilerplates is allowed. However, all project core code, features, and custom designs must be built from scratch during the 24-hour hacking window. Pre-existing projects cannot be submitted.'
+    a: 'Yes, using open-source libraries, frameworks, and boilerplates is allowed. However, all project core code, features, and custom designs must be built from scratch during the build window on event day. Pre-existing projects cannot be submitted.'
   },
   {
     q: 'What should we bring to the venue?',
@@ -144,7 +137,6 @@ const FAQS = [
 ]
 
 export default function AboutEventPage() {
-  const [activeDay, setActiveDay] = useState<'day1' | 'day2'>('day1')
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   const [mousePos1, setMousePos1] = useState({ x: 0, y: 0 })
@@ -234,13 +226,13 @@ export default function AboutEventPage() {
                   undergraduates from across the region to tackle modern, complex industry problems.
                 </p>
                 <p className="font-poppins text-xs md:text-sm lg:text-base text-white/70 leading-relaxed">
-                  Over a 24-hour sprint, your team will conceptualize, develop, test, and pitch an application, 
+                  Over a single intensive build day, your team will conceptualize, develop, test, and pitch an application,
                   proving that you can convert high-level requirements into clean, production-ready systems.
                 </p>
               </div>
               <div className="border-t border-white/10 pt-6 mt-8 flex items-center justify-between text-xs font-inter text-bright-cyan font-bold uppercase tracking-wider">
                 <span>ASE Signature Event</span>
-                <span>August 15-16, 2026</span>
+                <span>August 5, 2026</span>
               </div>
             </div>
 
@@ -368,7 +360,7 @@ export default function AboutEventPage() {
 
             <ul className="space-y-4">
               {[
-                { title: 'Originality First', desc: 'All submitted projects must be designed and coded entirely during the 24-hour hackathon window.' },
+                { title: 'Originality First', desc: 'All submitted projects must be designed and coded entirely during the build window on event day.' },
                 { title: 'Template Disclosure', desc: 'Pre-existing templates, boilers, or component packages must be fully disclosed upon submission.' },
                 { title: 'Intellectual Honesty', desc: 'Plagiarism, copying code from other participants, or submitting pre-built projects results in instant disqualification.' },
                 { title: 'Final Arbiters', desc: 'The scoring and decisions of the judging panel are final, absolute, and not subject to appeal.' }
@@ -417,38 +409,22 @@ export default function AboutEventPage() {
               ))}
             </div>
 
-            {/* Daily Schedule tabs */}
+            {/* Event Day Schedule */}
             <div className="lg:col-span-7 glass-card p-5 md:p-8 space-y-8">
-              
-              {/* Tab Selector */}
-              <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between border-b border-white/10 pb-4">
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => setActiveDay('day1')}
-                    className={`font-inter text-sm px-4 py-2 rounded-lg font-semibold transition-all duration-200 cursor-pointer ${
-                      activeDay === 'day1'
-                        ? 'bg-bio-cyan text-deep-ocean shadow-cyan-glow'
-                        : 'text-white/60 hover:text-white hover:bg-white/5'
-                    }`}
-                  >
-                    Day 1 (Aug 15)
-                  </button>
-                  <button
-                    onClick={() => setActiveDay('day2')}
-                    className={`font-inter text-sm px-4 py-2 rounded-lg font-semibold transition-all duration-200 cursor-pointer ${
-                      activeDay === 'day2'
-                        ? 'bg-bio-cyan text-deep-ocean shadow-cyan-glow'
-                        : 'text-white/60 hover:text-white hover:bg-white/5'
-                    }`}
-                  >
-                    Day 2 (Aug 16)
-                  </button>
-                </div>
+
+              {/* Header */}
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center justify-between border-b border-white/10 pb-4">
+                <h3 className="font-display text-lg md:text-xl font-bold text-white tracking-wide">
+                  Event Day Schedule
+                </h3>
+                <span className="font-inter text-xs text-bright-cyan font-bold tracking-widest uppercase">
+                  August 5, 2026 · 10 AM – 5 PM
+                </span>
               </div>
 
               {/* Schedule listing */}
               <div className="space-y-6 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                {(activeDay === 'day1' ? SCHEDULE_DAY_1 : SCHEDULE_DAY_2).map((item, idx) => (
+                {SCHEDULE.map((item, idx) => (
                   <div key={idx} className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-start border-l border-white/5 pl-4 hover:border-bio-cyan/30 transition-colors">
                     <span className="font-inter text-xs text-bright-cyan font-bold sm:min-w-[140px] pt-0.5">
                       {item.time}
