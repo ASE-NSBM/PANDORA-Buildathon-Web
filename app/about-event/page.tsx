@@ -25,7 +25,7 @@ const OBJECTIVES = [
   {
     icon: Users,
     title: 'Collaborate',
-    description: 'Work in diverse teams of 1 to 5 to co-create, learn, and grow together under pressure.'
+    description: 'Work in diverse teams of 1 to 4 to co-create, learn, and grow together under pressure.'
   },
   {
     icon: Zap,
@@ -82,21 +82,21 @@ const SCHEDULE = [
 const PRIZES = [
   {
     rank: '2nd Place',
-    amount: 'Rs. 30,000',
+    amount: 'Rs. 20,000',
     perks: ['Silver Trophies', 'Individual Certificates', 'ASE Premium Merch'],
     glowClass: 'shadow-[0_0_20px_rgba(163,247,255,0.25)] border-ice-blue/30',
     badgeBg: 'bg-ice-blue/10 text-ice-blue'
   },
   {
     rank: '1st Place',
-    amount: 'Rs. 50,000',
+    amount: 'Rs. 30,000',
     perks: ['Champion Gold Trophies', 'Winner Certificates', 'Direct Incubation Opportunity', 'ASE Premium Merch'],
     glowClass: 'shadow-[0_0_30px_rgba(100,230,255,0.4)] border-bright-cyan/50 scale-105 z-10',
     badgeBg: 'bg-bright-cyan/25 text-bright-cyan font-bold ring-1 ring-bright-cyan/30'
   },
   {
     rank: '3rd Place',
-    amount: 'Rs. 20,000',
+    amount: 'Rs. 10,000',
     perks: ['Bronze Trophies', 'Individual Certificates', 'ASE Premium Merch'],
     glowClass: 'shadow-[0_0_20px_rgba(138,43,226,0.25)] border-accent-purple/30',
     badgeBg: 'bg-accent-purple/10 text-accent-purple'
@@ -116,7 +116,7 @@ const FAQS = [
   },
   {
     q: 'What is the required team size?',
-    a: 'Teams must consist of a minimum of 1 member and a maximum of 5 members. Cross-institutional teams are permitted.'
+    a: 'Teams can consist of a minimum of 1 member and a maximum of 4 members. Cross-institutional teams are permitted.'
   },
   {
     q: 'Is there a registration fee for the hackathon?',
@@ -307,7 +307,7 @@ export default function AboutEventPage() {
             <ul className="space-y-4">
               {[
                 { title: 'Undergraduate Status', desc: 'Open exclusively to all undergraduate students enrolled in a recognized university.' },
-                { title: 'Flexible Team Sizes', desc: 'Participate as an individual builder or team up in groups of up to 5 members.' },
+                { title: 'Flexible Team Sizes', desc: 'Participate as an individual builder or team up in groups of up to 4 members.' },
                 { title: 'Cross-Institutional Teams', desc: 'Collaborators from different universities and courses are allowed and encouraged.' },
                 { title: 'Clean Track Record', desc: 'All registered participants must adhere to university guidelines and represent a clean conduct history.' }
               ].map((item, idx) => (
