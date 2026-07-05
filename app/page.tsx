@@ -54,9 +54,9 @@ export default function HomePage() {
       <div id="scrub-track" className="relative z-10">
 
         {/* ── 1: Hero ── */}
-        <section className="relative min-h-dvh flex flex-col items-center justify-center text-center px-4 pt-24 pb-16">
+        <section className="relative min-h-dvh flex flex-col items-center justify-center text-center px-6 sm:px-12 lg:px-20 pt-28 pb-20">
           <div className="pointer-events-none absolute inset-0 hud-grid" aria-hidden="true" />
-          <Reveal className="relative flex flex-col items-center">
+          <Reveal className="relative flex flex-col items-center w-full max-w-4xl mx-auto">
             <Image
               src="/logo-Pandora.png"
               alt="Pandora"
@@ -65,7 +65,7 @@ export default function HomePage() {
               priority
               className="mb-6 h-12 w-auto drop-shadow-[0_0_20px_rgba(100,230,255,0.45)] md:h-16"
             />
-            <h1 className="font-display font-bold text-[clamp(2.25rem,10.5vw,8.5rem)] mb-4 tracking-wider leading-none drop-shadow-[0_0_45px_rgba(100,230,255,0.35)]">
+            <h1 className="font-display font-bold text-[clamp(2rem,7.5vw,6rem)] mb-4 tracking-wider leading-none drop-shadow-[0_0_45px_rgba(100,230,255,0.35)]">
               <TypewriterText
                 words={['BUILDERTHON']}
                 typingMs={110}
@@ -109,7 +109,7 @@ export default function HomePage() {
 
         {/* ── 2: About ── */}
         <section className="min-h-dvh flex items-center px-4 sm:px-6 lg:px-8">
-          <Reveal className="max-w-2xl mx-auto md:mx-0 glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-8 md:p-10">
+          <Reveal className="max-w-2xl w-full mx-auto glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-8 md:p-10 text-center">
             <div className="mb-4">
               <SectionIndex n="01" label="About the Event" />
             </div>
