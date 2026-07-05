@@ -13,6 +13,10 @@ import {
   Zap,
   CheckCircle2
 } from 'lucide-react'
+import { DiaTextReveal } from '@/components/ui/dia-text-reveal'
+
+// Bioluminescent sweep palette (matches the home page headings)
+const REVEAL_COLORS = ['#A3F7FF', '#64E6FF', '#24A3C7']
 
 const OBJECTIVES = [
   {
@@ -173,7 +177,9 @@ export default function EventContent() {
       {/* Overview & Objectives Section */}
       <section id="overview" className="scroll-mt-24 space-y-12">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="section-heading text-4xl mb-4">BuilderThan 2026</h2>
+          <h2 className="section-heading text-4xl mb-4">
+            <DiaTextReveal text="BuilderThan 2026" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+          </h2>
           <p className="font-poppins text-white/50 text-sm md:text-base">
             Explore the core vision of our flagship software engineering challenge.
           </p>
@@ -352,7 +358,9 @@ export default function EventContent() {
       {/* Timeline & Schedule Section */}
       <section id="timeline" className="scroll-mt-24 space-y-16">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="section-heading text-4xl mb-4">Milestones & Timeline</h2>
+          <h2 className="section-heading text-4xl mb-4">
+            <DiaTextReveal text="Milestones & Timeline" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+          </h2>
           <p className="font-poppins text-white/50 text-sm md:text-base">
             Mark the dates and follow our progression timeline from launch to presentation.
           </p>
@@ -421,7 +429,9 @@ export default function EventContent() {
       {/* Prizes Showcase Section */}
       <section id="prizes" className="scroll-mt-24 space-y-16">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="section-heading text-4xl mb-4">The Prize Pool</h2>
+          <h2 className="section-heading text-4xl mb-4">
+            <DiaTextReveal text="The Prize Pool" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+          </h2>
           <p className="font-poppins text-white/50 text-sm md:text-base">
             A total cash prize pool along with outstanding awards, trophies, and premium incubation pathways.
           </p>
@@ -466,7 +476,9 @@ export default function EventContent() {
 
         {/* Special Awards */}
         <div className="space-y-8 pt-8">
-          <h3 className="font-display text-xl font-bold text-white text-center">Special Recognition</h3>
+          <h3 className="font-display text-xl font-bold text-white text-center">
+            <DiaTextReveal text="Special Recognition" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+          </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {SPECIAL_AWARDS.map((award, idx) => (
@@ -488,7 +500,9 @@ export default function EventContent() {
       {/* Frequently Asked Questions */}
       <section id="faq" className="scroll-mt-24 space-y-12">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="section-heading text-4xl mb-4">Frequently Asked Questions</h2>
+          <h2 className="section-heading text-4xl mb-4">
+            <DiaTextReveal text="Frequently Asked Questions" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+          </h2>
           <p className="font-poppins text-white/50 text-sm md:text-base">
             Got questions? We have compiled the most common inquiries about the competition.
           </p>

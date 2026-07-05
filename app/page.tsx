@@ -7,9 +7,13 @@ import ScrollProgress from '@/components/ui/ScrollProgress'
 import Countdown from '@/components/ui/Countdown'
 import Reveal from '@/components/ui/Reveal'
 import TypewriterText from '@/components/ui/TypewriterText'
+import { DiaTextReveal } from '@/components/ui/dia-text-reveal'
 import AnimatedTestimonials from '@/components/ui/AnimatedTestimonials'
 import EventContent from '@/components/EventContent'
 import RegisterForm from '@/components/RegisterForm'
+
+// Bioluminescent sweep palette for DiaTextReveal (ice-blue → bright-cyan → bio-cyan)
+const REVEAL_COLORS = ['#A3F7FF', '#64E6FF', '#24A3C7']
 
 const whyParticipate = [
   { icon: Zap,      title: 'Real World Impact', description: 'Solve meaningful problems that create impact.' },
@@ -69,8 +73,13 @@ export default function HomePage() {
                 className="text-gradient-cyan"
               />
             </h1>
-            <p className="font-display text-base md:text-lg text-bright-cyan/80 tracking-[0.35em] uppercase mb-8">
-              Build Beyond Imagination
+            <p className="font-display text-base md:text-lg tracking-[0.35em] uppercase mb-8">
+              <DiaTextReveal
+                text="Build Beyond Imagination"
+                colors={REVEAL_COLORS}
+                textColor="rgba(100,230,255,0.8)"
+                delay={0.3}
+              />
             </p>
             <Countdown />
             <p className="font-poppins text-white/60 text-base md:text-lg max-w-xl mx-auto mt-8 mb-10">
@@ -104,7 +113,9 @@ export default function HomePage() {
             <div className="mb-4">
               <SectionIndex n="01" label="About the Event" />
             </div>
-            <h2 className="section-heading mb-6">BuilderThan</h2>
+            <h2 className="section-heading mb-6">
+              <DiaTextReveal text="BuilderThan" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+            </h2>
             <p className="font-poppins text-white/70 leading-relaxed text-lg mb-8">
               BuilderThan is a platform for passionate minds to solve real-world problems and build
               innovative solutions. Dive into the journey of creativity, collaboration and impact.
@@ -121,7 +132,9 @@ export default function HomePage() {
           <div className="max-w-7xl w-full mx-auto text-center">
             <Reveal className="flex flex-col items-center mb-12">
               <SectionIndex n="02" label="Why Join" />
-              <h2 className="section-heading mt-4">Why Participate?</h2>
+              <h2 className="section-heading mt-4">
+                <DiaTextReveal text="Why Participate?" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+              </h2>
             </Reveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {whyParticipate.map(({ icon: Icon, title, description }, i) => (
@@ -152,7 +165,7 @@ export default function HomePage() {
               <SectionIndex n="03" label="Ready to Build?" />
             </div>
             <h2 className="font-display font-bold text-4xl md:text-6xl text-white mb-6 glow-text-cyan">
-              Join BuilderThan 2026
+              <DiaTextReveal text="Join BuilderThan 2026" colors={REVEAL_COLORS} textColor="#FFFFFF" />
             </h2>
             <p className="font-poppins text-white/60 max-w-xl mx-auto mb-10 text-lg">
               Secure your team&apos;s spot before registration closes.
@@ -170,7 +183,9 @@ export default function HomePage() {
             <div className="flex justify-center mb-4">
               <SectionIndex n="04" label="Join BuilderThan 2026" />
             </div>
-            <h2 className="section-heading text-4xl md:text-5xl mb-4">Assemble Your Crew</h2>
+            <h2 className="section-heading text-4xl md:text-5xl mb-4">
+              <DiaTextReveal text="Assemble Your Crew" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+            </h2>
             <p className="font-poppins text-white/50 max-w-lg mx-auto">
               Name your team, choose your crew size, and fill in every member&apos;s details to secure your spot.
             </p>
@@ -183,7 +198,9 @@ export default function HomePage() {
           <div className="max-w-7xl w-full mx-auto text-center">
             <Reveal className="flex flex-col items-center mb-6">
               <SectionIndex n="05" label="Get in Touch" />
-              <h2 className="section-heading mt-4">Contact Us</h2>
+              <h2 className="section-heading mt-4">
+                <DiaTextReveal text="Contact Us" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+              </h2>
             </Reveal>
 
             {/* Shared contact channels */}
