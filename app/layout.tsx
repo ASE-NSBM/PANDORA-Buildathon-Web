@@ -28,7 +28,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'BuilderThan 2026 | Pandora – ASE Club',
   description:
-    'BuilderThan: Build Beyond Imagination. A competitive challenge for innovators, dreamers and builders. 15th–16th August 2026, Colombo, Sri Lanka.',
+    'BuilderThan: Build Beyond Imagination. A competitive challenge for innovators, dreamers and builders. 5th August 2026, NSBM Green University.',
   keywords: ['BuilderThan', 'Pandora', 'ASE Club', 'hackathon', 'competition', 'Sri Lanka'],
   openGraph: {
     title: 'BuilderThan 2026 | Pandora – ASE Club',

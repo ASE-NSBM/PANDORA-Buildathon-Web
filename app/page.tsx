@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Calendar, MapPin, ArrowRight, Zap, Code2, BookOpen, Trophy } from 'lucide-react'
+import { Calendar, MapPin, ArrowRight, Zap, Code2, BookOpen, Trophy, Mail, Phone } from 'lucide-react'
 import ScrollScrubBackground from '@/components/ui/ScrollScrubBackground'
 import Countdown from '@/components/ui/Countdown'
 
@@ -10,6 +10,18 @@ const whyParticipate = [
   { icon: BookOpen, title: 'Learn & Grow',       description: 'Learn from experts and grow your skills.' },
   { icon: Trophy,   title: 'Win Rewards',        description: 'Exciting prizes and recognition await.' },
 ]
+
+const committee = [
+  { role: 'President',      name: 'Samsudeen Ashad',        email: 'samsudeenashad@gmail.com' },
+  { role: 'Vice President', name: 'Nethum Bashitha',        email: 'bashithanethum4@gmail.com' },
+  { role: 'Vice President', name: 'Dilara Wickramanayake',  email: 'dilarawickramanayake@gmail.com' },
+  { role: 'Secretary',      name: 'Hirushi Nethmini',       email: 'hirushinethmini5@gmail.com' },
+]
+
+function initials(name: string) {
+  const parts = name.trim().split(/\s+/)
+  return parts.length > 1 ? `${parts[0][0]}${parts[parts.length - 1][0]}` : name.slice(0, 2)
+}
 
 export default function HomePage() {
   return (
@@ -46,12 +58,12 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-12 font-poppins text-sm text-white/60">
             <div className="flex items-center gap-2">
               <Calendar size={15} className="text-bright-cyan" />
-              <span>15th – 16th August 2026</span>
+              <span>5th August 2026 · 10 AM – 5 PM</span>
             </div>
             <div className="hidden sm:block w-px h-4 bg-white/20" />
             <div className="flex items-center gap-2">
               <MapPin size={15} className="text-bright-cyan" />
-              <span>Colombo, Sri Lanka</span>
+              <span>NSBM Green University</span>
             </div>
           </div>
           <Link href="/register" className="btn-primary inline-flex items-center gap-2 text-base px-8 py-4">
@@ -114,6 +126,56 @@ export default function HomePage() {
             Register Now
             <ArrowRight size={18} />
           </Link>
+        </section>
+
+        {/* ── 5: Contact ── */}
+        <section id="contact-team" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-24">
+          <div className="max-w-7xl w-full mx-auto text-center">
+            <p className="font-display text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
+              Get in Touch
+            </p>
+            <h2 className="section-heading mb-6">Contact Us</h2>
+
+            {/* Shared contact channels */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-14 font-poppins text-sm text-white/60">
+              <a
+                href="mailto:ase.nsbm.official@gmail.com"
+                className="flex items-center gap-2 hover:text-bright-cyan transition-colors duration-200"
+              >
+                <Mail size={15} className="text-bright-cyan" />
+                <span>ase.nsbm.official@gmail.com</span>
+              </a>
+              <div className="hidden sm:block w-px h-4 bg-white/20" />
+              <a
+                href="tel:+94718729888"
+                className="flex items-center gap-2 hover:text-bright-cyan transition-colors duration-200"
+              >
+                <Phone size={15} className="text-bright-cyan" />
+                <span>+94 71 872 9888</span>
+              </a>
+            </div>
+
+            {/* Committee cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {committee.map(({ role, name, email }) => (
+                <a
+                  key={email}
+                  href={`mailto:${email}`}
+                  className="glass-card glow-border-cyan p-6 text-center group hover:shadow-cyan-glow transition-all duration-300"
+                >
+                  <div className="w-16 h-16 rounded-full bg-bio-cyan/10 border border-bio-cyan/30 flex items-center justify-center mx-auto mb-4 font-display font-bold text-bright-cyan text-lg group-hover:border-bright-cyan group-hover:shadow-cyan-glow transition-all duration-300">
+                    {initials(name)}
+                  </div>
+                  <p className="font-display text-bright-cyan text-[11px] tracking-[0.25em] uppercase mb-2">{role}</p>
+                  <h3 className="font-display font-semibold text-white text-base mb-1">{name}</h3>
+                  <p className="font-poppins text-white/40 text-xs mb-3">Association of Software Engineering</p>
+                  <p className="font-poppins text-white/50 text-xs break-all group-hover:text-bright-cyan transition-colors duration-200">
+                    {email}
+                  </p>
+                </a>
+              ))}
+            </div>
+          </div>
         </section>
       </div>
     </div>

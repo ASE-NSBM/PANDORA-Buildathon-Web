@@ -88,7 +88,7 @@ export default function Footer() {
             <div className="space-y-2 font-poppins text-sm text-white/50">
               <p>builderthan@pandora.lk</p>
               <p>+94 77 123 4567</p>
-              <p>Colombo, Sri Lanka</p>
+              <p>NSBM Green University</p>
             </div>
           </div>
         </div>
