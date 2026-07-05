@@ -76,14 +76,14 @@ export default function AboutOrganizerPage() {
 
           {/* Vision & Mission */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
-            <div className="glass-card p-8">
+            <div className="glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-8 hover:scale-[1.01] hover:shadow-cyan-glow transition-all duration-300">
               <h3 className="font-display font-bold text-bright-cyan text-xl mb-4">Vision</h3>
               <p className="font-poppins text-white/60 leading-relaxed">
                 To be the leading student organization that nurtures innovation and technical excellence
                 among Software Engineering undergraduates.
               </p>
             </div>
-            <div className="glass-card p-8">
+            <div className="glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-8 hover:scale-[1.01] hover:shadow-cyan-glow transition-all duration-300">
               <h3 className="font-display font-bold text-bright-cyan text-xl mb-4">Mission</h3>
               <p className="font-poppins text-white/60 leading-relaxed">
                 To create an inclusive community that bridges academia and industry through meaningful

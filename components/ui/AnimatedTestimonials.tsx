@@ -74,7 +74,7 @@ export default function AnimatedTestimonials({ members }: { members: CommitteeMe
             return (
               <div
                 key={m.email}
-                className="hud-corners glass-card glow-border-cyan absolute inset-0
+                className="glass-card glow-border-cyan border-l-4 border-l-bright-cyan absolute inset-0
                            flex flex-col items-center justify-center text-center transition-all duration-500 ease-out"
                 style={{
                   opacity: isActive ? 1 : 0,

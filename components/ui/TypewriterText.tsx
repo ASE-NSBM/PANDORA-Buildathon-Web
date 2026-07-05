@@ -70,7 +70,9 @@ export default function TypewriterText({
     // className is applied to the inner text span (not this container):
     // effects like bg-clip-text gradients only work directly on the element
     // whose text they clip to.
-    <span className="relative inline-grid text-left align-baseline" aria-label={words.join(', ')}>
+    // justify-items-center: the typed text stays centered in the reserved slot,
+    // so the word grows outward symmetrically instead of leaving a trailing gap.
+    <span className="relative inline-grid justify-items-center text-center align-baseline" aria-label={words.join(', ')}>
       {/* Invisible sizer keeps the slot as wide as the longest word */}
       <span className={`invisible whitespace-nowrap col-start-1 row-start-1 ${className}`} aria-hidden="true">
         {longest}

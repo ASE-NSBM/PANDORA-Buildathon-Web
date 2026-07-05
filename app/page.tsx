@@ -54,7 +54,7 @@ export default function HomePage() {
       <div id="scrub-track" className="relative z-10">
 
         {/* ── 1: Hero ── */}
-        <section className="relative min-h-dvh flex flex-col items-center justify-center text-center px-4">
+        <section className="relative min-h-dvh flex flex-col items-center justify-center text-center px-4 pt-24 pb-16">
           <div className="pointer-events-none absolute inset-0 hud-grid" aria-hidden="true" />
           <Reveal className="relative flex flex-col items-center">
             <Image
@@ -109,7 +109,7 @@ export default function HomePage() {
 
         {/* ── 2: About ── */}
         <section className="min-h-dvh flex items-center px-4 sm:px-6 lg:px-8">
-          <Reveal className="max-w-2xl mx-auto md:mx-0">
+          <Reveal className="max-w-2xl mx-auto md:mx-0 glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-8 md:p-10">
             <div className="mb-4">
               <SectionIndex n="01" label="About the Event" />
             </div>
@@ -140,7 +140,7 @@ export default function HomePage() {
               {whyParticipate.map(({ icon: Icon, title, description }, i) => (
                 <Reveal key={title} delay={i * 90}>
                   <div
-                    className="hud-corners relative glass-card glow-border-cyan p-6 text-center group h-full
+                    className="glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-6 text-center group h-full
                                hover:shadow-cyan-glow hover:-translate-y-1 transition-all duration-300"
                   >
                     <div className="w-12 h-12 rounded-full bg-bio-cyan/10 border border-bio-cyan/30 flex items-center justify-center mx-auto mb-4 group-hover:border-bright-cyan group-hover:shadow-cyan-glow transition-all duration-300">
@@ -160,7 +160,7 @@ export default function HomePage() {
 
         {/* ── 4: Final CTA ── */}
         <section className="min-h-dvh flex flex-col items-center justify-center text-center px-4">
-          <Reveal className="flex flex-col items-center">
+          <Reveal className="flex flex-col items-center glass-card glow-border-cyan border-l-4 border-l-bright-cyan w-full max-w-3xl px-6 py-12 sm:px-12 md:py-16">
             <div className="mb-6">
               <SectionIndex n="03" label="Ready to Build?" />
             </div>

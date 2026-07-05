@@ -219,7 +219,7 @@ export default function EventContent() {
               return (
                 <div
                   key={i}
-                  className="glass-card p-5 md:p-6 flex flex-col justify-between hover:scale-[1.02] hover:border-bio-cyan/30 hover:shadow-cyan-glow transition-all duration-300 group"
+                  className="glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-5 md:p-6 flex flex-col justify-between hover:scale-[1.02] hover:shadow-cyan-glow transition-all duration-300 group"
                 >
                   <div className="space-y-4">
                     <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-bio-cyan/30 group-hover:bg-bio-cyan/10 transition-colors">
@@ -248,7 +248,7 @@ export default function EventContent() {
         <div
           onMouseMove={handleMouseMove1}
           onMouseLeave={handleMouseLeave1}
-          className="glass-card glow-border-cyan p-6 md:p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-visible group"
+          className="glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-6 md:p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-visible group"
           style={{ perspective: 1000, transformStyle: 'preserve-3d' }}
         >
           <div className="absolute top-0 right-0 w-24 h-24 bg-bright-cyan/5 rounded-full blur-xl group-hover:bg-bright-cyan/10 transition-all duration-500" />
@@ -302,7 +302,7 @@ export default function EventContent() {
         <div
           onMouseMove={handleMouseMove2}
           onMouseLeave={handleMouseLeave2}
-          className="glass-card glow-border-cyan p-6 md:p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-visible group"
+          className="glass-card glow-border-cyan border-l-4 border-l-accent-purple p-6 md:p-8 hover:scale-[1.01] transition-all duration-300 relative overflow-visible group"
           style={{ perspective: 1000, transformStyle: 'preserve-3d' }}
         >
           <div className="absolute top-0 right-0 w-24 h-24 bg-accent-purple/5 rounded-full blur-xl group-hover:bg-accent-purple/10 transition-all duration-500" />
@@ -388,7 +388,7 @@ export default function EventContent() {
           </div>
 
           {/* Event Day Schedule */}
-          <div className="lg:col-span-7 glass-card p-5 md:p-8 space-y-8">
+          <div className="lg:col-span-7 glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-5 md:p-8 space-y-8">
 
             {/* Header */}
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center justify-between border-b border-white/10 pb-4">
@@ -482,7 +482,7 @@ export default function EventContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {SPECIAL_AWARDS.map((award, idx) => (
-              <div key={idx} className="glass-card p-5 md:p-6 border border-white/5 hover:border-bio-cyan/20 hover:scale-[1.01] transition-all duration-300">
+              <div key={idx} className="glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-5 md:p-6 hover:shadow-cyan-glow hover:scale-[1.01] transition-all duration-300">
                 <h4 className="font-display text-base font-bold text-bright-cyan mb-2">
                   {award.title}
                 </h4>
@@ -512,7 +512,7 @@ export default function EventContent() {
           {FAQS.map((faq, idx) => (
             <div
               key={idx}
-              className="glass-card border border-white/10 hover:border-bio-cyan/30 transition-all duration-300 rounded-card overflow-hidden"
+              className="glass-card glow-border-cyan border-l-4 border-l-bright-cyan hover:shadow-cyan-glow transition-all duration-300 rounded-card overflow-hidden"
             >
               <button
                 type="button"

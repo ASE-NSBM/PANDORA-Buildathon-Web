@@ -151,7 +151,7 @@ export default function RegisterForm() {
             <div className="lg:col-span-2 space-y-4">
 
               {/* Team info card */}
-              <div className="glass-card p-6 space-y-5">
+              <div className="glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-6 space-y-5">
                 <h2 className="font-display font-bold text-bright-cyan text-xs tracking-[0.25em] uppercase">Mission Setup</h2>
 
                 <div>
@@ -188,7 +188,7 @@ export default function RegisterForm() {
               </div>
 
               {/* Roster card */}
-              <div className="glass-card p-5 space-y-3">
+              <div className="glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-5 space-y-3">
                 <div className="flex items-center justify-between">
                   <h2 className="font-display font-bold text-bright-cyan text-xs tracking-[0.25em] uppercase">Crew Manifest</h2>
                   <span className="font-inter text-xs text-white/35">{completedCount}/{memberCount} ready</span>
@@ -264,7 +264,7 @@ export default function RegisterForm() {
             </div>
 
             {/* ── Right: Member form ───────────────────────────────── */}
-            <div className="lg:col-span-3 glass-card p-6 flex flex-col gap-5">
+            <div className="lg:col-span-3 glass-card glow-border-cyan border-l-4 border-l-bright-cyan p-6 flex flex-col gap-5">
 
               {/* Header */}
               <div className="flex items-start justify-between flex-wrap gap-3">
