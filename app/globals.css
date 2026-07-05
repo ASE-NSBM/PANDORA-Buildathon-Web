@@ -143,8 +143,9 @@ body {
     font-family: var(--font-display), 'Trajan Pro', 'Cinzel', serif;
   }
   .form-input {
+    /* text-base on mobile — inputs under 16px trigger iOS focus auto-zoom */
     @apply w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3
-           font-poppins text-sm text-white placeholder:text-white/25
+           font-poppins text-base sm:text-sm text-white placeholder:text-white/25
            focus:outline-none focus:border-bio-cyan/70 focus:shadow-cyan-glow
            transition-all duration-200;
   }

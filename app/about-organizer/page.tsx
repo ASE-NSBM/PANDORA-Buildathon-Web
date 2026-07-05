@@ -27,7 +27,7 @@ export default function AboutOrganizerPage() {
           <p className="font-display text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
             Meet the Team
           </p>
-          <h1 className="section-heading text-5xl md:text-6xl mb-4">About the Organizer</h1>
+          <h1 className="section-heading text-4xl sm:text-5xl md:text-6xl mb-4">About the Organizer</h1>
           <p className="font-poppins text-white/60 max-w-xl mx-auto">
             BuilderThan is proudly organized by the Association of Software Engineering (ASE) Club under Pandora.
           </p>

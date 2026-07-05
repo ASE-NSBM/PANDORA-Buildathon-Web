@@ -52,9 +52,10 @@ export default function Navbar() {
               Register Now
             </Link>
             <button
-              className="md:hidden text-white/70 hover:text-white"
+              className="md:hidden text-white/70 hover:text-white p-2.5 -mr-2.5"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -69,7 +70,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="block font-inter text-sm text-white/70 hover:text-bright-cyan transition-colors duration-200 py-2 px-2"
+              className="block font-inter text-base text-white/70 hover:text-bright-cyan transition-colors duration-200 py-3 px-2"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}

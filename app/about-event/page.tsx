@@ -24,7 +24,7 @@ export default function AboutEventPage() {
           <p className="font-display text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
             Discover More
           </p>
-          <h1 className="section-heading text-5xl md:text-6xl mb-4">
+          <h1 className="section-heading text-4xl sm:text-5xl md:text-6xl mb-4">
             About the Event
           </h1>
 

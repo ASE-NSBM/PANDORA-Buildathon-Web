@@ -18,11 +18,13 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   }
 
   return (
-    <div className="min-h-screen bg-[#030d15] flex">
-      {/* Sidebar */}
-      <aside className="w-60 bg-[#050f18] border-r border-white/10 flex flex-col fixed h-full z-40">
+    <div className="min-h-dvh bg-[#030d15] flex">
+      {/* Sidebar (desktop) / top bar (mobile) */}
+      <aside className="fixed z-40 bg-[#050f18] border-white/10 flex
+                        top-0 left-0 right-0 h-auto flex-row items-center gap-1 border-b px-2
+                        lg:right-auto lg:h-full lg:w-60 lg:flex-col lg:items-stretch lg:gap-0 lg:border-b-0 lg:border-r lg:px-0">
         {/* Logo */}
-        <div className="p-5 border-b border-white/10">
+        <div className="p-2.5 shrink-0 lg:p-5 lg:border-b border-white/10">
           <Link href="/admin" className="group inline-flex flex-col gap-1.5">
             <Image
               src="/logo-Pandora.png"
@@ -30,9 +32,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
               width={1201}
               height={239}
               priority
-              className="h-auto w-[150px] transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(100,230,255,0.45)]"
+              className="h-auto w-[104px] lg:w-[150px] transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(100,230,255,0.45)]"
             />
-            <span className="pl-0.5 font-inter text-[10px] uppercase tracking-[0.25em] text-white/35">
+            <span className="hidden lg:block pl-0.5 font-inter text-[10px] uppercase tracking-[0.25em] text-white/35">
               Admin Panel
             </span>
           </Link>
@@ -40,11 +42,11 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
         <AdminNav />
 
-        {/* Bottom */}
-        <div className="p-4 border-t border-white/10 space-y-1">
+        {/* Bottom (desktop) / right end (mobile) */}
+        <div className="flex items-center gap-1 p-2 shrink-0 lg:block lg:p-4 lg:border-t border-white/10 lg:space-y-1">
           <Link
             href="/"
-            className="flex items-center gap-3 px-3 py-2.5 rounded-lg font-inter text-xs text-white/35 hover:text-white/60 transition-colors"
+            className="hidden lg:flex items-center gap-3 px-3 py-2.5 rounded-lg font-inter text-xs text-white/35 hover:text-white/60 transition-colors"
           >
             ← Back to site
           </Link>
@@ -52,8 +54,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         </div>
       </aside>
 
-      {/* Content */}
-      <main className="flex-1 ml-60 min-h-screen p-8">
+      {/* Content — offset for the top bar (mobile) / sidebar (desktop) */}
+      <main className="flex-1 pt-20 lg:pt-8 lg:ml-60 min-h-dvh p-4 sm:p-6 lg:p-8">
         <PageTransition>{children}</PageTransition>
       </main>
     </div>

@@ -13,10 +13,11 @@ export default function AdminLogout() {
   return (
     <button
       onClick={logout}
-      className="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg font-inter text-sm font-medium text-white/40 hover:text-red-400 hover:bg-red-500/10 transition-all duration-200"
+      className="flex items-center gap-3 w-auto lg:w-full px-3 py-2.5 rounded-lg font-inter text-sm font-medium text-white/40 hover:text-red-400 hover:bg-red-500/10 transition-all duration-200"
+      aria-label="Logout"
     >
       <LogOut size={16} />
-      Logout
+      <span className="hidden sm:inline">Logout</span>
     </button>
   )
 }

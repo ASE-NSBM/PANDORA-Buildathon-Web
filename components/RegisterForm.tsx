@@ -174,7 +174,7 @@ export default function RegisterForm() {
                         key={n}
                         type="button"
                         onClick={() => handleMemberCountChange(n)}
-                        className={`w-10 h-10 rounded-lg font-inter text-sm font-semibold transition-all duration-200 ${
+                        className={`w-11 h-11 rounded-lg font-inter text-sm font-semibold transition-all duration-200 ${
                           memberCount === n
                             ? 'bg-bio-cyan text-deep-ocean shadow-cyan-glow'
                             : 'bg-white/5 border border-white/15 text-white/50 hover:border-bio-cyan/50 hover:text-white'
@@ -267,7 +267,7 @@ export default function RegisterForm() {
             <div className="lg:col-span-3 glass-card p-6 flex flex-col gap-5">
 
               {/* Header */}
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between flex-wrap gap-3">
                 <div>
                   <h2 className="font-display font-bold text-white text-lg">
                     {memberLabel(activeMember)}{memberCount > 1 ? ` · ${activeMember + 1} of ${memberCount}` : ''}
@@ -309,12 +309,13 @@ export default function RegisterForm() {
                     value={members[activeMember]?.fullName ?? ''}
                     onChange={e => updateMember(activeMember, 'fullName', e.target.value)}
                     placeholder="Enter full name"
+                    autoComplete="name"
                     required
                     className="form-input"
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-3">
                   <div>
                     <label className="form-label">Student ID <span className="text-accent-purple">*</span></label>
                     <input
@@ -338,6 +339,8 @@ export default function RegisterForm() {
                       value={members[activeMember]?.email ?? ''}
                       onChange={e => updateMember(activeMember, 'email', e.target.value)}
                       placeholder="name@email.com"
+                      autoComplete="email"
+                      inputMode="email"
                       required
                       className={`form-input ${dupes.email ? 'border-red-500/60 focus:border-red-500/60' : ''}`}
                     />
@@ -349,7 +352,7 @@ export default function RegisterForm() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-3">
                   <div>
                     <label className="form-label">Contact Number <span className="text-accent-purple">*</span></label>
                     <input
@@ -357,6 +360,8 @@ export default function RegisterForm() {
                       value={members[activeMember]?.contactNumber ?? ''}
                       onChange={e => updateMember(activeMember, 'contactNumber', e.target.value)}
                       placeholder="+94 7x or 07x"
+                      autoComplete="tel"
+                      inputMode="tel"
                       required
                       className="form-input"
                     />
@@ -368,6 +373,7 @@ export default function RegisterForm() {
                       value={members[activeMember]?.whatsappNumber ?? ''}
                       onChange={e => updateMember(activeMember, 'whatsappNumber', e.target.value)}
                       placeholder="+94 7x or 07x"
+                      inputMode="tel"
                       required
                       className="form-input"
                     />
@@ -401,9 +407,9 @@ export default function RegisterForm() {
             </div>
           </div>
 
-          {/* Submit row */}
-          <div className="flex items-center justify-between">
-            <p className="font-inter text-xs text-white/30">
+          {/* Submit row — stacks on mobile so the button stays full-size and tappable */}
+          <div className="flex flex-col-reverse sm:flex-row items-center sm:justify-between gap-4">
+            <p className="font-inter text-xs text-white/30 text-center sm:text-left">
               {completedCount === memberCount && teamName.trim()
                 ? '✓ All fields complete — ready to submit'
                 : `${memberCount - completedCount} member${memberCount - completedCount !== 1 ? 's' : ''} still incomplete`}
@@ -411,7 +417,7 @@ export default function RegisterForm() {
             <button
               type="submit"
               disabled={submitting}
-              className="btn-primary inline-flex items-center gap-2 text-base px-10 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn-primary inline-flex items-center justify-center gap-2 text-base px-10 py-4 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {submitting ? 'Submitting…' : 'Submit Registration'}
               {!submitting && <ChevronRight size={18} />}

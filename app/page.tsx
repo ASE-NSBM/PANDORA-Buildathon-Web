@@ -54,7 +54,7 @@ export default function HomePage() {
       <div id="scrub-track" className="relative z-10">
 
         {/* ── 1: Hero ── */}
-        <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4">
+        <section className="relative min-h-dvh flex flex-col items-center justify-center text-center px-4">
           <div className="pointer-events-none absolute inset-0 hud-grid" aria-hidden="true" />
           <Reveal className="relative flex flex-col items-center">
             <Image
@@ -65,7 +65,7 @@ export default function HomePage() {
               priority
               className="mb-6 h-12 w-auto drop-shadow-[0_0_20px_rgba(100,230,255,0.45)] md:h-16"
             />
-            <h1 className="font-display font-bold text-6xl md:text-8xl lg:text-[8.5rem] mb-4 tracking-wider leading-none drop-shadow-[0_0_45px_rgba(100,230,255,0.35)]">
+            <h1 className="font-display font-bold text-[clamp(2.25rem,10.5vw,8.5rem)] mb-4 tracking-wider leading-none drop-shadow-[0_0_45px_rgba(100,230,255,0.35)]">
               <TypewriterText
                 words={['BUILDERTHON']}
                 typingMs={110}
@@ -108,7 +108,7 @@ export default function HomePage() {
         </section>
 
         {/* ── 2: About ── */}
-        <section className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8">
+        <section className="min-h-dvh flex items-center px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl mx-auto md:mx-0">
             <div className="mb-4">
               <SectionIndex n="01" label="About the Event" />
@@ -128,7 +128,7 @@ export default function HomePage() {
         </section>
 
         {/* ── 3: Why Participate ── */}
-        <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+        <section className="min-h-dvh flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl w-full mx-auto text-center">
             <Reveal className="flex flex-col items-center mb-12">
               <SectionIndex n="02" label="Why Join" />
@@ -159,7 +159,7 @@ export default function HomePage() {
         <EventContent />
 
         {/* ── 4: Final CTA ── */}
-        <section className="min-h-screen flex flex-col items-center justify-center text-center px-4">
+        <section className="min-h-dvh flex flex-col items-center justify-center text-center px-4">
           <Reveal className="flex flex-col items-center">
             <div className="mb-6">
               <SectionIndex n="03" label="Ready to Build?" />
@@ -194,7 +194,7 @@ export default function HomePage() {
         </section>
 
         {/* ── 5: Contact ── */}
-        <section id="contact-team" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-24">
+        <section id="contact-team" className="min-h-dvh flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-24">
           <div className="max-w-7xl w-full mx-auto text-center">
             <Reveal className="flex flex-col items-center mb-6">
               <SectionIndex n="05" label="Get in Touch" />
