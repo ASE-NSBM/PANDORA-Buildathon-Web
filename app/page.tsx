@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Calendar, MapPin, ArrowRight, Zap, Code2, BookOpen, Trophy, Mail, Phone } from 'lucide-react'
 import ScrollScrubBackground from '@/components/ui/ScrollScrubBackground'
 import Countdown from '@/components/ui/Countdown'
+import EventContent from '@/components/EventContent'
 
 const whyParticipate = [
   { icon: Zap,      title: 'Real World Impact', description: 'Solve meaningful problems that create impact.' },
@@ -107,6 +108,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* ── 3.5: Full event details (shared with /about-event) ── */}
+        <EventContent />
 
         {/* ── 4: Final CTA ── */}
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-4">
