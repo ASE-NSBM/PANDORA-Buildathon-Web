@@ -246,6 +246,44 @@ body {
   50%      { opacity: 0.25; }
 }
 
+/* ── Jellyfish loader ─────────────────────────────────────────── */
+@keyframes jelly-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+.jelly-float {
+  animation: jelly-float 3.2s ease-in-out infinite;
+}
+@keyframes jelly-pulse {
+  0%, 100% { transform: scaleX(1) scaleY(1); }
+  50%      { transform: scaleX(1.06) scaleY(0.94); }
+}
+.jelly-pulse {
+  animation: jelly-pulse 1.6s ease-in-out infinite;
+}
+@keyframes jelly-tentacle {
+  0%, 100% { transform: rotate(-4deg); }
+  50%      { transform: rotate(5deg); }
+}
+.jelly-tentacle {
+  animation: jelly-tentacle 2.4s ease-in-out infinite;
+}
+@keyframes jelly-shimmer {
+  from { transform: translateX(-120%); }
+  to   { transform: translateX(420%); }
+}
+.jelly-shimmer {
+  animation: jelly-shimmer 1.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .jelly-float,
+  .jelly-pulse,
+  .jelly-tentacle,
+  .jelly-shimmer {
+    animation: none;
+  }
+}
+
 /* Typewriter caret */
 .typewriter-caret {
   display: inline-block;
