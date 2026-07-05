@@ -110,11 +110,11 @@ export default function AnimatedTestimonials({ members }: { members: CommitteeMe
             <h3 className="testi-enter font-display font-bold text-white text-lg sm:text-3xl leading-tight mb-1">
               {active.name}
             </h3>
-            <p className="testi-enter font-poppins text-white/40 text-xs mb-3 sm:mb-5">
+            <p className="testi-enter font-poppins text-white/60 text-xs mb-3 sm:mb-5">
               {active.org ?? 'Association of Software Engineering'}
             </p>
             <p
-              className="font-poppins text-white/70 leading-relaxed text-sm sm:text-lg mb-4 sm:mb-6 min-h-[6.5rem] sm:min-h-[5.25rem]"
+              className="font-poppins text-white/85 leading-relaxed text-sm sm:text-lg mb-4 sm:mb-6 min-h-[6.5rem] sm:min-h-[5.25rem]"
               aria-live="polite"
             >
               {blurb.split(' ').map((word, i) => (
@@ -125,7 +125,7 @@ export default function AnimatedTestimonials({ members }: { members: CommitteeMe
             </p>
             <a
               href={`mailto:${active.email}`}
-              className="focus-ring self-start inline-flex items-center gap-2 font-poppins text-xs sm:text-sm text-white/60 hover:text-bright-cyan transition-colors duration-200"
+              className="focus-ring self-start inline-flex items-center gap-2 font-poppins text-xs sm:text-sm text-white/80 hover:text-bright-cyan transition-colors duration-200"
             >
               <Mail size={15} className="text-bright-cyan shrink-0" />
               <span className="break-all">{active.email}</span>

@@ -134,7 +134,7 @@ const FAQS = [
   },
   {
     q: 'Who do we contact if we have questions during registration?',
-    a: 'You can reach out to the ASE Club organizers via our social channels linked in the footer, or email us at ase@pandora.org for immediate assistance.'
+    a: 'You can reach out to the ASE Club organizers via our social channels linked in the footer, or email us at ase@nsbm.ac.lk for immediate assistance.'
   }
 ]
 
@@ -180,7 +180,7 @@ export default function EventContent() {
           <h2 className="section-heading text-4xl mb-4">
             <DiaTextReveal text="BuilderThan 2026" colors={REVEAL_COLORS} textColor="#FFFFFF" />
           </h2>
-          <p className="font-poppins text-white/50 text-sm md:text-base">
+          <p className="font-poppins text-white/70 text-sm md:text-base">
             Explore the core vision of our flagship software engineering challenge.
           </p>
         </div>
@@ -196,12 +196,12 @@ export default function EventContent() {
               <h3 className="font-display text-xl md:text-2xl font-bold text-white tracking-wide">
                 Build Beyond Imagination
               </h3>
-              <p className="font-poppins text-xs md:text-sm lg:text-base text-white/70 leading-relaxed">
+              <p className="font-poppins text-xs md:text-sm lg:text-base text-white/85 leading-relaxed">
                 BuilderThan is more than a competition; it is a collaborative platform designed to test the limits
                 of your technical prowess and product thinking. In partnership with Pandora, the ASE Club hosts
                 undergraduates from across the region to tackle modern, complex industry problems.
               </p>
-              <p className="font-poppins text-xs md:text-sm lg:text-base text-white/70 leading-relaxed">
+              <p className="font-poppins text-xs md:text-sm lg:text-base text-white/85 leading-relaxed">
                 Over a single intensive build day, your team will conceptualize, develop, test, and pitch an application,
                 proving that you can convert high-level requirements into clean, production-ready systems.
               </p>
@@ -223,12 +223,12 @@ export default function EventContent() {
                 >
                   <div className="space-y-4">
                     <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-bio-cyan/30 group-hover:bg-bio-cyan/10 transition-colors">
-                      <IconComponent className="text-white/60 group-hover:text-bright-cyan transition-colors" size={20} />
+                      <IconComponent className="text-white/80 group-hover:text-bright-cyan transition-colors" size={20} />
                     </div>
                     <h4 className="font-display text-base md:text-lg font-bold text-white group-hover:text-bright-cyan transition-colors">
                       {obj.title}
                     </h4>
-                    <p className="font-poppins text-xs md:text-sm text-white/60 leading-relaxed">
+                    <p className="font-poppins text-xs md:text-sm text-white/80 leading-relaxed">
                       {obj.description}
                     </p>
                   </div>
@@ -291,7 +291,7 @@ export default function EventContent() {
                 <CheckCircle2 size={18} className="text-bright-cyan flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-sm font-semibold text-white/90">{item.title}</h4>
-                  <p className="text-xs md:text-sm text-white/60 mt-0.5 leading-relaxed">{item.desc}</p>
+                  <p className="text-xs md:text-sm text-white/80 mt-0.5 leading-relaxed">{item.desc}</p>
                 </div>
               </li>
             ))}
@@ -345,7 +345,7 @@ export default function EventContent() {
                 <CheckCircle2 size={18} className="text-accent-purple flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-sm font-semibold text-white/90">{item.title}</h4>
-                  <p className="text-xs md:text-sm text-white/60 mt-0.5 leading-relaxed">{item.desc}</p>
+                  <p className="text-xs md:text-sm text-white/80 mt-0.5 leading-relaxed">{item.desc}</p>
                 </div>
               </li>
             ))}
@@ -361,7 +361,7 @@ export default function EventContent() {
           <h2 className="section-heading text-4xl mb-4">
             <DiaTextReveal text="Milestones & Timeline" colors={REVEAL_COLORS} textColor="#FFFFFF" />
           </h2>
-          <p className="font-poppins text-white/50 text-sm md:text-base">
+          <p className="font-poppins text-white/70 text-sm md:text-base">
             Mark the dates and follow our progression timeline from launch to presentation.
           </p>
         </div>
@@ -380,7 +380,7 @@ export default function EventContent() {
                 <h3 className="font-display text-lg font-bold text-white/90 mt-1 group-hover:text-bright-cyan transition-colors">
                   {item.title}
                 </h3>
-                <p className="font-poppins text-xs md:text-sm text-white/60 mt-1 leading-relaxed">
+                <p className="font-poppins text-xs md:text-sm text-white/80 mt-1 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -411,7 +411,7 @@ export default function EventContent() {
                     <h4 className="font-display text-base font-bold text-white">
                       {item.title}
                     </h4>
-                    <p className="font-poppins text-xs md:text-sm text-white/50 leading-relaxed">
+                    <p className="font-poppins text-xs md:text-sm text-white/70 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -432,7 +432,7 @@ export default function EventContent() {
           <h2 className="section-heading text-4xl mb-4">
             <DiaTextReveal text="The Prize Pool" colors={REVEAL_COLORS} textColor="#FFFFFF" />
           </h2>
-          <p className="font-poppins text-white/50 text-sm md:text-base">
+          <p className="font-poppins text-white/70 text-sm md:text-base">
             A total cash prize pool along with outstanding awards, trophies, and premium incubation pathways.
           </p>
         </div>
@@ -455,7 +455,7 @@ export default function EventContent() {
                 </div>
 
                 <div className="space-y-1">
-                  <p className="font-inter text-xs text-white/40 uppercase tracking-widest">Cash Prize</p>
+                  <p className="font-inter text-xs text-white/60 uppercase tracking-widest">Cash Prize</p>
                   <p className="font-display text-3xl md:text-4xl font-bold text-white tracking-wide">
                     {prize.amount}
                   </p>
@@ -463,7 +463,7 @@ export default function EventContent() {
 
                 <ul className="space-y-2 border-t border-white/5 pt-4">
                   {prize.perks.map((perk, i) => (
-                    <li key={i} className="flex gap-2 items-center text-xs md:text-sm font-poppins text-white/70">
+                    <li key={i} className="flex gap-2 items-center text-xs md:text-sm font-poppins text-white/85">
                       <span className="text-bright-cyan">•</span>
                       {perk}
                     </li>
@@ -486,7 +486,7 @@ export default function EventContent() {
                 <h4 className="font-display text-base font-bold text-bright-cyan mb-2">
                   {award.title}
                 </h4>
-                <p className="font-poppins text-xs md:text-sm text-white/50 leading-relaxed">
+                <p className="font-poppins text-xs md:text-sm text-white/70 leading-relaxed">
                   {award.desc}
                 </p>
               </div>
@@ -503,7 +503,7 @@ export default function EventContent() {
           <h2 className="section-heading text-4xl mb-4">
             <DiaTextReveal text="Frequently Asked Questions" colors={REVEAL_COLORS} textColor="#FFFFFF" />
           </h2>
-          <p className="font-poppins text-white/50 text-sm md:text-base">
+          <p className="font-poppins text-white/70 text-sm md:text-base">
             Got questions? We have compiled the most common inquiries about the competition.
           </p>
         </div>
@@ -538,7 +538,7 @@ export default function EventContent() {
               >
                 <div className="overflow-hidden">
                   <div className="px-4 md:px-6 pb-4 md:pb-5 pt-3 border-t border-white/5 bg-white/[0.01]">
-                    <p className="font-poppins text-xs md:text-sm text-white/60 leading-relaxed">
+                    <p className="font-poppins text-xs md:text-sm text-white/80 leading-relaxed">
                       {faq.a}
                     </p>
                   </div>

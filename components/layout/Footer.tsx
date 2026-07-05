@@ -7,7 +7,7 @@ const quickLinks = [
   { label: 'About Event',     href: '/about-event' },
   { label: 'About Organizer', href: '/about-organizer' },
   { label: 'Register',        href: '/register' },
-  { label: 'Contact',         href: 'mailto:scse.nsbm@gmail.com' },
+  { label: 'Contact',         href: 'mailto:ase@nsbm.ac.lk' },
 ]
 
 const socialLinks = [
@@ -85,8 +85,8 @@ export default function Footer() {
               Contact Us
             </h4>
             <div className="space-y-2 font-poppins text-sm text-white/50">
-              <p>builderthan@pandora.lk</p>
-              <p>+94 77 123 4567</p>
+              <p>ase@nsbm.ac.lk</p>
+              <p>+94 71 872 9888</p>
               <p>NSBM Green University</p>
             </div>
           </div>
