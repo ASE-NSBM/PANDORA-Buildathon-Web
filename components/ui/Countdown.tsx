@@ -15,40 +15,51 @@ function getTimeLeft() {
   }
 }
 
-function Pad({ n }: { n: number }) {
+function pad(n: number) {
   return String(n).padStart(2, '0')
 }
 
 export default function Countdown() {
-  const [t, setT] = useState(getTimeLeft)
+  // Start null so server and first client render match (avoids hydration drift),
+  // then hydrate the live value on mount.
+  const [t, setT] = useState<ReturnType<typeof getTimeLeft> | null>(null)
 
   useEffect(() => {
+    setT(getTimeLeft())
     const id = setInterval(() => setT(getTimeLeft()), 1000)
     return () => clearInterval(id)
   }, [])
 
   const units = [
-    { label: 'Days',    value: t.days    },
-    { label: 'Hours',   value: t.hours   },
-    { label: 'Minutes', value: t.minutes },
-    { label: 'Seconds', value: t.seconds },
+    { label: 'Days',    value: t?.days    },
+    { label: 'Hours',   value: t?.hours   },
+    { label: 'Minutes', value: t?.minutes },
+    { label: 'Seconds', value: t?.seconds },
   ]
 
+  const label = t
+    ? `${t.days} days, ${t.hours} hours, ${t.minutes} minutes and ${t.seconds} seconds until the event`
+    : 'Countdown to the event'
+
   return (
-    <div className="flex items-center gap-3 sm:gap-5">
-      {units.map(({ label, value }, i) => (
-        <div key={label} className="flex items-center gap-3 sm:gap-5">
-          <div className="text-center">
-            <div className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white glow-text-cyan tabular-nums leading-none">
-              <Pad n={value} />
-            </div>
-            <div className="font-display text-bright-cyan text-[10px] sm:text-xs tracking-[0.25em] uppercase mt-1">
-              {label}
-            </div>
-          </div>
-          {i < units.length - 1 && (
-            <span className="font-display text-2xl sm:text-3xl text-bright-cyan/40 font-bold leading-none mb-3">:</span>
-          )}
+    <div
+      className="flex items-stretch gap-2 sm:gap-4"
+      role="timer"
+      aria-live="off"
+      aria-label={label}
+    >
+      {units.map(({ label, value }) => (
+        <div
+          key={label}
+          className="hud-corners glass-card glow-border-cyan flex flex-col items-center justify-center
+                     px-3 py-3 sm:px-5 sm:py-4 min-w-[64px] sm:min-w-[84px]"
+        >
+          <span className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white glow-text-cyan tabular-nums leading-none">
+            {value === undefined ? '––' : pad(value)}
+          </span>
+          <span className="font-poppins text-bright-cyan/70 text-[9px] sm:text-[10px] tracking-[0.28em] uppercase mt-2">
+            {label}
+          </span>
         </div>
       ))}
     </div>

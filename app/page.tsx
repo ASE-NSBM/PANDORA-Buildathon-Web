@@ -2,8 +2,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, MapPin, ArrowRight, Zap, Code2, BookOpen, Trophy, Mail, Phone } from 'lucide-react'
 import ScrollScrubBackground from '@/components/ui/ScrollScrubBackground'
+import FlowFieldOverlay from '@/components/ui/FlowFieldOverlay'
+import ScrollProgress from '@/components/ui/ScrollProgress'
 import Countdown from '@/components/ui/Countdown'
+import Reveal from '@/components/ui/Reveal'
+import CommitteeSlider from '@/components/ui/CommitteeSlider'
 import EventContent from '@/components/EventContent'
+import RegisterForm from '@/components/RegisterForm'
 
 const whyParticipate = [
   { icon: Zap,      title: 'Real World Impact', description: 'Solve meaningful problems that create impact.' },
@@ -19,91 +24,109 @@ const committee = [
   { role: 'Secretary',      name: 'Hirushi Nethmini',       email: 'hirushinethmini5@gmail.com' },
 ]
 
-function initials(name: string) {
-  const parts = name.trim().split(/\s+/)
-  return parts.length > 1 ? `${parts[0][0]}${parts[parts.length - 1][0]}` : name.slice(0, 2)
+/** Small HUD chapter marker, e.g. "01 / HERO" */
+function SectionIndex({ n, label }: { n: string; label: string }) {
+  return (
+    <span className="hud-index">
+      {n} <span className="text-white/25">/</span> {label}
+    </span>
+  )
 }
 
 export default function HomePage() {
   return (
     <div className="relative">
+      {/* Whole-page scroll progress indicator (storytelling pattern) */}
+      <ScrollProgress />
+
       {/* Pinned video — scrubbed by total page scroll */}
       <ScrollScrubBackground src="/vids/story.mp4" overlay={0.5} />
+
+      {/* Ambient flow-field particles over the video (below content) */}
+      <FlowFieldOverlay />
 
       {/* Content scrolls over the locked video */}
       <div id="scrub-track" className="relative z-10">
 
         {/* ── 1: Hero ── */}
-        <section className="min-h-screen flex flex-col items-center justify-center text-center px-4">
-          <Image
-            src="/logo-Pandora.png"
-            alt="Pandora"
-            width={1201}
-            height={239}
-            priority
-            className="mb-6 h-12 w-auto drop-shadow-[0_0_20px_rgba(100,230,255,0.45)] md:h-16"
-          />
-          <h1 className="font-display font-bold text-6xl md:text-8xl lg:text-[8.5rem] text-gradient-cyan mb-4 tracking-wider leading-none drop-shadow-[0_0_45px_rgba(100,230,255,0.35)]">
-            BUILDERTHON
-          </h1>
-          <p className="font-display text-base md:text-lg text-bright-cyan/80 tracking-[0.35em] uppercase mb-6">
-            Build Beyond Imagination
-          </p>
-          <Countdown />
-          <p className="font-poppins text-white/60 text-base md:text-lg max-w-xl mx-auto mt-8 mb-10">
-            A competitive challenge for innovators, dreamers and builders.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-12 font-poppins text-sm text-white/60">
-            <div className="flex items-center gap-2">
-              <Calendar size={15} className="text-bright-cyan" />
-              <span>5th August 2026 · 10 AM – 5 PM</span>
+        <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4">
+          <div className="pointer-events-none absolute inset-0 hud-grid" aria-hidden="true" />
+          <Reveal className="relative flex flex-col items-center">
+            <Image
+              src="/logo-Pandora.png"
+              alt="Pandora"
+              width={1201}
+              height={239}
+              priority
+              className="mb-6 h-12 w-auto drop-shadow-[0_0_20px_rgba(100,230,255,0.45)] md:h-16"
+            />
+            <h1 className="font-display font-bold text-6xl md:text-8xl lg:text-[8.5rem] text-gradient-cyan mb-4 tracking-wider leading-none drop-shadow-[0_0_45px_rgba(100,230,255,0.35)]">
+              BUILDERTHON
+            </h1>
+            <p className="font-display text-base md:text-lg text-bright-cyan/80 tracking-[0.35em] uppercase mb-8">
+              Build Beyond Imagination
+            </p>
+            <Countdown />
+            <p className="font-poppins text-white/60 text-base md:text-lg max-w-xl mx-auto mt-8 mb-10">
+              A competitive challenge for innovators, dreamers and builders.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-12 font-poppins text-sm text-white/60">
+              <div className="flex items-center gap-2">
+                <Calendar size={15} className="text-bright-cyan" />
+                <span>5th August 2026 · 10 AM – 5 PM</span>
+              </div>
+              <div className="hidden sm:block w-px h-4 bg-white/20" />
+              <div className="flex items-center gap-2">
+                <MapPin size={15} className="text-bright-cyan" />
+                <span>NSBM Green University</span>
+              </div>
             </div>
-            <div className="hidden sm:block w-px h-4 bg-white/20" />
-            <div className="flex items-center gap-2">
-              <MapPin size={15} className="text-bright-cyan" />
-              <span>NSBM Green University</span>
-            </div>
-          </div>
-          <Link href="/register" className="btn-primary inline-flex items-center gap-2 text-base px-8 py-4">
-            Register Now
-            <ArrowRight size={18} />
-          </Link>
+            <Link href="/register" className="btn-primary focus-ring inline-flex items-center gap-2 text-base px-8 py-4 group">
+              Register Now
+              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </Reveal>
         </section>
 
         {/* ── 2: About ── */}
         <section className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto md:mx-0">
-            <p className="font-display text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
-              About the Event
-            </p>
+          <Reveal className="max-w-2xl mx-auto md:mx-0">
+            <div className="mb-4">
+              <SectionIndex n="01" label="About the Event" />
+            </div>
             <h2 className="section-heading mb-6">BuilderThan</h2>
             <p className="font-poppins text-white/70 leading-relaxed text-lg mb-8">
               BuilderThan is a platform for passionate minds to solve real-world problems and build
               innovative solutions. Dive into the journey of creativity, collaboration and impact.
             </p>
-            <Link href="/about-event" className="btn-outline inline-flex items-center gap-2">
+            <Link href="/about-event" className="btn-outline focus-ring inline-flex items-center gap-2 group">
               Explore Event
-              <ArrowRight size={16} />
+              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
-          </div>
+          </Reveal>
         </section>
 
         {/* ── 3: Why Participate ── */}
         <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl w-full mx-auto text-center">
-            <h2 className="section-heading mb-12">Why Participate?</h2>
+            <Reveal className="flex flex-col items-center mb-12">
+              <SectionIndex n="02" label="Why Join" />
+              <h2 className="section-heading mt-4">Why Participate?</h2>
+            </Reveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {whyParticipate.map(({ icon: Icon, title, description }) => (
-                <div
-                  key={title}
-                  className="glass-card glow-border-cyan p-6 text-center group hover:shadow-cyan-glow transition-all duration-300"
-                >
-                  <div className="w-12 h-12 rounded-full bg-bio-cyan/10 border border-bio-cyan/30 flex items-center justify-center mx-auto mb-4 group-hover:border-bright-cyan group-hover:shadow-cyan-glow transition-all duration-300">
-                    <Icon size={20} className="text-bright-cyan" />
+              {whyParticipate.map(({ icon: Icon, title, description }, i) => (
+                <Reveal key={title} delay={i * 90}>
+                  <div
+                    className="hud-corners glass-card glow-border-cyan p-6 text-center group h-full
+                               hover:shadow-cyan-glow hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-bio-cyan/10 border border-bio-cyan/30 flex items-center justify-center mx-auto mb-4 group-hover:border-bright-cyan group-hover:shadow-cyan-glow transition-all duration-300">
+                      <Icon size={20} className="text-bright-cyan" />
+                    </div>
+                    <h3 className="font-display font-semibold text-white text-sm mb-2">{title}</h3>
+                    <p className="font-poppins text-white/50 text-sm leading-relaxed">{description}</p>
                   </div>
-                  <h3 className="font-display font-semibold text-white text-sm mb-2">{title}</h3>
-                  <p className="font-poppins text-white/50 text-sm leading-relaxed">{description}</p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -114,34 +137,50 @@ export default function HomePage() {
 
         {/* ── 4: Final CTA ── */}
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-4">
-          <p className="font-display text-bright-cyan text-xs tracking-[0.3em] uppercase mb-6">
-            Ready to Build?
-          </p>
-          <h2 className="font-display font-bold text-4xl md:text-6xl text-white mb-6 glow-text-cyan">
-            Join BuilderThan 2026
-          </h2>
-          <p className="font-poppins text-white/60 max-w-xl mx-auto mb-10 text-lg">
-            Secure your team&apos;s spot before registration closes.
-          </p>
-          <Link href="/register" className="btn-primary inline-flex items-center gap-2 text-base px-10 py-4">
-            Register Now
-            <ArrowRight size={18} />
-          </Link>
+          <Reveal className="flex flex-col items-center">
+            <div className="mb-6">
+              <SectionIndex n="03" label="Ready to Build?" />
+            </div>
+            <h2 className="font-display font-bold text-4xl md:text-6xl text-white mb-6 glow-text-cyan">
+              Join BuilderThan 2026
+            </h2>
+            <p className="font-poppins text-white/60 max-w-xl mx-auto mb-10 text-lg">
+              Secure your team&apos;s spot before registration closes.
+            </p>
+            <Link href="/register" className="btn-primary focus-ring inline-flex items-center gap-2 text-base px-10 py-4 group">
+              Register Now
+              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </Reveal>
+        </section>
+
+        {/* ── 4.5: Registration form (shared with /register) ── */}
+        <section id="register" className="scroll-mt-20 px-4 sm:px-6 lg:px-8">
+          <Reveal className="max-w-5xl mx-auto text-center pt-8">
+            <div className="flex justify-center mb-4">
+              <SectionIndex n="04" label="Join BuilderThan 2026" />
+            </div>
+            <h2 className="section-heading text-4xl md:text-5xl mb-4">Assemble Your Crew</h2>
+            <p className="font-poppins text-white/50 max-w-lg mx-auto">
+              Name your team, choose your crew size, and fill in every member&apos;s details to secure your spot.
+            </p>
+          </Reveal>
+          <RegisterForm />
         </section>
 
         {/* ── 5: Contact ── */}
         <section id="contact-team" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-24">
           <div className="max-w-7xl w-full mx-auto text-center">
-            <p className="font-display text-bright-cyan text-xs tracking-[0.3em] uppercase mb-4">
-              Get in Touch
-            </p>
-            <h2 className="section-heading mb-6">Contact Us</h2>
+            <Reveal className="flex flex-col items-center mb-6">
+              <SectionIndex n="05" label="Get in Touch" />
+              <h2 className="section-heading mt-4">Contact Us</h2>
+            </Reveal>
 
             {/* Shared contact channels */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-14 font-poppins text-sm text-white/60">
+            <Reveal className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-14 font-poppins text-sm text-white/60">
               <a
                 href="mailto:ase.nsbm.official@gmail.com"
-                className="flex items-center gap-2 hover:text-bright-cyan transition-colors duration-200"
+                className="focus-ring flex items-center gap-2 px-2 py-1 hover:text-bright-cyan transition-colors duration-200"
               >
                 <Mail size={15} className="text-bright-cyan" />
                 <span>ase.nsbm.official@gmail.com</span>
@@ -149,33 +188,17 @@ export default function HomePage() {
               <div className="hidden sm:block w-px h-4 bg-white/20" />
               <a
                 href="tel:+94718729888"
-                className="flex items-center gap-2 hover:text-bright-cyan transition-colors duration-200"
+                className="focus-ring flex items-center gap-2 px-2 py-1 hover:text-bright-cyan transition-colors duration-200"
               >
                 <Phone size={15} className="text-bright-cyan" />
                 <span>+94 71 872 9888</span>
               </a>
-            </div>
+            </Reveal>
 
-            {/* Committee cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {committee.map(({ role, name, email }) => (
-                <a
-                  key={email}
-                  href={`mailto:${email}`}
-                  className="glass-card glow-border-cyan p-6 text-center group hover:shadow-cyan-glow transition-all duration-300"
-                >
-                  <div className="w-16 h-16 rounded-full bg-bio-cyan/10 border border-bio-cyan/30 flex items-center justify-center mx-auto mb-4 font-display font-bold text-bright-cyan text-lg group-hover:border-bright-cyan group-hover:shadow-cyan-glow transition-all duration-300">
-                    {initials(name)}
-                  </div>
-                  <p className="font-display text-bright-cyan text-[11px] tracking-[0.25em] uppercase mb-2">{role}</p>
-                  <h3 className="font-display font-semibold text-white text-base mb-1">{name}</h3>
-                  <p className="font-poppins text-white/40 text-xs mb-3">Association of Software Engineering</p>
-                  <p className="font-poppins text-white/50 text-xs break-all group-hover:text-bright-cyan transition-colors duration-200">
-                    {email}
-                  </p>
-                </a>
-              ))}
-            </div>
+            {/* Committee — presented as a slider */}
+            <Reveal>
+              <CommitteeSlider members={committee} />
+            </Reveal>
           </div>
         </section>
       </div>
