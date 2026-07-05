@@ -52,9 +52,9 @@ export default function Countdown() {
         <div
           key={label}
           className="hud-corners relative glass-card glow-border-cyan flex flex-col items-center justify-center
-                     px-3 py-3 sm:px-5 sm:py-4 min-w-[64px] sm:min-w-[84px]"
+                     px-2.5 py-2.5 sm:px-5 sm:py-4 min-w-[56px] sm:min-w-[84px]"
         >
-          <span className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white glow-text-cyan tabular-nums leading-none">
+          <span className="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-white glow-text-cyan tabular-nums leading-none">
             {value === undefined ? '––' : pad(value)}
           </span>
           <span className="font-poppins text-bright-cyan/70 text-[9px] sm:text-[10px] tracking-[0.28em] uppercase mt-2">
