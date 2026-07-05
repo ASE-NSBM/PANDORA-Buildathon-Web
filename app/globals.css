@@ -170,10 +170,10 @@ body {
             mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
   }
 
-  /* Corner brackets drawn around a bordered card */
-  .hud-corners {
-    position: relative;
-  }
+  /* Corner brackets drawn around a bordered card.
+     NOTE: deliberately does NOT set position — it would override Tailwind's
+     .absolute (same specificity, later in cascade). Pair with `relative`
+     (or any positioned class) on the element. */
   .hud-corners::before,
   .hud-corners::after {
     content: '';
@@ -244,6 +244,24 @@ body {
   0%, 100% { opacity: 1; }
   50%      { opacity: 0.25; }
 }
+
+/* Animated-testimonials word reveal + content entrance */
+@keyframes testi-word {
+  from { opacity: 0; transform: translateY(0.45em); filter: blur(4px); }
+  to   { opacity: 1; transform: none;               filter: blur(0);   }
+}
+.testi-word {
+  display: inline-block;
+  opacity: 0;
+  animation: testi-word 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes testi-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+.testi-enter {
+  animation: testi-enter 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 @keyframes hud-scan {
   0%   { transform: translateY(-100%); opacity: 0; }
   15%  { opacity: 1; }
@@ -260,5 +278,12 @@ body {
   }
   .hud-index::before {
     animation: none;
+  }
+  .testi-word,
+  .testi-enter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
   }
 }

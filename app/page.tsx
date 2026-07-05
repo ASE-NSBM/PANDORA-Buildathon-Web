@@ -6,7 +6,7 @@ import FlowFieldOverlay from '@/components/ui/FlowFieldOverlay'
 import ScrollProgress from '@/components/ui/ScrollProgress'
 import Countdown from '@/components/ui/Countdown'
 import Reveal from '@/components/ui/Reveal'
-import CommitteeSlider from '@/components/ui/CommitteeSlider'
+import AnimatedTestimonials from '@/components/ui/AnimatedTestimonials'
 import EventContent from '@/components/EventContent'
 import RegisterForm from '@/components/RegisterForm'
 
@@ -117,7 +117,7 @@ export default function HomePage() {
               {whyParticipate.map(({ icon: Icon, title, description }, i) => (
                 <Reveal key={title} delay={i * 90}>
                   <div
-                    className="hud-corners glass-card glow-border-cyan p-6 text-center group h-full
+                    className="hud-corners relative glass-card glow-border-cyan p-6 text-center group h-full
                                hover:shadow-cyan-glow hover:-translate-y-1 transition-all duration-300"
                   >
                     <div className="w-12 h-12 rounded-full bg-bio-cyan/10 border border-bio-cyan/30 flex items-center justify-center mx-auto mb-4 group-hover:border-bright-cyan group-hover:shadow-cyan-glow transition-all duration-300">
@@ -195,9 +195,9 @@ export default function HomePage() {
               </a>
             </Reveal>
 
-            {/* Committee — presented as a slider */}
+            {/* Committee — animated testimonials style */}
             <Reveal>
-              <CommitteeSlider members={committee} />
+              <AnimatedTestimonials members={committee} />
             </Reveal>
           </div>
         </section>

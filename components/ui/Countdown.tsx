@@ -51,7 +51,7 @@ export default function Countdown() {
       {units.map(({ label, value }) => (
         <div
           key={label}
-          className="hud-corners glass-card glow-border-cyan flex flex-col items-center justify-center
+          className="hud-corners relative glass-card glow-border-cyan flex flex-col items-center justify-center
                      px-3 py-3 sm:px-5 sm:py-4 min-w-[64px] sm:min-w-[84px]"
         >
           <span className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white glow-text-cyan tabular-nums leading-none">
