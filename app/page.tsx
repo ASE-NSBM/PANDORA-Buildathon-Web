@@ -6,6 +6,7 @@ import FlowFieldOverlay from '@/components/ui/FlowFieldOverlay'
 import ScrollProgress from '@/components/ui/ScrollProgress'
 import Countdown from '@/components/ui/Countdown'
 import Reveal from '@/components/ui/Reveal'
+import TypewriterText from '@/components/ui/TypewriterText'
 import AnimatedTestimonials from '@/components/ui/AnimatedTestimonials'
 import EventContent from '@/components/EventContent'
 import RegisterForm from '@/components/RegisterForm'
@@ -60,15 +61,24 @@ export default function HomePage() {
               priority
               className="mb-6 h-12 w-auto drop-shadow-[0_0_20px_rgba(100,230,255,0.45)] md:h-16"
             />
-            <h1 className="font-display font-bold text-6xl md:text-8xl lg:text-[8.5rem] text-gradient-cyan mb-4 tracking-wider leading-none drop-shadow-[0_0_45px_rgba(100,230,255,0.35)]">
-              BUILDERTHON
+            <h1 className="font-display font-bold text-6xl md:text-8xl lg:text-[8.5rem] mb-4 tracking-wider leading-none drop-shadow-[0_0_45px_rgba(100,230,255,0.35)]">
+              <TypewriterText
+                words={['BUILDERTHON']}
+                typingMs={110}
+                holdMs={3500}
+                className="text-gradient-cyan"
+              />
             </h1>
             <p className="font-display text-base md:text-lg text-bright-cyan/80 tracking-[0.35em] uppercase mb-8">
               Build Beyond Imagination
             </p>
             <Countdown />
             <p className="font-poppins text-white/60 text-base md:text-lg max-w-xl mx-auto mt-8 mb-10">
-              A competitive challenge for innovators, dreamers and builders.
+              A competitive challenge for{' '}
+              <TypewriterText
+                words={['innovators.', 'dreamers.', 'builders.']}
+                className="text-bright-cyan font-semibold"
+              />
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-12 font-poppins text-sm text-white/60">
               <div className="flex items-center gap-2">
