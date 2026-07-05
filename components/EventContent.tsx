@@ -113,7 +113,7 @@ const SPECIAL_AWARDS = [
 
 const FAQS = [
   {
-    q: 'Who is eligible to participate in BuilderThan 2026?',
+    q: 'Who is eligible to participate in Buildathon 2026?',
     a: 'Any undergraduate student currently enrolled in a recognized university or higher education institution is eligible. Teams can consist of members from different departments or universities, as long as everyone is an undergraduate.'
   },
   {
@@ -139,7 +139,7 @@ const FAQS = [
 ]
 
 /**
- * The full BuilderThan event body — Overview, Eligibility & Rules, Timeline &
+ * The full Buildathon event body — Overview, Eligibility & Rules, Timeline &
  * Schedule, Prizes and FAQ. Shared by the About Event page and the home page.
  * Background-neutral so it adapts to whichever page renders it.
  */
@@ -178,7 +178,7 @@ export default function EventContent() {
       <section id="overview" className="scroll-mt-24 space-y-12">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="section-heading text-4xl mb-4">
-            <DiaTextReveal text="BuilderThan 2026" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+            <DiaTextReveal text="Buildathon 2026" colors={REVEAL_COLORS} textColor="#FFFFFF" />
           </h2>
           <p className="font-poppins text-white/70 text-sm md:text-base">
             Explore the core vision of our flagship software engineering challenge.
@@ -197,7 +197,7 @@ export default function EventContent() {
                 Build Beyond Imagination
               </h3>
               <p className="font-poppins text-xs md:text-sm lg:text-base text-white/85 leading-relaxed">
-                BuilderThan is more than a competition; it is a collaborative platform designed to test the limits
+                Buildathon is more than a competition; it is a collaborative platform designed to test the limits
                 of your technical prowess and product thinking. In partnership with Pandora, the ASE Club hosts
                 undergraduates from across the region to tackle modern, complex industry problems.
               </p>

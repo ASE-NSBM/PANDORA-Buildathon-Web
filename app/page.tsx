@@ -67,7 +67,7 @@ export default function HomePage() {
             />
             <h1 className="font-display font-bold text-[clamp(2rem,7.5vw,6rem)] mb-4 tracking-wider leading-none drop-shadow-[0_0_45px_rgba(100,230,255,0.35)]">
               <TypewriterText
-                words={['BUILDERTHON']}
+                words={['BUILDATHON']}
                 typingMs={110}
                 holdMs={3500}
                 className="text-gradient-cyan"
@@ -114,10 +114,10 @@ export default function HomePage() {
               <SectionIndex n="01" label="About the Event" />
             </div>
             <h2 className="section-heading mb-6">
-              <DiaTextReveal text="BuilderThan" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+              <DiaTextReveal text="Buildathon" colors={REVEAL_COLORS} textColor="#FFFFFF" />
             </h2>
             <p className="font-poppins text-white/85 leading-relaxed text-lg mb-8">
-              BuilderThan is a platform for passionate minds to solve real-world problems and build
+              Buildathon is a platform for passionate minds to solve real-world problems and build
               innovative solutions. Dive into the journey of creativity, collaboration and impact.
             </p>
             <Link href="/about-event" className="btn-outline focus-ring inline-flex items-center gap-2 group">
@@ -165,7 +165,7 @@ export default function HomePage() {
               <SectionIndex n="03" label="Ready to Build?" />
             </div>
             <h2 className="font-display font-bold text-4xl md:text-6xl text-white mb-6 glow-text-cyan">
-              <DiaTextReveal text="Join BuilderThan 2026" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+              <DiaTextReveal text="Join Buildathon 2026" colors={REVEAL_COLORS} textColor="#FFFFFF" />
             </h2>
             <p className="font-poppins text-white/80 max-w-xl mx-auto mb-10 text-lg">
               Secure your team&apos;s spot before registration closes.
@@ -181,7 +181,7 @@ export default function HomePage() {
         <section id="register" className="scroll-mt-20 px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-5xl mx-auto text-center pt-8">
             <div className="flex justify-center mb-4">
-              <SectionIndex n="04" label="Join BuilderThan 2026" />
+              <SectionIndex n="04" label="Join Buildathon 2026" />
             </div>
             <h2 className="section-heading text-4xl md:text-5xl mb-4">
               <DiaTextReveal text="Assemble Your Crew" colors={REVEAL_COLORS} textColor="#FFFFFF" />

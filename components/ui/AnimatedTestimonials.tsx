@@ -50,7 +50,7 @@ export default function AnimatedTestimonials({ members }: { members: CommitteeMe
   }
 
   const active = members[index]
-  const blurb = `${active.role} at the ${active.org ?? 'Association of Software Engineering'}, helping bring BuilderThon 2026 to life at NSBM Green University.`
+  const blurb = `${active.role} at the ${active.org ?? 'Association of Software Engineering'}, helping bring Buildathon 2026 to life at NSBM Green University.`
 
   return (
     <div

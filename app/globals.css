@@ -130,7 +130,7 @@ body {
     @apply border border-bio-cyan/60 text-bright-cyan font-inter font-semibold px-6 py-3 rounded-full
            hover:bg-bio-cyan/10 hover:border-bright-cyan hover:shadow-cyan-glow transition-all duration-300 cursor-pointer;
   }
-  /* Gradient display lettering, e.g. the BUILDERTHON hero title */
+  /* Gradient display lettering, e.g. the BUILDATHON hero title */
   .text-gradient-cyan {
     @apply bg-gradient-to-b from-ice-blue via-bright-cyan to-aqua-blue bg-clip-text text-transparent;
   }

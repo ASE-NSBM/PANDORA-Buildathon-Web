@@ -29,7 +29,7 @@ export default function AboutOrganizerPage() {
           </p>
           <h1 className="section-heading text-4xl sm:text-5xl md:text-6xl mb-4">About the Organizer</h1>
           <p className="font-poppins text-white/60 max-w-xl mx-auto">
-            BuilderThan is proudly organized by the Association of Software Engineering (ASE) Club under Pandora.
+            Buildathon is proudly organized by the Association of Software Engineering (ASE) Club under Pandora.
           </p>
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function AboutOrganizerPage() {
               <h3 className="font-display font-bold text-bright-cyan text-xl mb-4">Mission</h3>
               <p className="font-poppins text-white/60 leading-relaxed">
                 To create an inclusive community that bridges academia and industry through meaningful
-                events, workshops, and competitions like BuilderThan.
+                events, workshops, and competitions like Buildathon.
               </p>
             </div>
           </div>

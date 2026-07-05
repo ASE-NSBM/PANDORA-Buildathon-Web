@@ -29,7 +29,7 @@ export default function AboutEventPage() {
           </h1>
 
           <p className="font-poppins text-white/60 max-w-xl mx-auto">
-            Everything you need to know about BuilderThan 2026.
+            Everything you need to know about Buildathon 2026.
           </p>
         </div>
       </section>

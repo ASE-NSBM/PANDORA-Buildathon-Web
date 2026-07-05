@@ -27,6 +27,23 @@ export default function ScrollScrubBackground({
     const video = videoRef.current
     if (!video) return
 
+    // iOS/mobile Safari won't paint frames of a paused <video> that is only
+    // scrubbed via currentTime (it renders a frame only once playback starts),
+    // so the scroll-scrub background shows up blank on iPhone. On touch devices
+    // (and when reduced-motion is requested) fall back to a normal muted,
+    // looping autoplay background so the video actually displays.
+    const coarsePointer = window.matchMedia('(pointer: coarse)').matches
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (coarsePointer || reduceMotion) {
+      video.muted = true
+      video.loop = true
+      video.autoplay = true
+      const played = video.play()
+      if (played && typeof played.catch === 'function') played.catch(() => {})
+      return
+    }
+
     video.pause()
 
     let raf = 0
