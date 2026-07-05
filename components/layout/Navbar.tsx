@@ -22,16 +22,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
+          <Link href="/" className="flex items-center group">
             <Image
-              src="/pandora-mark.png"
-              alt=""
-              width={512}
-              height={512}
+              src="/logo-Pandora.png"
+              alt="Pandora"
+              width={1201}
+              height={239}
               priority
-              className="h-8 w-8 transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(100,230,255,0.55)]"
+              className="h-8 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(100,230,255,0.55)]"
             />
-            <span className="font-display font-semibold text-white text-lg tracking-[0.18em]">PANDORA</span>
           </Link>
 
           {/* Desktop links */}

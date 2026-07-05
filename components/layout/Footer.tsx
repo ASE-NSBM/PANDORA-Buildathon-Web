@@ -25,15 +25,14 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
+            <div className="mb-4">
               <Image
-                src="/pandora-mark.png"
-                alt=""
-                width={512}
-                height={512}
-                className="h-8 w-8"
+                src="/logo-Pandora.png"
+                alt="Pandora"
+                width={1201}
+                height={239}
+                className="h-9 w-auto"
               />
-              <span className="font-display font-semibold text-white text-lg tracking-[0.18em]">PANDORA</span>
             </div>
             <p className="font-poppins text-sm text-white/50 leading-relaxed">
               Explore. Connect. Create.<br />Build beyond imagination.

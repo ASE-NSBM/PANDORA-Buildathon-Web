@@ -34,17 +34,14 @@ export default function HomePage() {
 
         {/* ── 1: Hero ── */}
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-4">
-          <div className="inline-flex items-center gap-2.5 mb-6">
-            <Image
-              src="/pandora-mark.png"
-              alt=""
-              width={512}
-              height={512}
-              priority
-              className="h-9 w-9 drop-shadow-[0_0_14px_rgba(100,230,255,0.5)]"
-            />
-            <span className="font-display font-semibold text-white text-base tracking-[0.3em]">PANDORA</span>
-          </div>
+          <Image
+            src="/logo-Pandora.png"
+            alt="Pandora"
+            width={1201}
+            height={239}
+            priority
+            className="mb-6 h-12 w-auto drop-shadow-[0_0_20px_rgba(100,230,255,0.45)] md:h-16"
+          />
           <h1 className="font-display font-bold text-6xl md:text-8xl lg:text-[8.5rem] text-gradient-cyan mb-4 tracking-wider leading-none drop-shadow-[0_0_45px_rgba(100,230,255,0.35)]">
             BUILDERTHON
           </h1>
