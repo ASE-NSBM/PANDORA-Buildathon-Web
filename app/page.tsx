@@ -63,7 +63,7 @@ export default function HomePage() {
               width={1201}
               height={239}
               priority
-              className="mb-6 h-12 w-auto drop-shadow-[0_0_20px_rgba(100,230,255,0.45)] md:h-16"
+              className="mb-6 h-8 w-auto drop-shadow-[0_0_20px_rgba(100,230,255,0.45)] sm:h-12 md:h-16"
             />
             <h1 className="font-display font-bold text-[clamp(2rem,7.5vw,6rem)] mb-4 tracking-wider leading-none drop-shadow-[0_0_45px_rgba(100,230,255,0.35)]">
               <TypewriterText

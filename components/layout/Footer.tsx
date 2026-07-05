@@ -31,7 +31,7 @@ export default function Footer() {
                 alt="Pandora"
                 width={1201}
                 height={239}
-                className="h-9 w-auto"
+                className="h-7 w-auto sm:h-9"
               />
             </div>
             <p className="font-poppins text-sm text-white/50 leading-relaxed">
