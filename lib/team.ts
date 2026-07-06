@@ -11,7 +11,7 @@ export const committee: Member[] = [
 /** Development team — shown only on the contact page. */
 export const developmentTeam: Member[] = [
   { role: 'President',                   name: 'Samsudeen Ashad',      image: '/team/ashad.jpg' },
-  { role: 'Chief Technical Affairs',     name: 'Rashmika Fernando',    image: '/team/rashmika.jpg' },
+  { role: 'Chief Technical Affairs & Organizing Lead', name: 'Rashmika Fernando', image: '/team/rashmika.jpg' },
   { role: 'Development Lead — Powerteam', name: 'Zenith Ivan',          image: '/team/zenith.jpg' },
   { role: 'Development Lead — 24 Batch',  name: 'Himath Bandara',       image: '/team/himath.jpg' },
   { role: 'Development Lead — 25 Batch',  name: 'Shamika Keshan',       image: '/team/keshan.jpg' },

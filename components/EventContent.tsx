@@ -337,7 +337,7 @@ export default function EventContent() {
           <ul className="space-y-4">
             {[
               { title: 'Originality First', desc: 'All submitted projects must be designed and coded entirely during the build window on event day.' },
-              { title: 'Template Disclosure', desc: 'Pre-existing templates, boilers, or component packages must be fully disclosed upon submission.' },
+              { title: 'Template Disclosure', desc: 'Pre-existing templates, boilerplates, or component packages must be fully disclosed upon submission.' },
               { title: 'Intellectual Honesty', desc: 'Plagiarism, copying code from other participants, or submitting pre-built projects results in instant disqualification.' },
               { title: 'Final Arbiters', desc: 'The scoring and decisions of the judging panel are final, absolute, and not subject to appeal.' }
             ].map((item, idx) => (
