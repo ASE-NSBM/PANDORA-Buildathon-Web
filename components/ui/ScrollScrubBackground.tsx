@@ -14,7 +14,7 @@ interface ScrollScrubBackgroundProps {
  * Fixed, full-viewport video locked behind the page content.
  * Stays pinned while content scrolls over it; currentTime is scrubbed
  * to whole-page scroll progress (0 at top → duration at bottom).
- * Never autoplays — only scroll drives playback.
+ * Scroll drives playback on both desktop and mobile.
  */
 export default function ScrollScrubBackground({
   src,
@@ -27,15 +27,11 @@ export default function ScrollScrubBackground({
     const video = videoRef.current
     if (!video) return
 
-    // iOS/mobile Safari won't paint frames of a paused <video> that is only
-    // scrubbed via currentTime (it renders a frame only once playback starts),
-    // so the scroll-scrub background shows up blank on iPhone. On touch devices
-    // (and when reduced-motion is requested) fall back to a normal muted,
-    // looping autoplay background so the video actually displays.
-    const coarsePointer = window.matchMedia('(pointer: coarse)').matches
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    if (coarsePointer || reduceMotion) {
+    // Accessibility fallback: don't scrub for users who prefer reduced motion —
+    // just show a calm, muted, looping background instead.
+    if (reduceMotion) {
       video.muted = true
       video.loop = true
       video.autoplay = true
@@ -43,8 +39,6 @@ export default function ScrollScrubBackground({
       if (played && typeof played.catch === 'function') played.catch(() => {})
       return
     }
-
-    video.pause()
 
     let raf = 0
     let displayed = 0
@@ -81,12 +75,32 @@ export default function ScrollScrubBackground({
       raf = requestAnimationFrame(tick)
     }
 
-    if (video.readyState >= 1) start()
-    else video.addEventListener('loadedmetadata', start, { once: true })
+    // iOS/mobile Safari won't paint frames of a video that has *never* played
+    // when you only seek it via currentTime — the scrub background stays blank.
+    // "Prime" it with a brief muted play → pause so the decoder starts painting;
+    // afterwards, seeking to a currentTime repaints correctly on both iOS and
+    // Android. Muted + playsInline autoplay is permitted without a user gesture.
+    const prime = () => {
+      video.muted = true
+      const played = video.play()
+      if (played && typeof played.then === 'function') {
+        played
+          .then(() => {
+            video.pause()
+            start()
+          })
+          .catch(() => start())
+      } else {
+        start()
+      }
+    }
+
+    if (video.readyState >= 1) prime()
+    else video.addEventListener('loadedmetadata', prime, { once: true })
 
     return () => {
       cancelAnimationFrame(raf)
-      video.removeEventListener('loadedmetadata', start)
+      video.removeEventListener('loadedmetadata', prime)
     }
   }, [ease])
 
