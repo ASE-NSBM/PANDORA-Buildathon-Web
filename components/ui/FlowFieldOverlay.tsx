@@ -7,17 +7,23 @@ import FlowFieldBackground from '@/components/ui/flow-field-background'
  * Ambient flow-field particle layer that sits above the scrubbed background
  * video but below the page content. Uses mix-blend-screen so the canvas's
  * black trail fill disappears and only the cyan particles glow additively
- * over the video. Skipped entirely under prefers-reduced-motion.
+ * over the video. Skipped entirely under prefers-reduced-motion and on
+ * mobile viewports (unmounted, not just hidden, so no canvas work runs).
  */
 export default function FlowFieldOverlay() {
   const [enabled, setEnabled] = useState(false)
 
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const apply = () => setEnabled(!mq.matches)
+    const motionMq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const desktopMq = window.matchMedia('(min-width: 768px)')
+    const apply = () => setEnabled(!motionMq.matches && desktopMq.matches)
     apply()
-    mq.addEventListener('change', apply)
-    return () => mq.removeEventListener('change', apply)
+    motionMq.addEventListener('change', apply)
+    desktopMq.addEventListener('change', apply)
+    return () => {
+      motionMq.removeEventListener('change', apply)
+      desktopMq.removeEventListener('change', apply)
+    }
   }, [])
 
   if (!enabled) return null

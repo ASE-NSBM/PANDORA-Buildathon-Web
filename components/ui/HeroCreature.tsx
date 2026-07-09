@@ -10,7 +10,7 @@ import Image from 'next/image'
  */
 export default function HeroCreature() {
   return (
-    <div className="pointer-events-none absolute left-[-2%] top-[58%] z-[4] block w-[120px] opacity-60 sm:left-[2%] sm:w-[160px] md:left-[3%] md:top-[40%] md:w-[240px] md:opacity-90 lg:w-[320px] xl:w-[390px]">
+    <div className="pointer-events-none absolute z-[4] hidden md:block md:left-[3%] md:top-[40%] md:w-[240px] md:opacity-90 lg:w-[320px] xl:w-[390px]">
       <div className="guardian-float" style={{ animationDuration: '8s' }}>
         <div className="relative -rotate-6">
           {/* Soft glow trailing the creature */}
