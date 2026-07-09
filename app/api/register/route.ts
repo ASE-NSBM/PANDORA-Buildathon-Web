@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import connectDB from '@/lib/mongodb'
 import Registration from '@/models/Registration'
+import { appendRegistrationToSheet } from '@/lib/googleSheets'
 
 interface MemberInput {
   fullName?: string;
@@ -90,6 +91,10 @@ export async function POST(req: Request) {
 
     // ── Save ───────────────────────────────────────────────────────────
     const registration = await Registration.create(body)
+
+    // Mirror to Google Sheets (best-effort — never blocks the response).
+    await appendRegistrationToSheet({ teamName, memberCount, members })
+
     return NextResponse.json({ success: true, registration })
 
   } catch (error) {
