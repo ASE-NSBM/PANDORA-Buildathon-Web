@@ -70,7 +70,7 @@ const TIMELINE = [
 
 const SCHEDULE = [
   { time: '08:30 AM', title: 'Registration & Opening Ceremony', desc: 'Welcome desk check-in, credential collection, and the official opening of the event.' },
-  { time: '09:00 AM', title: 'Welcome Address & Introduction', desc: 'Introduction by the ASE Club and guest speeches to kick off the Buildathon.' },
+  { time: '09:00 AM', title: 'Welcome Address & Introduction', desc: 'Introduction by the ASE and guest speeches to kick off the Buildathon.' },
   { time: '09:30 AM', title: 'Challenge Briefing & Rules', desc: 'The challenge domains and evaluation criteria are revealed, with a full rules briefing.' },
   { time: '10:00 AM', title: 'Buildathon Officially Begins', desc: 'Building starts. Teams begin turning their ideas into working prototypes.' },
   { time: '12:30 PM', title: 'Lunch Break', desc: 'Refuel and regroup before the afternoon development session.' },
@@ -114,7 +114,7 @@ const SPECIAL_AWARDS = [
 const FAQS = [
   {
     q: 'Who is eligible to participate in Buildathon 2026?',
-    a: 'Any undergraduate student currently enrolled in a recognized university or higher education institution is eligible. Teams can consist of members from different departments or universities, as long as everyone is an undergraduate.'
+    a: 'Only undergraduate students currently enrolled in the Faculty of Computing at NSBM Green University are eligible to participate in Buildathon 2026. Participants must form teams according to the stated team-size requirements.'
   },
   {
     q: 'What is the required team size?',
@@ -122,7 +122,7 @@ const FAQS = [
   },
   {
     q: 'Is there a registration fee for the hackathon?',
-    a: 'No! Registration is completely free for all selected participants. ASE Club and Pandora fully sponsor the venue, food, and mentorship.'
+    a: 'No! Registration is completely free for all selected participants. ASE and Pandora fully sponsor the venue, food, and mentorship.'
   },
   {
     q: 'Can we use pre-built templates or libraries?',
@@ -130,11 +130,11 @@ const FAQS = [
   },
   {
     q: 'What should we bring to the venue?',
-    a: 'Bring your laptops, chargers, adapters, notebooks, personal toiletries, and your enthusiasm! Stable high-speed Wi-Fi, power outlets, meals, and snacks will be provided by the organizers.'
+    a: 'Bring your laptops, chargers, adapters, notebooks, personal, and your enthusiasm! Stable high-speed Wi-Fi, power outlets, meals, and snacks will be provided by the organizers.'
   },
   {
     q: 'Who do we contact if we have questions during registration?',
-    a: 'You can reach out to the ASE Club organizers via our social channels linked in the footer, or email us at ase@nsbm.ac.lk for immediate assistance.'
+    a: 'You can reach out to the ASE organizers via our social channels linked in the footer, or email us at ase@nsbm.ac.lk for immediate assistance.'
   }
 ]
 
@@ -197,13 +197,14 @@ export default function EventContent() {
                 Build Beyond Imagination
               </h3>
               <p className="font-poppins text-xs md:text-sm lg:text-base text-white/85 leading-relaxed">
-                Buildathon is more than a competition; it is a collaborative platform designed to test the limits
-                of your technical prowess and product thinking. In partnership with Pandora, the ASE Club hosts
-                undergraduates from across the region to tackle modern, complex industry problems.
+                PANDORA is more than a competition—it is an immersive buildathon experience where
+                creativity, technology, and teamwork come together.
               </p>
               <p className="font-poppins text-xs md:text-sm lg:text-base text-white/85 leading-relaxed">
-                Over a single intensive build day, your team will conceptualize, develop, test, and pitch an application,
-                proving that you can convert high-level requirements into clean, production-ready systems.
+                During one intensive build day, teams will analyse a challenge, design a solution, develop
+                and test their application, and present their final concept to a panel of judges. It is a
+                platform created to push technical skills, product thinking, collaboration, and
+                problem-solving beyond the expected.
               </p>
             </div>
             <div className="border-t border-white/10 pt-6 mt-8 flex items-center justify-between text-xs font-inter text-bright-cyan font-bold uppercase tracking-wider">
@@ -282,7 +283,7 @@ export default function EventContent() {
 
           <ul className="space-y-4">
             {[
-              { title: 'Undergraduate Status', desc: 'Open exclusively to all undergraduate students enrolled in a recognized university.' },
+              { title: 'Undergraduate Status', desc: 'Participation is exclusively open to undergraduate students of the Faculty of Computing of NSBM.' },
               { title: 'Flexible Team Sizes', desc: 'Participate as an individual builder or team up in groups of up to 4 members.' },
               { title: 'Cross-Institutional Teams', desc: 'Collaborators from different universities and courses are allowed and encouraged.' },
               { title: 'Clean Track Record', desc: 'All registered participants must adhere to university guidelines and represent a clean conduct history.' }

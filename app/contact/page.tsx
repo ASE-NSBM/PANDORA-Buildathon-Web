@@ -30,7 +30,7 @@ export default function ContactPage() {
             <DiaTextReveal text="Contact Us" colors={REVEAL_COLORS} textColor="#FFFFFF" />
           </h1>
           <p className="font-poppins text-white/60 max-w-xl mx-auto mt-4">
-            Reach out to the team behind Buildathon 2026.
+            Reach out to the team behind Pandora 2026.
           </p>
         </Reveal>
 

@@ -115,8 +115,8 @@ export default function HomePage() {
               <DiaTextReveal text="Buildathon" colors={REVEAL_COLORS} textColor="#FFFFFF" />
             </h2>
             <p className="font-poppins text-white/85 leading-relaxed text-lg mb-8">
-              Buildathon is a platform for passionate minds to solve real-world problems and build
-              innovative solutions. Dive into the journey of creativity, collaboration and impact.
+              Step into a world of imagination, teamwork, and technology—where unexpected challenges
+              inspire extraordinary ideas.
             </p>
             <Link href="/about-event" className="btn-outline focus-ring inline-flex items-center gap-2 group">
               Explore Event

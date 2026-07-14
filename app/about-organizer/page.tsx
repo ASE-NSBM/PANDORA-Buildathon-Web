@@ -28,7 +28,7 @@ export default function AboutOrganizerPage() {
           </p>
           <h1 className="section-heading text-4xl sm:text-5xl md:text-6xl mb-4">About the Organizer</h1>
           <p className="font-poppins text-white/60 max-w-xl mx-auto">
-            Buildathon is proudly organized by the Association of Software Engineering (ASE) Club under Pandora.
+          Pandora is proudly organized by the Association of Software Engineering (ASE) Club under Pandora.
           </p>
         </div>
       </section>
@@ -39,14 +39,14 @@ export default function AboutOrganizerPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
-              <h2 className="section-subheading mb-2">ASE Club</h2>
+              <h2 className="section-subheading mb-2">ASE</h2>
               <h3 className="font-display font-bold text-white text-2xl mb-6">
                 Association of Software Engineering
               </h3>
               <p className="font-poppins text-white/60 leading-relaxed mb-8">
-                The Association of Software Engineering (ASE) Club is the official student body for Software Engineering
-                under Pandora. We aim to empower students by creating opportunities to learn, connect and grow through
-                technical and non-technical activities.
+                The Association of Software Engineering (ASE) is the official student body representing Software
+                Engineering undergraduates at NSBM. We aim to empower students by creating opportunities to learn,
+                connect, and grow through technical and non-technical activities.
               </p>
               <a
                 href="https://asensbm.live/"
@@ -63,7 +63,7 @@ export default function AboutOrganizerPage() {
               <div className="w-48 h-48 rounded-full glass-card glow-border-cyan flex items-center justify-center p-6 animate-float">
                 <Image
                   src="/ase-logo.jpg"
-                  alt="ASE Club logo"
+                  alt="ASE logo"
                   width={160}
                   height={160}
                   className="w-full h-full object-contain rounded-full"
@@ -93,7 +93,7 @@ export default function AboutOrganizerPage() {
 
           {/* Social */}
           <div className="text-center">
-            <h3 className="section-subheading mb-8">Follow ASE Club</h3>
+            <h3 className="section-subheading mb-8">Follow ASE</h3>
             <div className="flex justify-center gap-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
