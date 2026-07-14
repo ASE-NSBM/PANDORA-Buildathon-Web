@@ -113,8 +113,8 @@ const SPECIAL_AWARDS = [
 
 const FAQS = [
   {
-    q: 'Who is eligible to participate in Buildathon 2026?',
-    a: 'Only undergraduate students currently enrolled in the Faculty of Computing at NSBM Green University are eligible to participate in Buildathon 2026. Participants must form teams according to the stated team-size requirements.'
+    q: 'Who is eligible to participate in Pandora 2026?',
+    a: 'Only undergraduate students currently enrolled in the Faculty of Computing at NSBM Green University are eligible to participate in Pandora 2026. Participants must form teams according to the stated team-size requirements.'
   },
   {
     q: 'What is the required team size?',
@@ -178,7 +178,7 @@ export default function EventContent() {
       <section id="overview" className="scroll-mt-24 space-y-12">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="section-heading text-4xl mb-4">
-            <DiaTextReveal text="Buildathon 2026" colors={REVEAL_COLORS} textColor="#FFFFFF" />
+            <DiaTextReveal text="Pandora 2026" colors={REVEAL_COLORS} textColor="#FFFFFF" />
           </h2>
           <p className="font-poppins text-white/70 text-sm md:text-base">
             Explore the core vision of our flagship software engineering challenge.

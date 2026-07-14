@@ -9,8 +9,8 @@ import { committee, developmentTeam } from '@/lib/team'
 const REVEAL_COLORS = ['#A3F7FF', '#64E6FF', '#24A3C7']
 
 export const metadata = {
-  title: 'Contact | Buildathon 2026 – Pandora',
-  description: 'Get in touch with the Buildathon 2026 organizing committee and development team.',
+  title: 'Contact | Pandora 2026',
+  description: 'Get in touch with the Pandora 2026 organizing committee and development team.',
 }
 
 export default function ContactPage() {

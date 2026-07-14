@@ -86,7 +86,7 @@ export default function AboutOrganizerPage() {
               <h3 className="font-display font-bold text-bright-cyan text-xl mb-4">Mission</h3>
               <p className="font-poppins text-white/60 leading-relaxed">
                 To create an inclusive community that bridges academia and industry through meaningful
-                events, workshops, and competitions like Buildathon.
+                events, workshops, and competitions like Pandora.
               </p>
             </div>
           </div>

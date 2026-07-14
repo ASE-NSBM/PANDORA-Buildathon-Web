@@ -27,12 +27,12 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Buildathon 2026 | Pandora – ASE',
+  title: 'Pandora 2026 | ASE',
   description:
-    'Buildathon: Build Beyond Imagination. A competitive challenge for innovators, dreamers and builders. 5th August 2026, NSBM Green University.',
-  keywords: ['Buildathon', 'Pandora', 'ASE', 'hackathon', 'competition', 'Sri Lanka'],
+    'Pandora 2026: Build Beyond Imagination. A competitive challenge for innovators, dreamers and builders. 5th August 2026, NSBM Green University.',
+  keywords: ['Pandora 2026', 'Pandora', 'ASE', 'buildathon', 'hackathon', 'competition', 'Sri Lanka'],
   openGraph: {
-    title: 'Buildathon 2026 | Pandora – ASE',
+    title: 'Pandora 2026 | ASE',
     description: 'A competitive challenge for innovators, dreamers and builders.',
     type: 'website',
   },

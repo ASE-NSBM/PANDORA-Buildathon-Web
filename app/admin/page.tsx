@@ -103,7 +103,7 @@ export default async function AdminDashboard() {
       {/* Header */}
       <div>
         <h1 className="font-poppins text-xl font-bold text-white sm:text-2xl">Admin Overview</h1>
-        <p className="mt-1 font-inter text-sm text-white/40">Buildathon 2026 registration analytics</p>
+        <p className="mt-1 font-inter text-sm text-white/40">Pandora 2026 registration analytics</p>
       </div>
 
       {/* Stat cards */}
