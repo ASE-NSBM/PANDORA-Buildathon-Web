@@ -3,6 +3,8 @@ import AdminLogout from '@/components/admin/AdminLogout'
 import PageTransition from '@/components/PageTransition'
 import Link from 'next/link'
 import Image from 'next/image'
+import { headers } from 'next/headers'
+import { redirect } from 'next/navigation'
 import { getAdminSession } from '@/lib/adminAuth'
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -10,6 +12,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   const authenticated = session !== null
 
   if (!authenticated) {
+    // Only the login route may render without a valid session. Every other
+    // /admin/* page must redirect — otherwise a forged (present-but-invalid)
+    // session cookie would render protected content and leak registration PII.
+    const pathname = (await headers()).get('x-pathname') ?? ''
+    if (pathname !== '/admin/login') redirect('/admin/login')
+
     return (
       <div className="min-h-screen bg-[#030d15] flex items-center justify-center">
         {children}

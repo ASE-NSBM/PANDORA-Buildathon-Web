@@ -12,7 +12,13 @@ const SESSION_COOKIE = 'admin_session'
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl
 
-  if (pathname === '/admin/login') return NextResponse.next()
+  // Forward the current path so the admin layout can distinguish the login
+  // route (which must render for unauthenticated users) from protected pages.
+  const requestHeaders = new Headers(req.headers)
+  requestHeaders.set('x-pathname', pathname)
+  const pass = () => NextResponse.next({ request: { headers: requestHeaders } })
+
+  if (pathname === '/admin/login') return pass()
 
   const hasSession = Boolean(req.cookies.get(SESSION_COOKIE)?.value)
 
@@ -22,7 +28,7 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  return NextResponse.next()
+  return pass()
 }
 
 export const config = {
